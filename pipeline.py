@@ -892,29 +892,49 @@ def fetch_monthly_revenue() -> dict[str, dict]:
         return {}
 
 # ============================================================
-# 【大盤位階判斷】fetch_tw_market_phase
+# 【大盤位階判斷】fetch_tw_market_phase (修正版：改用 TWSE API)
 # ============================================================
 def fetch_tw_market_phase() -> dict | None:
     """
     抓取台股加權指數 (^TWII) 計算大盤位階 (20MA)。
+    避免 yfinance 經常斷線抓不到資料的問題，改用 TWSE 官方歷史指數 API。
     回傳 {"close": 20000, "ma20": 19500, "weather": "🌞 晴天"}
     """
     try:
-        hist = yf.Ticker("^TWII").history(period="30d")
-        time.sleep(0.2)
-        if hist.empty or len(hist) < 20:
+        from dateutil.relativedelta import relativedelta
+        import datetime
+        
+        closes = []
+        today = datetime.date.today()
+        # 抓取上個月與這個月的資料，確保有足夠的 20 天交易日
+        dates_to_fetch = [
+            (today - relativedelta(months=1)).strftime('%Y%m01'),
+            today.strftime('%Y%m01')
+        ]
+        
+        for d in dates_to_fetch:
+            url = f"https://www.twse.com.tw/rwd/zh/TAIEX/MI_5MIN_HIST?response=json&date={d}"
+            resp = fetch_with_retry(url)
+            if not resp: continue
+            data = resp.json()
+            if data.get("stat") == "OK":
+                for row in data.get("data", []):
+                    close_str = row[4].replace(",", "")
+                    closes.append(float(close_str))
+            time.sleep(1) # 避免過度頻繁請求
+            
+        if len(closes) < 20:
+            logger.warning("TWSE API 歷史資料不足 20 天")
             return None
-        closes = hist["Close"].values
+            
         last_close = float(closes[-1])
         ma20 = float(sum(closes[-20:]) / 20)
         weather = "🌞 晴天" if last_close >= ma20 else "🌧️ 雨天"
+        
         return {"close": round(last_close, 2), "ma20": round(ma20, 2), "weather": weather}
     except Exception as e:
         logger.warning(f"fetch_tw_market_phase 失敗: {e}")
         return None
-
-# ============================================================
-# 【美股指數表現】fetch_us_market
 # 使用 yfinance 抓取美股主要指數昨日收盤表現
 # 包含：S&P500、NASDAQ、費城半導體指數（對台股科技股最相關）、台積電 ADR
 # /* 收費風險警告：yfinance 為非官方套件，完全免費，但高頻請求可能暫時封IP */
@@ -1133,3 +1153,4 @@ if __name__ == "__main__":
         )
         logger.exception(f"❌ Pipeline 未捕捉例外：{e}")
         send_telegram(err_msg)
+
