@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-TW">
 <head>
   <meta charset="UTF-8" />
@@ -606,6 +606,196 @@
 
     /* 動畫 */
     .card-appear { animation: fadeIn 0.35s ease both; }
+
+    /* ── 庫存管理 Modal ── */
+    #portfolio-manager-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.85);
+      z-index: 3000;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+    #portfolio-manager-overlay.visible { display: flex; }
+
+    #portfolio-manager-modal {
+      background: #0f1623;
+      border: 1px solid var(--color-cyan);
+      border-radius: 16px;
+      padding: 28px;
+      max-width: 560px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      box-shadow: 0 0 60px rgba(0,212,255,0.15);
+      animation: fadeIn 0.25s ease;
+    }
+    .pm-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--color-cyan);
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .pm-close-btn {
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      font-size: 20px;
+      cursor: pointer;
+      padding: 0 4px;
+      transition: color 0.2s;
+    }
+    .pm-close-btn:hover { color: var(--color-red); }
+
+    /* 小表單樣式 */
+    .pm-stock-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 10px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border-base);
+      border-radius: 8px;
+      margin-bottom: 6px;
+      font-size: 12px;
+      transition: background 0.15s;
+    }
+    .pm-stock-row:hover { background: rgba(255,255,255,0.06); }
+    .pm-stock-code { color: var(--color-cyan); font-weight: 700; width: 54px; flex-shrink: 0; }
+    .pm-stock-name { color: var(--text-primary); flex: 1; }
+    .pm-stock-etf  { color: #93c5fd; font-size: 10px; width: 36px; text-align:center; flex-shrink:0; }
+    .pm-stock-cost { color: var(--color-green); width: 72px; text-align: right; flex-shrink: 0; }
+    .pm-del-btn {
+      background: none;
+      border: 1px solid rgba(255,68,68,0.3);
+      color: var(--color-red);
+      border-radius: 4px;
+      padding: 2px 7px;
+      font-size: 11px;
+      cursor: pointer;
+      transition: all 0.15s;
+      flex-shrink: 0;
+    }
+    .pm-del-btn:hover { background: rgba(255,68,68,0.15); }
+
+    /* 新增表單 */
+    .pm-add-form {
+      background: rgba(0,212,255,0.04);
+      border: 1px solid rgba(0,212,255,0.2);
+      border-radius: 10px;
+      padding: 14px;
+      margin-top: 16px;
+    }
+    .pm-add-title {
+      font-size: 12px;
+      color: var(--color-cyan);
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    .pm-inputs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+    .pm-input {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border-base);
+      color: var(--text-primary);
+      padding: 6px 10px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-family: 'JetBrains Mono', monospace;
+      outline: none;
+      width: 100%;
+      transition: border-color 0.2s;
+    }
+    .pm-input:focus { border-color: var(--color-cyan); }
+    .pm-input::placeholder { color: var(--text-muted); }
+    .pm-checkbox-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      color: var(--text-primary);
+      grid-column: 1 / -1;
+    }
+    .pm-add-btn {
+      width: 100%;
+      margin-top: 10px;
+      padding: 8px;
+      background: linear-gradient(135deg, #0891b2, #06b6d4);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: 'JetBrains Mono', monospace;
+      transition: transform 0.15s;
+    }
+    .pm-add-btn:hover { transform: scale(1.01); }
+
+    /* 匯出區 */
+    .pm-export-box {
+      background: rgba(0,0,0,0.4);
+      border: 1px solid var(--border-base);
+      border-radius: 8px;
+      padding: 10px;
+      font-size: 10px;
+      color: var(--text-muted);
+      margin-top: 16px;
+      white-space: pre-wrap;
+      word-break: break-all;
+      max-height: 140px;
+      overflow-y: auto;
+      display: none;
+    }
+    .pm-export-box.show { display: block; }
+    .pm-action-row {
+      display: flex;
+      gap: 8px;
+      margin-top: 14px;
+      flex-wrap: wrap;
+    }
+    .pm-action-btn {
+      flex: 1;
+      padding: 7px;
+      border-radius: 8px;
+      border: 1px solid var(--border-base);
+      background: rgba(255,255,255,0.04);
+      color: var(--text-muted);
+      font-size: 11px;
+      cursor: pointer;
+      font-family: 'JetBrains Mono', monospace;
+      transition: all 0.2s;
+      text-align: center;
+    }
+    .pm-action-btn:hover {
+      border-color: var(--color-cyan);
+      color: var(--color-cyan);
+      background: rgba(0,212,255,0.08);
+    }
+
+    /* 管理庫存按鈕 */
+    #manage-portfolio-btn {
+      background: rgba(0,212,255,0.08);
+      border: 1px solid rgba(0,212,255,0.4);
+      color: var(--color-cyan);
+      padding: 4px 12px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 11px;
+      font-family: 'JetBrains Mono', monospace;
+      transition: all 0.2s;
+    }
+    #manage-portfolio-btn:hover {
+      background: rgba(0,212,255,0.18);
+    }
   </style>
 </head>
 <body>
@@ -700,7 +890,10 @@
   <section id="portfolio-section">
     <div class="section-header">
       <span class="section-title">📂 我的庫存 My Portfolio</span>
-      <span class="section-meta" id="portfolio-count"></span>
+      <div style="display:flex;align-items:center;gap:10px;">
+        <span class="section-meta" id="portfolio-count"></span>
+        <button id="manage-portfolio-btn" onclick="openPortfolioManager()">⚙️ 管理庫存</button>
+      </div>
     </div>
 
     <div class="cards-grid" id="portfolio-grid">
@@ -741,6 +934,48 @@
   </section>
 
 </div><!-- /app-container -->
+
+<!-- ══ 庫存管理 Modal ══ -->
+<div id="portfolio-manager-overlay">
+  <div id="portfolio-manager-modal">
+    <div class="pm-title">
+      <span>⚙️ 管理我的庫存</span>
+      <button class="pm-close-btn" onclick="closePortfolioManager()">×</button>
+    </div>
+
+    <!-- 現有持股列表 -->
+    <div id="pm-stock-list"></div>
+
+    <!-- 新增表單 -->
+    <div class="pm-add-form">
+      <div class="pm-add-title">➕ 新增持股</div>
+      <div class="pm-inputs">
+        <input class="pm-input" id="pm-code"      placeholder="股票代號（如60050）" maxlength="6" />
+        <input class="pm-input" id="pm-name"      placeholder="股票名稱（如60050）" />
+        <input class="pm-input" id="pm-cost"      placeholder="買入成本（選填）" type="number" step="0.01" />
+        <div class="pm-checkbox-row">
+          <input type="checkbox" id="pm-is-etf" />
+          <label for="pm-is-etf">是 ETF（代號通常0開頤00xxx）</label>
+        </div>
+      </div>
+      <button class="pm-add-btn" onclick="pmAddStock()">➕ 加入庫存</button>
+    </div>
+
+    <!-- 操作區 -->
+    <div class="pm-action-row">
+      <button class="pm-action-btn" onclick="pmExport()">📤 願示 portfolio.json</button>
+      <button class="pm-action-btn" onclick="pmCopyExport()">📋 複製 JSON</button>
+      <button class="pm-action-btn" onclick="pmSaveAndClose()" style="color:var(--color-green);border-color:var(--color-green);">✅ 儲存並關閉</button>
+    </div>
+
+    <!-- 匯出顯示區 -->
+    <div id="pm-export-box" class="pm-export-box"></div>
+
+    <div style="margin-top:14px;font-size:10px;color:var(--text-muted);line-height:1.7;font-family:'Inter',sans-serif;">
+      💡 儲存後儀表板立即更新。若要讓 Pipeline 也使用此設定，請點「願示 portfolio.json」並將內容更新至 GitHub 上的 portfolio.json。
+    </div>
+  </div>
+</div>
 
 
 <script>
@@ -808,6 +1043,85 @@ const MOCK_DATA = {
 let globalData      = null;
 let currentFilter   = 'all';
 let activeKwFilter  = null;
+
+// ============================================================
+// 【庫存管理 CRUD】Portfolio Manager - localStorage based
+// ============================================================
+function getUserPortfolioConfig() {
+  try { const s = localStorage.getItem('user_portfolio'); if (s) return JSON.parse(s); } catch(e) {}
+  return [
+    { code: '0050',  name: '元大台灣50',   is_etf: true,  cost_price: 150.0 },
+    { code: '2330',  name: '台積電',        is_etf: false, cost_price: 850.0 },
+    { code: '00878', name: '國泰永續高股息', is_etf: true,  cost_price: 20.0  },
+  ];
+}
+function saveUserPortfolioConfig(list) { localStorage.setItem('user_portfolio', JSON.stringify(list)); }
+function openPortfolioManager() {
+  renderPmList();
+  document.getElementById('portfolio-manager-overlay').classList.add('visible');
+  document.getElementById('pm-export-box').classList.remove('show');
+}
+function closePortfolioManager() { document.getElementById('portfolio-manager-overlay').classList.remove('visible'); }
+function renderPmList() {
+  const list = getUserPortfolioConfig();
+  const el = document.getElementById('pm-stock-list');
+  if (!list.length) { el.innerHTML = '<div style="color:var(--text-muted);font-size:12px;padding:10px;">目前沒有持股，請在下方新增。</div>'; return; }
+  el.innerHTML = list.map((s, i) => `<div class="pm-stock-row">
+    <span class="pm-stock-code">${s.code}</span>
+    <span class="pm-stock-name">${s.name}</span>
+    <span class="pm-stock-etf">${s.is_etf ? 'ETF' : '個股'}</span>
+    <span class="pm-stock-cost">${s.cost_price != null ? '成本 '+s.cost_price : '未設成本'}</span>
+    <button class="pm-del-btn" onclick="pmDeleteStock(${i})">✕ 刪除</button>
+  </div>`).join('');
+}
+function pmAddStock() {
+  const code = document.getElementById('pm-code').value.trim();
+  const name = document.getElementById('pm-name').value.trim();
+  const cost = parseFloat(document.getElementById('pm-cost').value) || null;
+  const isEtf = document.getElementById('pm-is-etf').checked;
+  if (!code || !name) { alert('請填寫股票代號和名稱！'); return; }
+  const list = getUserPortfolioConfig();
+  if (list.find(s => s.code === code)) { alert(code + ' 已在庫存中！'); return; }
+  list.push({ code, name, is_etf: isEtf, cost_price: cost });
+  saveUserPortfolioConfig(list);
+  renderPmList();
+  ['pm-code','pm-name','pm-cost'].forEach(id => document.getElementById(id).value = '');
+  document.getElementById('pm-is-etf').checked = false;
+}
+function pmDeleteStock(index) {
+  const list = getUserPortfolioConfig();
+  if (!confirm('確定要移除 ' + list[index].code + ' ' + list[index].name + '？')) return;
+  list.splice(index, 1);
+  saveUserPortfolioConfig(list);
+  renderPmList();
+}
+function pmExport() {
+  const json = JSON.stringify(getUserPortfolioConfig(), null, 2);
+  const box = document.getElementById('pm-export-box');
+  box.textContent = json;
+  box.classList.add('show');
+}
+function pmCopyExport() {
+  const json = JSON.stringify(getUserPortfolioConfig(), null, 2);
+  navigator.clipboard.writeText(json).then(() => {
+    alert('已複製到剪貼板！\n接著到 GitHub 上的 portfolio.json 貼上儲存，Pipeline 下次執行就會使用新設定。');
+  }).catch(() => { pmExport(); alert('請手動複製上方 JSON 內容。'); });
+}
+function pmSaveAndClose() {
+  closePortfolioManager();
+  if (globalData) {
+    const config = getUserPortfolioConfig();
+    const srv = globalData.portfolio || [];
+    const merged = config.map(cfg => {
+      const s = srv.find(x => x.code === cfg.code);
+      return s ? { ...s, cost_price: cfg.cost_price }
+               : { ...cfg, price: null, ma60: null, suggested_stop_loss: null,
+                   pnl_percent: null, news_heat_today: 0, news_heat_yesterday: 0,
+                   ptt_push: 0, ptt_boo: 0, keywords_hit: [], alert: null, _no_price: true };
+    });
+    renderPortfolio(merged);
+  }
+}
 
 // ============================================================
 // 【2-C】即時時鐘

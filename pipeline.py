@@ -74,14 +74,35 @@ logger = logging.getLogger(__name__)
 
 # ============================================================
 # 【1-A】自選庫存設定
-# 使用者可自行修改此列表
-# cost_price 選填，未填寫設為 None
+# ✅ 優先讀取 portfolio.json（可從網頁儀表板管理）
+# 若 portfolio.json 不存在，才使用下方預設清單。
+# cost_price 選填，未填寫設為 None。
 # ============================================================
-MY_PORTFOLIO = [
+_DEFAULT_PORTFOLIO = [
     {"code": "0050",  "name": "元大台灣50",        "is_etf": True,  "cost_price": 150.0},
     {"code": "2330",  "name": "台積電",             "is_etf": False, "cost_price": 850.0},
     {"code": "00878", "name": "國泰永續高股息",      "is_etf": True,  "cost_price": 20.0},
 ]
+
+def load_portfolio() -> list:
+    """
+    優先從 portfolio.json 讀取庫存設定。
+    找不到檔案或解析失敗時，回傳預設清單。
+    """
+    portfolio_path = "portfolio.json"
+    if os.path.exists(portfolio_path):
+        try:
+            with open(portfolio_path, "r", encoding="utf-8") as f:
+                data = json.load(f)
+            logger.info(f"✅ 從 portfolio.json 載入庫存，共 {len(data)} 檔")
+            return data
+        except Exception as e:
+            logger.warning(f"portfolio.json 讀取失敗，使用預設清單：{e}")
+    else:
+        logger.info("portfolio.json 不存在，使用預設庫存清單")
+    return _DEFAULT_PORTFOLIO
+
+MY_PORTFOLIO = load_portfolio()
 
 # ============================================================
 # 產業關鍵字權重矩陣（1-H）
