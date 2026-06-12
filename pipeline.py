@@ -1,4 +1,4 @@
-# ============================================================
+﻿# ============================================================
 # 台股輿情雷達 v10 — 後端資料管道
 # pipeline.py
 # ============================================================
@@ -269,15 +269,16 @@ def fetch_tpex_prices(date_str: str) -> dict[str, float]:
 
 
 # ============================================================
-# 【1-C】三大法人（TWSE T86，僅上市，ETF 跳過）
 # ============================================================
-def fetch_institutional(target_codes: list[str], dates: list[str]) -> dict[str, int]:
+# 【1-C】三大法人與投信（TWSE T86，僅上市，ETF 跳過）
+# ============================================================
+def fetch_institutional(target_codes: list[str], dates: list[str]) -> dict[str, dict]:
     """
-    累加 dates 列表中每一天的三大法人淨買超張數。
-    僅查詢 target_codes（已排除 ETF）。
-    回傳 {股票代號: 3日累計淨買超} 字典。
+    累加 dates 列表中每一天的三大法人淨買超張數，以及投信連買狀況。
+    回傳 {股票代號: {"net_buy_3d": 123, "it_continuous_buy": True}}
     """
-    cumulative: dict[str, int] = {}
+    results: dict[str, dict] = {}
+    it_buy_history: dict[str, list[bool]] = {}
 
     for date_str in dates:
         url = (
@@ -285,48 +286,52 @@ def fetch_institutional(target_codes: list[str], dates: list[str]) -> dict[str, 
             f"?response=json&date={date_str}&selectType=ALLBUT0999"
         )
         resp = fetch_with_retry(url)
-        if resp is None:
-            continue
+        if resp is None: continue
+        try: data = resp.json()
+        except Exception: continue
 
-        try:
-            data = resp.json()
-        except Exception:
-            continue
-
-        if data.get("stat") != "OK":
-            continue
+        if data.get("stat") != "OK": continue
 
         fields = data.get("fields", [])
-        # 欄位含：證券代號、買賣差股數（三大法人合計）
         try:
             code_idx = fields.index("證券代號")
-            # 三大法人合計買賣差（張）
             net_idx  = fields.index("三大法人買賣超股數")
+            it_idx   = fields.index("投信買賣超股數")
         except ValueError:
-            # 欄位名稱不符時嘗試第2、最後欄
-            code_idx = 0
-            net_idx  = -1
+            try:
+                code_idx = 0
+                net_idx = -1
+                it_idx = fields.index("投信買賣超股數") if "投信買賣超股數" in fields else -2
+            except ValueError:
+                continue
 
         for row in data.get("data", []):
             try:
                 code = row[code_idx].strip()
-                if code not in target_codes:
-                    continue
-                net_str = str(row[net_idx]).replace(",", "").strip()
-                # 單位：股 → 張（1張=1000股）
-                net_shares = int(net_str)
+                if code not in target_codes: continue
+                
+                net_shares = int(str(row[net_idx]).replace(",", "").strip())
                 net_lots   = net_shares // 1000
-                cumulative[code] = cumulative.get(code, 0) + net_lots
+                
+                it_shares = int(str(row[it_idx]).replace(",", "").strip())
+                it_lots   = it_shares // 1000
+                is_it_buy = it_lots > 0
+
+                if code not in results:
+                    results[code] = {"net_buy_3d": 0, "it_continuous_buy": False}
+                    it_buy_history[code] = []
+                
+                results[code]["net_buy_3d"] += net_lots
+                it_buy_history[code].append(is_it_buy)
             except (ValueError, IndexError):
                 continue
+        time.sleep(0.8)
 
-        time.sleep(0.8)  # 每次請求間隔 0.8s
+    for code, history in it_buy_history.items():
+        if len(history) > 0 and len(history) == len(dates) and all(history):
+            results[code]["it_continuous_buy"] = True
 
-    return cumulative
-
-
-# ============================================================
-# 【1-D】yfinance MA60 與停損計算
+    return results
 # /* 收費風險警告：yfinance 為非官方開源套件，本身完全免費，
 #    但高頻請求可能導致 Yahoo Finance 暫時封鎖 IP。
 #    務必在每次 yfinance 請求後加入 time.sleep(0.2)。*/
@@ -639,117 +644,93 @@ def get_recent_trading_dates(n: int = 3) -> list[str]:
 # 【1-J / 1-K / 主流程】run_pipeline
 # ============================================================
 def run_pipeline() -> None:
-    """
-    主資料管道，含：
-    - 雙軌抓取（市場掃描 + 庫存 VIP 豁免）
-    - 冪等備份（1-K）
-    - 執行摘要日誌（1-J）
-    - 錯誤推播（1-J）
-    - 非交易日優雅退出（1-J）
-    """
     start_time = time.time()
     today_str  = datetime.date.today().strftime("%Y%m%d")
     now_iso    = datetime.datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
 
     logger.info(f"🚀 Pipeline 啟動 [{now_iso}]")
 
-    # ── 步驟 1：抓取今日 TWSE 上市收盤價 ──
-    logger.info("正在抓取 TWSE 收盤價...")
     twse_prices = fetch_twse_prices(today_str)
-
-    # 非交易日優雅退出
     if not twse_prices:
         logger.info("📅 今日為非交易日或 TWSE 尚未更新，跳過執行。")
         return
 
-    # 補充 TPEx 上櫃收盤價
-    logger.info("正在抓取 TPEx 收盤價...")
     tpex_prices = fetch_tpex_prices(today_str)
     all_prices  = {**twse_prices, **tpex_prices}
 
-    logger.info(f"取得收盤價共 {len(all_prices)} 檔")
-
-    # ── 步驟 2：確定庫存代號集合 ──
     portfolio_codes = {p["code"] for p in MY_PORTFOLIO}
     etf_codes       = {p["code"] for p in MY_PORTFOLIO if p["is_etf"]}
 
-    # ── 步驟 3：三大法人（僅上市非ETF）──
-    logger.info("正在抓取三大法人資料（近3日）...")
+    logger.info("正在抓取三大法人與投信資料（近3日）...")
     recent_dates = get_recent_trading_dates(3)
-    # 候選池前 80 檔（依收盤價排序，先以代號過濾非ETF）
-    # 全部上市代號（排除 ETF 代號形式：通常5位以上或含字母開頭00xxx）
-    # 注意：此為近似篩選，ETF 代號通常以 0 開頭且5位
     candidate_non_etf_codes = [
         code for code in list(twse_prices.keys())[:SCAN_LIMIT * 2]
         if code not in etf_codes
     ]
     inst_data = fetch_institutional(candidate_non_etf_codes, recent_dates)
-    logger.info(f"法人資料取得 {len(inst_data)} 檔")
+    
+    logger.info("正在抓取上市月營收資料...")
+    revenue_data = fetch_monthly_revenue()
+    
+    logger.info("正在分析大盤位階...")
+    market_phase = fetch_tw_market_phase()
 
-    # ── 步驟 4：篩選候選池（軌道 A — 市場掃描）──
     logger.info("開始市場掃描篩選...")
     scan_candidates: list[dict] = []
 
-    # 依三大法人淨買超降序排列，取前 SCAN_LIMIT 檔
-    sorted_inst = sorted(inst_data.items(), key=lambda x: x[1], reverse=True)[:SCAN_LIMIT]
+    sorted_inst = sorted(inst_data.items(), key=lambda x: x[1]["net_buy_3d"], reverse=True)[:SCAN_LIMIT]
 
-    for code, net_buy in sorted_inst:
+    for code, inst_info in sorted_inst:
+        net_buy = inst_info["net_buy_3d"]
+        it_continuous_buy = inst_info["it_continuous_buy"]
         price = all_prices.get(code)
-        if price is None:
-            continue
+        if price is None: continue
 
-        # 取 MA60
         ma60, stop_loss = fetch_ma60(code)
-
-        # 篩選：股價 > MA60 且 法人3日淨買超 > 0
-        if ma60 is None:
-            continue
-        if price <= ma60 or net_buy <= 0:
-            continue
+        if ma60 is None or price <= ma60 or net_buy <= 0: continue
+        
+        revenue_info = revenue_data.get(code, {})
 
         scan_candidates.append({
             "code":            code,
             "price":           price,
             "ma60":            ma60,
             "inst_net_buy_3d": net_buy,
+            "it_continuous_buy": it_continuous_buy,
+            "revenue_double_growth": revenue_info.get("revenue_double_growth", False),
             "stop_loss":       stop_loss,
         })
 
-    logger.info(f"市場掃描：通過篩選 {len(scan_candidates)} 檔")
     scanned_total  = len(sorted_inst)
     passed_filter  = len(scan_candidates)
-
-    # ── 步驟 5：對候選池補充新聞/PTT/關鍵字/警報 ──
     alert_count   = 0
     market_result: list[dict] = []
 
     for s in scan_candidates:
         code  = s["code"]
-        name  = code  # 若無名稱對照表，先用代號（實際可從 TWSE 資料取名）
+        name  = code
         price = s["price"]
         ma60  = s["ma60"]
         net   = s["inst_net_buy_3d"]
 
-        logger.info(f"  抓取 {code} 新聞/PTT/關鍵字...")
         news_today, news_yday = fetch_news(code, name)
         ptt_push, ptt_boo     = fetch_ptt(code, name)
         keywords_hit          = match_keywords(code, name)
         alert                 = calc_alert(news_today, news_yday, ptt_push, ptt_boo, net)
 
-        if alert:
-            alert_count += 1
-
-        # 關鍵字評分
+        if alert: alert_count += 1
         kw_score = sum(k["weight"] for k in keywords_hit)
         score    = net + kw_score * 100
 
-        rec = {
+        market_result.append({
             "code":               code,
             "name":               name,
             "price":              price,
             "ma60":               ma60,
             "suggested_stop_loss": s["stop_loss"],
             "inst_net_buy_3d":    net,
+            "it_continuous_buy":  s["it_continuous_buy"],
+            "revenue_double_growth": s["revenue_double_growth"],
             "news_heat_today":    news_today,
             "news_heat_yesterday": news_yday,
             "ptt_push":           ptt_push,
@@ -757,18 +738,12 @@ def run_pipeline() -> None:
             "keywords_hit":       keywords_hit,
             "alert":              alert,
             "_score":             score,
-        }
-        market_result.append(rec)
+        })
 
-        # 關鍵字分數排序
     market_result.sort(key=lambda x: x["_score"], reverse=True)
-    for r in market_result:
-        r.pop("_score", None)
+    for r in market_result: r.pop("_score", None)
 
-    # ── 步驟 6：庫存 VIP 豁免（軌道 B）──
-    logger.info("開始處理庫存標的（VIP 豁免）...")
     portfolio_result: list[dict] = []
-
     for p in MY_PORTFOLIO:
         code     = p["code"]
         name     = p["name"]
@@ -776,31 +751,31 @@ def run_pipeline() -> None:
         cost     = p.get("cost_price")
         price    = all_prices.get(code)
 
-        logger.info(f"  庫存 {code} {name}（ETF={is_etf}）")
-
-        if price is None:
-            logger.warning(f"  ⚠️ {code} 無收盤價資料，跳過")
-            continue
+        if price is None: continue
 
         ma60, stop_loss = fetch_ma60(code)
         news_today, news_yday = fetch_news(code, name)
         ptt_push, ptt_boo     = fetch_ptt(code, name)
         keywords_hit          = match_keywords(code, name)
 
-        # ETF 不查法人
         inst_net = None
+        it_continuous_buy = False
         if not is_etf:
             inst_res = fetch_institutional([code], recent_dates)
-            inst_net = inst_res.get(code)
+            inst_info = inst_res.get(code, {"net_buy_3d": 0, "it_continuous_buy": False})
+            inst_net = inst_info["net_buy_3d"]
+            it_continuous_buy = inst_info["it_continuous_buy"]
 
         alert = calc_alert(news_today, news_yday, ptt_push, ptt_boo, inst_net)
+        if alert: alert_count += 1
 
-        # 損益計算
         pnl_pct = None
         if cost is not None and price is not None:
             pnl_pct = round((price - cost) / cost * 100, 2)
+            
+        rev_info = revenue_data.get(code, {})
 
-        rec = {
+        portfolio_result.append({
             "code":               code,
             "name":               name,
             "is_etf":             is_etf,
@@ -814,14 +789,11 @@ def run_pipeline() -> None:
             "ptt_push":           ptt_push,
             "ptt_boo":            ptt_boo,
             "keywords_hit":       keywords_hit,
+            "it_continuous_buy":  it_continuous_buy,
+            "revenue_double_growth": rev_info.get("revenue_double_growth", False),
             "alert":              alert,
-        }
-        portfolio_result.append(rec)
-
-        if alert:
-            alert_count += 1
-
-        # 庫存停損推播（1-G 額外規則）
+        })
+        
         if stop_loss and price < stop_loss:
             pnl_str = f"{pnl_pct}%" if pnl_pct is not None else "未設成本"
             msg = (
@@ -836,8 +808,7 @@ def run_pipeline() -> None:
                 f"⚠️ 股價已跌破 MA60×0.97，請檢視停損策略！"
             )
             send_telegram(msg)
-
-        # 警報推播
+            
         if alert in ("fomo_warning", "golden_divergence"):
             alert_zh = {
                 "fomo_warning":     "🔥 FOMO 散戶狂熱",
@@ -858,19 +829,14 @@ def run_pipeline() -> None:
             )
             send_telegram(msg)
 
-    # ── 步驟 7：冪等備份（1-K）──
     output_path  = "dashboard_data.json"
     backup_path  = "dashboard_data_backup.json"
-
     if os.path.exists(output_path):
         try:
             import shutil
             shutil.copy2(output_path, backup_path)
-            logger.info(f"✅ 已備份至 {backup_path}")
-        except Exception as e:
-            logger.warning(f"備份失敗：{e}")
+        except Exception: pass
 
-    # ── 步驟 8：輸出 JSON（1-O）──
     elapsed = round(time.time() - start_time, 1)
     output  = {
         "updated_at":  now_iso,
@@ -880,6 +846,7 @@ def run_pipeline() -> None:
             "alert_count":     alert_count,
             "elapsed_seconds": elapsed,
         },
+        "market_weather": market_phase,
         "portfolio":      portfolio_result,
         "market_scanned": market_result,
     }
@@ -887,23 +854,64 @@ def run_pipeline() -> None:
     try:
         with open(output_path, "w", encoding="utf-8") as f:
             json.dump(output, f, ensure_ascii=False, indent=2)
-        logger.info(f"✅ dashboard_data.json 寫出完成")
     except Exception as e:
         logger.error(f"JSON 寫出失敗：{e}")
 
-    # ── 步驟 9：執行摘要日誌（1-J）──
-    logger.info(
-        f"✅ 執行摘要：掃描 {scanned_total} 檔 / "
-        f"通過篩選 {passed_filter} 檔 / "
-        f"警報 {alert_count} 檔 / "
-        f"耗時 {elapsed}s"
-    )
-
-    # ── 步驟 10：每日智能摘要推播 ──
-    logger.info("正在抓取美股指數表現...")
     us_market = fetch_us_market()
-    send_daily_summary(portfolio_result, market_result, us_market, now_iso)
+    send_daily_summary(portfolio_result, market_result, us_market, market_phase, now_iso)
+# ============================================================
+# 【營收年月雙增】fetch_monthly_revenue
+# ============================================================
+def fetch_monthly_revenue() -> dict[str, dict]:
+    """
+    從 TWSE OpenAPI 抓取上市營收。
+    回傳: { code: {"mom": 5.2, "yoy": 10.5, "revenue_double_growth": True} }
+    """
+    url = "https://openapi.twse.com.tw/v1/opendata/t187ap05_L"
+    resp = fetch_with_retry(url)
+    if not resp: return {}
+    try:
+        data = resp.json()
+        results = {}
+        for row in data:
+            code = row.get("公司代號", "")
+            try:
+                mom = float(row.get("上月比較增減(%)", "0"))
+                yoy = float(row.get("去年同月增減(%)", "0"))
+                results[code] = {
+                    "mom": mom,
+                    "yoy": yoy,
+                    "revenue_double_growth": (mom > 0 and yoy > 0)
+                }
+            except ValueError:
+                continue
+        logger.info(f"✅ 取得營收資料: {len(results)} 檔")
+        return results
+    except Exception as e:
+        logger.warning(f"fetch_monthly_revenue 失敗: {e}")
+        return {}
 
+# ============================================================
+# 【大盤位階判斷】fetch_tw_market_phase
+# ============================================================
+def fetch_tw_market_phase() -> dict | None:
+    """
+    抓取台股加權指數 (^TWII) 計算大盤位階 (20MA)。
+    回傳 {"close": 20000, "ma20": 19500, "weather": "🌞 晴天"}
+    """
+    try:
+        hist = yf.Ticker("^TWII").history(period="30d")
+        time.sleep(0.2)
+        if hist.empty or len(hist) < 20:
+            return None
+        closes = hist["Close"].values
+        last_close = float(closes[-1])
+        ma20 = float(sum(closes[-20:]) / 20)
+        weather = "🌞 晴天" if last_close >= ma20 else "🌧️ 雨天"
+        return {"close": round(last_close, 2), "ma20": round(ma20, 2), "weather": weather}
+    except Exception as e:
+        logger.warning(f"fetch_tw_market_phase 失敗: {e}")
+        return None
 
 # ============================================================
 # 【美股指數表現】fetch_us_market
@@ -954,6 +962,7 @@ def send_daily_summary(
     portfolio_result: list,
     market_result:    list,
     us_market:        dict,
+    market_phase:     dict | None,
     now_iso:          str,
 ) -> None:
     """組合並發送每日 Telegram 智能摘要報告。"""
@@ -964,6 +973,19 @@ def send_daily_summary(
     lines.append(f"━━━━━━━━━━━━━━━")
     lines.append(f"📅 {today_str} 收盤後分析")
     lines.append("")
+    
+    # ── 大盤位階 ──
+    if market_phase:
+        weather = market_phase["weather"]
+        close = market_phase["close"]
+        ma20 = market_phase["ma20"]
+        lines.append(f"🌦️ <b>【台股大盤氣象站】</b>")
+        lines.append(f"  目前位階：{weather} (收盤 {close} / 月線 {ma20})")
+        if "晴天" in weather:
+            lines.append("  ✅ 指數站上月線，資金環境偏多，可積極操作。")
+        else:
+            lines.append("  ⚠️ 指數跌破月線，覆巢之下無完卵，請縮小部位並嚴守停損！")
+        lines.append("")
 
     # ── 美股表現 ──
     lines.append("🇺🇸 <b>【美股昨夜表現】</b>")
@@ -1037,7 +1059,14 @@ def send_daily_summary(
         for i, s in enumerate(top5, 1):
             net  = s.get("inst_net_buy_3d") or 0
             sign = "+" if net >= 0 else ""
-            lines.append(f"  #{i} {s['code']} {s['name']} | {sign}{net:,}張")
+            
+            tags = []
+            if s.get("it_continuous_buy"): tags.append("🏦投信連買")
+            if s.get("revenue_double_growth"): tags.append("💰營收雙增")
+            tag_str = " | ".join(tags)
+            if tag_str: tag_str = f" [{tag_str}]"
+            
+            lines.append(f"  #{i} {s['code']} {s['name']} | {sign}{net:,}張{tag_str}")
         lines.append("")
 
     # ── 明日開盤注意事項 ──
@@ -1052,73 +1081,42 @@ def send_daily_summary(
     ]
     stoploss_port = [
         s for s in portfolio_result
-        if s.get("suggested_stop_loss") and s.get("price")
-        and s["price"] < s["suggested_stop_loss"]
+        if s.get("suggested_stop_loss") and s.get("price") and s["price"] < s["suggested_stop_loss"]
     ]
 
     if stoploss_port:
-        names = "、".join(f"{s['code']}{s['name']}" for s in stoploss_port)
-        lines.append(f"  🚨 {names} 已跌破停損價 — 開盤務必重新評估出場")
         has_note = True
+        names = "、".join(s["name"] for s in stoploss_port)
+        lines.append(f"  ⛔ <b>庫存跌破停損</b>：{names}")
+        lines.append("     👉 收盤確認破底，明日開盤建議優先處理。")
 
     if weak_port:
-        names = "、".join(f"{s['code']}{s['name']}" for s in weak_port)
-        lines.append(f"  ⚠️ {names} 跌破均線 — 開盤觀察量能，必要時減碼")
         has_note = True
-
-    if fomo_stocks:
-        names = "、".join(f"{s['code']}{s['name']}" for s in fomo_stocks[:2])
-        lines.append(f"  🔥 {names} FOMO警告 — 追高風險高，新手避免追買")
-        has_note = True
+        names = "、".join(s["name"] for s in weak_port if s not in stoploss_port)
+        if names:
+            lines.append(f"  ⚠️ <b>庫存轉弱</b>：{names}")
+            lines.append("     👉 跌破季線支撐，可能進入整理期。")
 
     if golden_stocks:
-        names = "、".join(f"{s['code']}{s['name']}" for s in golden_stocks[:2])
-        lines.append(f"  ⚡ {names} 黃金背離 — 可小量留意，嚴設停損")
         has_note = True
+        names = "、".join(s["name"] for s in golden_stocks)
+        lines.append(f"  ✨ <b>關注清單</b>：{names}")
+        lines.append("     👉 法人買超且基本面題材浮現，可加入自選股觀察。")
+
+    if fomo_stocks:
+        has_note = True
+        names = "、".join(s["name"] for s in fomo_stocks)
+        lines.append(f"  🔥 <b>避開高危</b>：{names}")
+        lines.append("     👉 市場過熱，切勿在此時追高進場，以免被套。")
 
     if not has_note:
-        lines.append("  ➡️ 目前無特殊警示，維持原有計畫執行")
+        lines.append("  ✅ 今日無特殊異常，維持原交易紀律。")
+
     lines.append("")
+    lines.append("🤖 /ai_analysis -> 呼叫 AI 進行深入診斷")
 
-    # ── AI 分析 Prompt ──
-    us_str = "\n".join(
-        f"- {k}：{v['chg_pct']:+.2f}%" if v else f"- {k}：無資料"
-        for k, v in us_market.items()
-    )
-    port_str = "\n".join(
-        f"- {s['code']} {s['name']}：股價{s.get('price')}，"
-        f"MA60={s.get('ma60')}，損益{s.get('pnl_percent','未設')}%，"
-        f"警報={s.get('alert') or '無'}"
-        for s in portfolio_result
-    ) or "（無持股）"
-
-    ai_prompt = (
-        f"我是台股新手，請依以下數據給我今日分析：\n"
-        f"1. 我的庫存現況與風險評估\n"
-        f"2. 明日開盤具體操作策略（續抱/減碼/停損/觀望）\n"
-        f"3. 明日開盤前30分鐘要注意的事\n\n"
-        f"【美股昨夜】\n{us_str}\n\n"
-        f"【我的庫存】\n{port_str}"
-    )
-
-    lines.append("🤖 <b>【複製到 ChatGPT 取得完整分析】</b>")
-    # Telegram 單則限 4096 字，截斷 prompt
-    prompt_preview = ai_prompt[:400] + "...（完整版請至儀表板 AI診斷按鈕）"
-    lines.append(prompt_preview)
-    lines.append("")
-    lines.append(f"⏰ 報告時間：{now_iso}")
-
-    message = "\n".join(lines)
-    # Telegram 訊息長度上限 4096
-    if len(message) > 4000:
-        message = message[:3980] + "\n...（內容已截斷）"
-
-    send_telegram(message)
-    logger.info("✅ 每日智能摘要已推播")
-
-
-# ============================================================
-# 主程式入口
+    msg = "\n".join(lines)
+    send_telegram(msg)
 # ============================================================
 if __name__ == "__main__":
     try:

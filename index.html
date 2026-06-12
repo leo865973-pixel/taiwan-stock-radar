@@ -863,24 +863,30 @@
   <!-- 執行摘要 -->
   <div id="run-summary">
     <div class="summary-item">
+      <span class="summary-label">大盤氣象站</span>
+      <span class="summary-value" id="sum-weather" style="color:var(--color-cyan)">--</span>
+    </div>
+    <div class="summary-item">
       <span class="summary-label">掃描總數</span>
-      <span class="summary-value" id="sum-scanned">—</span>
+      <span class="summary-value" id="sum-scanned">--</span>
     </div>
     <div class="summary-item">
       <span class="summary-label">通過篩選</span>
-      <span class="summary-value" id="sum-passed">—</span>
+      <span class="summary-value" id="sum-passed">--</span>
     </div>
     <div class="summary-item">
       <span class="summary-label">觸發警報</span>
-      <span class="summary-value" id="sum-alerts" style="color:var(--color-orange)">—</span>
+      <span class="summary-value" id="sum-alerts" style="color:var(--color-orange)">--</span>
     </div>
     <div class="summary-item">
       <span class="summary-label">Pipeline 耗時</span>
-      <span class="summary-value" id="sum-elapsed">—</span>
+      <span class="summary-value" id="sum-elapsed">--</span>
     </div>
     <div class="summary-item">
-      <span class="summary-label">資料時間</span>
-      <span class="summary-value" id="sum-time" style="font-size:12px;">—</span>
+      <span class="summary-label">數據時間</span>
+      <span class="summary-value" id="sum-time" style="font-size:12px;">--</span>
+    </div>
+  </div>
     </div>
   </div>
 
@@ -922,6 +928,7 @@
     <div id="filter-bar">
       <button class="filter-btn active" id="btn-all"     onclick="setFilter('all', this)">全部</button>
       <button class="filter-btn"         id="btn-alert"  onclick="setFilter('alert', this)">⚡ 只看警報</button>
+      <button class="filter-btn" id="btn-it" onclick="setFilter('it', this)">🏦 依投信連買</button>
       <button class="filter-btn"         id="btn-inst"   onclick="setFilter('inst', this)">📈 依法人買超</button>
       <button class="filter-btn"         id="btn-news"   onclick="setFilter('news', this)">📰 依新聞熱度</button>
       <button class="filter-btn"         id="btn-kw"     onclick="setFilter('kw', this)">★ 依關鍵字分數</button>
@@ -1223,34 +1230,51 @@ function renderAll() {
 
   const d = globalData;
 
-  // 執行摘要
+  // 摘要
   const s = d.run_summary || {};
-  document.getElementById('sum-scanned').textContent = s.scanned_total ?? '—';
-  document.getElementById('sum-passed').textContent  = s.passed_filter ?? '—';
-  document.getElementById('sum-alerts').textContent  = s.alert_count   ?? '—';
-  document.getElementById('sum-elapsed').textContent = s.elapsed_seconds != null ? s.elapsed_seconds + 's' : '—';
-  document.getElementById('sum-time').textContent    = d.updated_at ? d.updated_at.replace('T', ' ').slice(0,16) : '—';
-
-  // 最後更新時間
-  if (d.updated_at) {
-    const t = d.updated_at.slice(11,16);
-    document.getElementById('last-update-time').textContent = `最後更新：${t}`;
+  document.getElementById('sum-scanned').textContent = s.scanned_total ?? '--';
+  document.getElementById('sum-passed').textContent  = s.passed_filter ?? '--';
+  document.getElementById('sum-alerts').textContent  = s.alert_count   ?? '--';
+  document.getElementById('sum-elapsed').textContent = s.elapsed_seconds != null ? s.elapsed_seconds + 's' : '--';
+  document.getElementById('sum-time').textContent    = d.updated_at ? d.updated_at.replace('T', ' ').slice(0,16) : '--';
+  
+  if (d.market_weather) {
+      const w = d.market_weather;
+      document.getElementById('sum-weather').textContent = `${w.weather}`;
+      document.getElementById('sum-weather').title = `收盤: ${w.close} | 月線: ${w.ma20}`;
   }
 
-  // FOMO 全局橫幅
+  // 最新更新時間
+  if (d.updated_at) {
+    const t = d.updated_at.slice(11,16);
+    document.getElementById('last-update-time').textContent = `最新更新：${t}`;
+  }
+
+  // FOMO 警告
   const hasFomo = [...(d.market_scanned||[]), ...(d.portfolio||[])]
     .some(x => x.alert === 'fomo_warning');
   document.getElementById('fomo-banner').style.display = hasFomo ? 'block' : 'none';
 
-  // 保存當前排名供歷史比對
+  // 儲存排名
   savePrevRanking(d.market_scanned || []);
 
-  // 渲染兩個區塊
+  // 渲染
   renderPortfolio(d.portfolio || []);
   renderScan(d.market_scanned || []);
 
-  // 【2-P】Web Notification
+  // 通知
   scheduleNotifications([...(d.portfolio||[]), ...(d.market_scanned||[])]);
+}
+
+function buildAdvancedTagsHTML(s) {
+  let html = '';
+  if (s.it_continuous_buy) {
+    html += `<span style="background: rgba(0,255,136,0.1); color: var(--color-green); border: 1px solid var(--color-green); font-size:10px; padding:2px 5px; border-radius:4px; margin-right: 4px;">🏦 投信連買</span>`;
+  }
+  if (s.revenue_double_growth) {
+    html += `<span style="background: rgba(255,215,0,0.1); color: var(--color-gold); border: 1px solid var(--color-gold); font-size:10px; padding:2px 5px; border-radius:4px;">💰 營收雙增</span>`;
+  }
+  return html ? `<div style="margin-top: 6px;">${html}</div>` : '';
 }
 
 // ============================================================
@@ -1365,6 +1389,7 @@ function buildPortfolioCard(s) {
       <div>
         <div class="card-code">${s.code}${etfBadge}</div>
         <div class="card-name">${s.name}</div>
+          ${buildAdvancedTagsHTML(s)}
       </div>
       <div style="display:flex;flex-direction:column;align-items:flex-end;gap:4px;">
         ${alertBadgeHTML(s.alert)}
@@ -1441,6 +1466,8 @@ function applyFilter() {
   // 篩選按鈕
   if (currentFilter === 'alert') {
     filtered = filtered.filter(s => s.alert);
+  } else if (currentFilter === 'it') {
+    filtered = filtered.filter(s => s.it_continuous_buy);
   } else if (currentFilter === 'inst') {
     filtered = [...filtered].sort((a,b) => (b.inst_net_buy_3d||0) - (a.inst_net_buy_3d||0));
   } else if (currentFilter === 'news') {
@@ -1513,6 +1540,7 @@ function buildScanCard(s, displayRank, originalRank) {
           ${rankArrow}
         </div>
         <div class="card-name">${s.name}</div>
+          ${buildAdvancedTagsHTML(s)}
       </div>
       <div>${alertBadgeHTML(s.alert)}</div>
     </div>
@@ -1654,3 +1682,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 </body>
 </html>
+
+
+
