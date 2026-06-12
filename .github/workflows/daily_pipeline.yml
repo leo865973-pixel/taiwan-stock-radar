@@ -1,0 +1,43 @@
+name: Daily Taiwan Stock Pipeline
+
+on:
+  schedule:
+    # UTC 08:30 = 台灣時間 16:30，週一至週五（台股收盤後執行）
+    - cron: '30 8 * * 1-5'
+  # 允許手動觸發
+  workflow_dispatch:
+
+jobs:
+  run-pipeline:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checkout 程式碼
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      # 2. 設定 Python 環境
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      # 3. 安裝相依套件（版本鎖定）
+      - name: Install Dependencies
+        run: pip install -r requirements.txt
+
+      # 4. 執行 Pipeline（注入 Telegram Secrets）
+      - name: Run Pipeline
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID:   ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python pipeline.py
+
+      # 5. 提交並推送更新的 JSON 資料
+      - name: Commit Output
+        run: |
+          git config user.email "bot@github.com"
+          git config user.name "Pipeline Bot"
+          git add dashboard_data.json dashboard_data_backup.json
+          git diff --cached --quiet || git commit -m "📊 Auto update $(date +'%Y-%m-%d %H:%M UTC')"
+          git push

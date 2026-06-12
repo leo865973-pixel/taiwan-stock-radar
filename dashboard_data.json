@@ -1,0 +1,96 @@
+{
+  "updated_at": "2026-06-12T14:30:00",
+  "run_summary": {
+    "scanned_total": 80,
+    "passed_filter": 12,
+    "alert_count": 3,
+    "elapsed_seconds": 142
+  },
+  "portfolio": [
+    {
+      "code": "0050",
+      "name": "元大台灣50",
+      "is_etf": true,
+      "cost_price": 150.0,
+      "price": 180.0,
+      "ma60": 175.0,
+      "suggested_stop_loss": 169.75,
+      "pnl_percent": 20.0,
+      "news_heat_today": 10,
+      "news_heat_yesterday": 8,
+      "ptt_push": 50,
+      "ptt_boo": 10,
+      "keywords_hit": [],
+      "alert": null
+    },
+    {
+      "code": "00878",
+      "name": "國泰永續高股息",
+      "is_etf": true,
+      "cost_price": 20.0,
+      "price": 19.5,
+      "ma60": 20.8,
+      "suggested_stop_loss": 20.18,
+      "pnl_percent": -2.5,
+      "news_heat_today": 5,
+      "news_heat_yesterday": 4,
+      "ptt_push": 30,
+      "ptt_boo": 8,
+      "keywords_hit": [],
+      "alert": null
+    }
+  ],
+  "market_scanned": [
+    {
+      "code": "2330",
+      "name": "台積電",
+      "price": 980,
+      "ma60": 850,
+      "suggested_stop_loss": 824.5,
+      "inst_net_buy_3d": 15000,
+      "news_heat_today": 45,
+      "news_heat_yesterday": 15,
+      "ptt_push": 120,
+      "ptt_boo": 50,
+      "keywords_hit": [
+        {"tag": "矽光子", "weight": 5},
+        {"tag": "CoWoS", "weight": 4}
+      ],
+      "alert": "fomo_warning"
+    },
+    {
+      "code": "6669",
+      "name": "緯穎",
+      "price": 1250,
+      "ma60": 1100,
+      "suggested_stop_loss": 1067.0,
+      "inst_net_buy_3d": 8500,
+      "news_heat_today": 6,
+      "news_heat_yesterday": 5,
+      "ptt_push": 40,
+      "ptt_boo": 25,
+      "keywords_hit": [
+        {"tag": "AI伺服器", "weight": 4},
+        {"tag": "全液冷", "weight": 4}
+      ],
+      "alert": "golden_divergence"
+    },
+    {
+      "code": "3711",
+      "name": "日月光投控",
+      "price": 175,
+      "ma60": 155,
+      "suggested_stop_loss": 150.35,
+      "inst_net_buy_3d": 3200,
+      "news_heat_today": 18,
+      "news_heat_yesterday": 5,
+      "ptt_push": 95,
+      "ptt_boo": 8,
+      "keywords_hit": [
+        {"tag": "先進封裝", "weight": 3},
+        {"tag": "HBM", "weight": 3}
+      ],
+      "alert": "news_surge"
+    }
+  ]
+}
