@@ -232,7 +232,6 @@
       padding: 16px;
       transition: all 0.25s ease;
       position: relative;
-      overflow: hidden;
     }
     .stock-card::before {
       content: '';
@@ -242,6 +241,7 @@
       background: linear-gradient(90deg, transparent, var(--color-cyan), transparent);
       opacity: 0;
       transition: opacity 0.3s;
+      border-radius: 12px 12px 0 0;
     }
     .stock-card:hover {
       background: var(--bg-card-hover);
