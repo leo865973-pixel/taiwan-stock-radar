@@ -1066,13 +1066,37 @@ function renderPmList() {
   const list = getUserPortfolioConfig();
   const el = document.getElementById('pm-stock-list');
   if (!list.length) { el.innerHTML = '<div style="color:var(--text-muted);font-size:12px;padding:10px;">目前沒有持股，請在下方新增。</div>'; return; }
-  el.innerHTML = list.map((s, i) => `<div class="pm-stock-row">
+  el.innerHTML = list.map((s, i) => `<div class="pm-stock-row" id="pm-row-${i}">
     <span class="pm-stock-code">${s.code}</span>
     <span class="pm-stock-name">${s.name}</span>
     <span class="pm-stock-etf">${s.is_etf ? 'ETF' : '個股'}</span>
-    <span class="pm-stock-cost">${s.cost_price != null ? '成本 '+s.cost_price : '未設成本'}</span>
-    <button class="pm-del-btn" onclick="pmDeleteStock(${i})">✕ 刪除</button>
+    <span class="pm-stock-cost" id="pm-cost-display-${i}">${s.cost_price != null ? '成本 '+s.cost_price : '未設成本'}</span>
+    
+    <input type="number" step="0.01" id="pm-cost-edit-${i}" value="${s.cost_price || ''}" style="display:none; width: 60px; font-size: 11px; padding: 2px; background: rgba(255,255,255,0.1); border: 1px solid var(--color-cyan); color: white; border-radius: 4px; outline: none; margin-left: auto;">
+    
+    <button class="pm-edit-btn" id="pm-edit-btn-${i}" onclick="pmEditStock(${i})" style="background: none; border: 1px solid rgba(0,212,255,0.3); color: var(--color-cyan); border-radius: 4px; padding: 2px 7px; font-size: 11px; cursor: pointer; transition: all 0.15s; margin-left: auto;">✏️ 編輯</button>
+    <button class="pm-save-btn" id="pm-save-btn-${i}" onclick="pmSaveEditStock(${i})" style="display:none; background: none; border: 1px solid rgba(0,255,136,0.3); color: var(--color-green); border-radius: 4px; padding: 2px 7px; font-size: 11px; cursor: pointer; transition: all 0.15s; margin-left: auto;">✅ 確定</button>
+    
+    <button class="pm-del-btn" onclick="pmDeleteStock(${i})" style="margin-left: 4px;">✕ 刪除</button>
   </div>`).join('');
+}
+
+function pmEditStock(index) {
+    document.getElementById(`pm-cost-display-${index}`).style.display = 'none';
+    document.getElementById(`pm-cost-edit-${index}`).style.display = 'inline-block';
+    document.getElementById(`pm-edit-btn-${index}`).style.display = 'none';
+    document.getElementById(`pm-save-btn-${index}`).style.display = 'inline-block';
+    document.getElementById(`pm-cost-edit-${index}`).focus();
+}
+
+function pmSaveEditStock(index) {
+    const list = getUserPortfolioConfig();
+    const newCost = parseFloat(document.getElementById(`pm-cost-edit-${index}`).value);
+    
+    list[index].cost_price = isNaN(newCost) ? null : newCost;
+    
+    saveUserPortfolioConfig(list);
+    renderPmList();
 }
 function pmAddStock() {
   const code = document.getElementById('pm-code').value.trim();
