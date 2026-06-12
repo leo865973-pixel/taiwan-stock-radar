@@ -878,6 +878,223 @@ def run_pipeline() -> None:
         f"耗時 {elapsed}s"
     )
 
+    # ── 步驟 10：每日智能摘要推播 ──
+    logger.info("正在抓取美股指數表現...")
+    us_market = fetch_us_market()
+    send_daily_summary(portfolio_result, market_result, us_market, now_iso)
+
+
+# ============================================================
+# 【美股指數表現】fetch_us_market
+# 使用 yfinance 抓取美股主要指數昨日收盤表現
+# 包含：S&P500、NASDAQ、費城半導體指數（對台股科技股最相關）、台積電 ADR
+# /* 收費風險警告：yfinance 為非官方套件，完全免費，但高頻請求可能暫時封IP */
+# ============================================================
+def fetch_us_market() -> dict:
+    """
+    透過 yfinance 抓取美股主要指數昨日收盤表現。
+    回傳 {名稱: {"close": 收盤, "chg_pct": 漲跌%}} 字典。
+    """
+    indices = {
+        "S&P 500":   "^GSPC",
+        "NASDAQ":    "^IXIC",
+        "費半指數":  "^SOX",
+        "台積電ADR": "TSM",
+    }
+    results = {}
+    for name, ticker_code in indices.items():
+        try:
+            hist = yf.Ticker(ticker_code).history(period="5d")
+            time.sleep(0.2)
+            if hist.empty or len(hist) < 2:
+                results[name] = None
+                continue
+            closes   = hist["Close"].values
+            prev_cls = float(closes[-2])
+            last_cls = float(closes[-1])
+            chg_pct  = round((last_cls - prev_cls) / prev_cls * 100, 2)
+            results[name] = {
+                "close":   round(last_cls, 2),
+                "chg_pct": chg_pct,
+            }
+        except Exception as e:
+            logger.warning(f"fetch_us_market [{ticker_code}]: {e}")
+            results[name] = None
+
+    return results
+
+
+# ============================================================
+# 【每日智能摘要推播】send_daily_summary
+# 每次 pipeline 完成後，自動發送包含：
+#   美股表現 / 庫存狀態 / 市場亮點 / 明日注意事項 / AI Prompt
+# ============================================================
+def send_daily_summary(
+    portfolio_result: list,
+    market_result:    list,
+    us_market:        dict,
+    now_iso:          str,
+) -> None:
+    """組合並發送每日 Telegram 智能摘要報告。"""
+    today_str = now_iso[:10]
+    lines: list[str] = []
+
+    lines.append(f"📊 <b>台股輿情雷達 每日報告</b>")
+    lines.append(f"━━━━━━━━━━━━━━━")
+    lines.append(f"📅 {today_str} 收盤後分析")
+    lines.append("")
+
+    # ── 美股表現 ──
+    lines.append("🇺🇸 <b>【美股昨夜表現】</b>")
+    sp500_chg = None
+    sox_chg   = None
+    for name, data in us_market.items():
+        if data is None:
+            lines.append(f"  ❓ {name}：無法取得")
+            continue
+        chg  = data["chg_pct"]
+        icon = "📈" if chg >= 0 else "📉"
+        sign = "+" if chg >= 0 else ""
+        lines.append(f"  {icon} {name}：{sign}{chg}%")
+        if name == "S&P 500":  sp500_chg = chg
+        if name == "費半指數": sox_chg   = chg
+
+    # 台股影響研判
+    if sp500_chg is not None and sox_chg is not None:
+        if sp500_chg >= 1.0 and sox_chg >= 1.0:
+            lines.append("  ✅ 美股強勁，明日台股科技股偏多開")
+        elif sp500_chg <= -1.5 or sox_chg <= -2.0:
+            lines.append("  ⚠️ 美股顯著回落，明日台股注意開盤賣壓")
+        elif sp500_chg <= -0.5 or sox_chg <= -1.0:
+            lines.append("  ➡️ 美股小跌，台股開盤可能偏弱，觀望為主")
+        else:
+            lines.append("  ➡️ 美股平盤震盪，台股自行表態")
+    lines.append("")
+
+    # ── 我的庫存狀態 ──
+    if portfolio_result:
+        lines.append("📂 <b>【我的庫存狀態】</b>")
+        for s in portfolio_result:
+            price     = s.get("price") or 0
+            ma60      = s.get("ma60") or 0
+            stop_loss = s.get("suggested_stop_loss") or 0
+            pnl       = s.get("pnl_percent")
+
+            if stop_loss and price < stop_loss:
+                status = "🚨 跌破停損，強烈建議評估出場"
+            elif ma60 and price < ma60:
+                status = "⚠️ 跌破均線，轉弱留意"
+            else:
+                status = "✅ 均線之上，持續觀察"
+
+            pnl_str = f"{'+' if pnl and pnl >= 0 else ''}{pnl}%" if pnl is not None else "未設成本"
+            bias    = round((price - ma60) / ma60 * 100, 1) if ma60 else 0
+            bias_str = f"{'+' if bias >= 0 else ''}{bias}%"
+
+            lines.append(f"  📌 <b>{s['code']} {s['name']}</b>")
+            lines.append(f"     股價 {price} | MA60 {ma60} | 乖離 {bias_str}")
+            lines.append(f"     損益 {pnl_str} | {status}")
+        lines.append("")
+
+    # ── 市場掃描亮點 ──
+    alert_map = {
+        "fomo_warning":     "🔥 FOMO",
+        "golden_divergence": "⚡ 黃金背離",
+        "news_surge":       "📰 新聞暴增",
+    }
+    alerts = [s for s in market_result if s.get("alert")]
+    if alerts:
+        lines.append("⚡ <b>【今日警報標的】</b>")
+        for s in alerts[:5]:
+            a_str = alert_map.get(s.get("alert", ""), "")
+            lines.append(f"  {a_str} {s['code']} {s['name']} 股價 {s.get('price')}")
+        lines.append("")
+
+    top5 = market_result[:5]
+    if top5:
+        lines.append("📡 <b>【法人買超前5名】</b>")
+        for i, s in enumerate(top5, 1):
+            net  = s.get("inst_net_buy_3d") or 0
+            sign = "+" if net >= 0 else ""
+            lines.append(f"  #{i} {s['code']} {s['name']} | {sign}{net:,}張")
+        lines.append("")
+
+    # ── 明日開盤注意事項 ──
+    lines.append("🔔 <b>【明日開盤注意事項】</b>")
+    has_note = False
+
+    fomo_stocks   = [s for s in market_result if s.get("alert") == "fomo_warning"]
+    golden_stocks = [s for s in market_result if s.get("alert") == "golden_divergence"]
+    weak_port     = [
+        s for s in portfolio_result
+        if s.get("ma60") and s.get("price") and s["price"] < s["ma60"]
+    ]
+    stoploss_port = [
+        s for s in portfolio_result
+        if s.get("suggested_stop_loss") and s.get("price")
+        and s["price"] < s["suggested_stop_loss"]
+    ]
+
+    if stoploss_port:
+        names = "、".join(f"{s['code']}{s['name']}" for s in stoploss_port)
+        lines.append(f"  🚨 {names} 已跌破停損價 — 開盤務必重新評估出場")
+        has_note = True
+
+    if weak_port:
+        names = "、".join(f"{s['code']}{s['name']}" for s in weak_port)
+        lines.append(f"  ⚠️ {names} 跌破均線 — 開盤觀察量能，必要時減碼")
+        has_note = True
+
+    if fomo_stocks:
+        names = "、".join(f"{s['code']}{s['name']}" for s in fomo_stocks[:2])
+        lines.append(f"  🔥 {names} FOMO警告 — 追高風險高，新手避免追買")
+        has_note = True
+
+    if golden_stocks:
+        names = "、".join(f"{s['code']}{s['name']}" for s in golden_stocks[:2])
+        lines.append(f"  ⚡ {names} 黃金背離 — 可小量留意，嚴設停損")
+        has_note = True
+
+    if not has_note:
+        lines.append("  ➡️ 目前無特殊警示，維持原有計畫執行")
+    lines.append("")
+
+    # ── AI 分析 Prompt ──
+    us_str = "\n".join(
+        f"- {k}：{v['chg_pct']:+.2f}%" if v else f"- {k}：無資料"
+        for k, v in us_market.items()
+    )
+    port_str = "\n".join(
+        f"- {s['code']} {s['name']}：股價{s.get('price')}，"
+        f"MA60={s.get('ma60')}，損益{s.get('pnl_percent','未設')}%，"
+        f"警報={s.get('alert') or '無'}"
+        for s in portfolio_result
+    ) or "（無持股）"
+
+    ai_prompt = (
+        f"我是台股新手，請依以下數據給我今日分析：\n"
+        f"1. 我的庫存現況與風險評估\n"
+        f"2. 明日開盤具體操作策略（續抱/減碼/停損/觀望）\n"
+        f"3. 明日開盤前30分鐘要注意的事\n\n"
+        f"【美股昨夜】\n{us_str}\n\n"
+        f"【我的庫存】\n{port_str}"
+    )
+
+    lines.append("🤖 <b>【複製到 ChatGPT 取得完整分析】</b>")
+    # Telegram 單則限 4096 字，截斷 prompt
+    prompt_preview = ai_prompt[:400] + "...（完整版請至儀表板 AI診斷按鈕）"
+    lines.append(prompt_preview)
+    lines.append("")
+    lines.append(f"⏰ 報告時間：{now_iso}")
+
+    message = "\n".join(lines)
+    # Telegram 訊息長度上限 4096
+    if len(message) > 4000:
+        message = message[:3980] + "\n...（內容已截斷）"
+
+    send_telegram(message)
+    logger.info("✅ 每日智能摘要已推播")
+
 
 # ============================================================
 # 主程式入口
