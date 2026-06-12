@@ -1427,6 +1427,9 @@ function buildPortfolioCard(s) {
       <span class="card-value"><span class="val-green">${s.ptt_push ?? 0}</span> / <span class="val-red">${s.ptt_boo ?? 0}</span></span>
     </div>
     ${kwHTML}
+    <div style="margin-top:12px; padding:8px; background:rgba(255,255,255,0.05); border-radius:6px; font-size:12px; color:var(--text-muted); border-left:3px solid var(--color-cyan);">
+      <span style="font-weight:bold; color:#fff;">📝 小白解讀：</span> ${s.advice || '暫無解讀'}
+    </div>
     <div class="card-actions">
       <button class="card-btn" onclick='copyRawData(${JSON.stringify(JSON.stringify(s))})'>📋 複製數據</button>
       <button class="card-btn" onclick='openAiDiagnosis(${JSON.stringify(aiPrompt)})'>🤖 AI診斷</button>
@@ -1574,6 +1577,9 @@ function buildScanCard(s, displayRank, originalRank) {
       <span class="card-value"><span class="val-green">${s.ptt_push??0}</span> / <span class="val-red">${s.ptt_boo??0}</span></span>
     </div>
     ${kwHTML}
+    <div style="margin-top:12px; padding:8px; background:rgba(255,255,255,0.05); border-radius:6px; font-size:12px; color:var(--text-muted); border-left:3px solid var(--color-cyan);">
+      <span style="font-weight:bold; color:#fff;">📝 小白解讀：</span> ${s.advice || '暫無解讀'}
+    </div>
     <div class="card-actions">
       <button class="card-btn" onclick='copyRawData(${JSON.stringify(JSON.stringify(s))})'>📋 複製數據</button>
       <button class="card-btn" onclick='openAiDiagnosis(${JSON.stringify(aiPrompt)})'>🤖 AI診斷</button>
@@ -1682,6 +1688,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 </body>
 </html>
+
+
 
 
 
