@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-TW">
 <head>
   <meta charset="UTF-8" />
@@ -898,8 +898,16 @@
       <span class="section-title">📂 我的庫存 My Portfolio</span>
       <div style="display:flex;align-items:center;gap:10px;">
         <span class="section-meta" id="portfolio-count"></span>
+        <div id="portfolio-summary" style="margin-left: 10px; font-size:12px; color:var(--text-muted);"></div>
         <button id="manage-portfolio-btn" onclick="openPortfolioManager()">⚙️ 管理庫存</button>
       </div>
+    </div>
+
+    <!-- 個股/ETF 分頁 Tab -->
+    <div id="portfolio-tab-bar" style="display:flex;gap:8px;margin-bottom:12px;">
+      <button class="filter-btn active" id="ptab-all"    onclick="setPortfolioTab('all',    this)">📋 全部</button>
+      <button class="filter-btn"        id="ptab-stock"  onclick="setPortfolioTab('stock',  this)">🏭 個股</button>
+      <button class="filter-btn"        id="ptab-etf"    onclick="setPortfolioTab('etf',    this)">💹 ETF</button>
     </div>
 
     <div class="cards-grid" id="portfolio-grid">
@@ -960,6 +968,7 @@
         <input class="pm-input" id="pm-code"      placeholder="股票代號（如60050）" maxlength="6" />
         <input class="pm-input" id="pm-name"      placeholder="股票名稱（如60050）" />
         <input class="pm-input" id="pm-cost"      placeholder="買入成本（選填）" type="number" step="0.01" />
+        <input class="pm-input" id="pm-shares"    placeholder="持有股數 (1張=1000股)" type="number" />
         <div class="pm-checkbox-row">
           <input type="checkbox" id="pm-is-etf" />
           <label for="pm-is-etf">是 ETF（代號通常0開頤00xxx）</label>
@@ -1077,9 +1086,10 @@ function renderPmList() {
     <span class="pm-stock-code">${s.code}</span>
     <span class="pm-stock-name">${s.name}</span>
     <span class="pm-stock-etf">${s.is_etf ? 'ETF' : '個股'}</span>
-    <span class="pm-stock-cost" id="pm-cost-display-${i}">${s.cost_price != null ? '成本 '+s.cost_price : '未設成本'}</span>
+    <span class="pm-stock-cost" id="pm-cost-display-${i}" style="width: auto;">${s.cost_price != null ? '成本 '+s.cost_price : '未設成本'} ${s.shares != null ? '('+s.shares+'股)' : ''}</span>
     
-    <input type="number" step="0.01" id="pm-cost-edit-${i}" value="${s.cost_price || ''}" style="display:none; width: 60px; font-size: 11px; padding: 2px; background: rgba(255,255,255,0.1); border: 1px solid var(--color-cyan); color: white; border-radius: 4px; outline: none; margin-left: auto;">
+    <input type="number" step="0.01" id="pm-cost-edit-${i}" value="${s.cost_price || ''}" placeholder="成本價" style="display:none; width: 60px; font-size: 11px; padding: 2px; background: rgba(255,255,255,0.1); border: 1px solid var(--color-cyan); color: white; border-radius: 4px; outline: none; margin-left: auto;">
+    <input type="number" id="pm-shares-edit-${i}" value="${s.shares || ''}" placeholder="股數" style="display:none; width: 60px; font-size: 11px; padding: 2px; background: rgba(255,255,255,0.1); border: 1px solid var(--color-cyan); color: white; border-radius: 4px; outline: none; margin-left: 4px;">
     
     <button class="pm-edit-btn" id="pm-edit-btn-${i}" onclick="pmEditStock(${i})" style="background: none; border: 1px solid rgba(0,212,255,0.3); color: var(--color-cyan); border-radius: 4px; padding: 2px 7px; font-size: 11px; cursor: pointer; transition: all 0.15s; margin-left: auto;">✏️ 編輯</button>
     <button class="pm-save-btn" id="pm-save-btn-${i}" onclick="pmSaveEditStock(${i})" style="display:none; background: none; border: 1px solid rgba(0,255,136,0.3); color: var(--color-green); border-radius: 4px; padding: 2px 7px; font-size: 11px; cursor: pointer; transition: all 0.15s; margin-left: auto;">✅ 確定</button>
@@ -1091,6 +1101,7 @@ function renderPmList() {
 function pmEditStock(index) {
     document.getElementById(`pm-cost-display-${index}`).style.display = 'none';
     document.getElementById(`pm-cost-edit-${index}`).style.display = 'inline-block';
+    document.getElementById(`pm-shares-edit-${index}`).style.display = 'inline-block';
     document.getElementById(`pm-edit-btn-${index}`).style.display = 'none';
     document.getElementById(`pm-save-btn-${index}`).style.display = 'inline-block';
     document.getElementById(`pm-cost-edit-${index}`).focus();
@@ -1099,8 +1110,10 @@ function pmEditStock(index) {
 function pmSaveEditStock(index) {
     const list = getUserPortfolioConfig();
     const newCost = parseFloat(document.getElementById(`pm-cost-edit-${index}`).value);
+    const newShares = parseInt(document.getElementById(`pm-shares-edit-${index}`).value, 10);
     
     list[index].cost_price = isNaN(newCost) ? null : newCost;
+    list[index].shares = isNaN(newShares) ? null : newShares;
     
     saveUserPortfolioConfig(list);
     renderPmList();
@@ -1109,14 +1122,15 @@ function pmAddStock() {
   const code = document.getElementById('pm-code').value.trim();
   const name = document.getElementById('pm-name').value.trim();
   const cost = parseFloat(document.getElementById('pm-cost').value) || null;
+  const shares = parseInt(document.getElementById('pm-shares').value, 10) || null;
   const isEtf = document.getElementById('pm-is-etf').checked;
   if (!code || !name) { alert('請填寫股票代號和名稱！'); return; }
   const list = getUserPortfolioConfig();
   if (list.find(s => s.code === code)) { alert(code + ' 已在庫存中！'); return; }
-  list.push({ code, name, is_etf: isEtf, cost_price: cost });
+  list.push({ code, name, is_etf: isEtf, cost_price: cost, shares: shares });
   saveUserPortfolioConfig(list);
   renderPmList();
-  ['pm-code','pm-name','pm-cost'].forEach(id => document.getElementById(id).value = '');
+  ['pm-code','pm-name','pm-cost','pm-shares'].forEach(id => document.getElementById(id).value = '');
   document.getElementById('pm-is-etf').checked = false;
 }
 function pmDeleteStock(index) {
@@ -1145,7 +1159,7 @@ function pmSaveAndClose() {
     const srv = globalData.portfolio || [];
     const merged = config.map(cfg => {
       const s = srv.find(x => x.code === cfg.code);
-      return s ? { ...s, cost_price: cfg.cost_price }
+      return s ? { ...s, cost_price: cfg.cost_price, shares: cfg.shares }
                : { ...cfg, price: null, ma60: null, suggested_stop_loss: null,
                    pnl_percent: null, news_heat_today: 0, news_heat_yesterday: 0,
                    ptt_push: 0, ptt_boo: 0, keywords_hit: [], alert: null, _no_price: true };
@@ -1329,21 +1343,82 @@ function alertBadgeHTML(alert) {
 }
 
 // ============================================================
+// 庫存 Tab 切換
+// ============================================================
+let currentPortfolioTab = 'all';
+let _portfolioCache = [];
+
+function setPortfolioTab(tab, btn) {
+  currentPortfolioTab = tab;
+  document.querySelectorAll('#portfolio-tab-bar .filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  applyPortfolioTab();
+}
+
+function applyPortfolioTab() {
+  let filtered = [..._portfolioCache];
+  if (currentPortfolioTab === 'stock') {
+    filtered = filtered.filter(s => !s.is_etf);
+  } else if (currentPortfolioTab === 'etf') {
+    filtered = filtered.filter(s => s.is_etf);
+  }
+  renderPortfolioCards(filtered);
+}
+
+// ============================================================
 // 庫存卡片渲染
 // ============================================================
 function renderPortfolio(portfolio) {
-  const grid = document.getElementById('portfolio-grid');
+  _portfolioCache = portfolio;  // 快取完整資料
   document.getElementById('portfolio-count').textContent = `共 ${portfolio.length} 檔`;
+  applyPortfolioTab();
+}
+
+function renderPortfolioCards(portfolio) {
+  const grid = document.getElementById('portfolio-grid');
+  const summaryEl = document.getElementById('portfolio-summary');
 
   if (!portfolio.length) {
     grid.innerHTML = '<div class="empty-state">庫存資料為空</div>';
+    if(summaryEl) summaryEl.innerHTML = '';
     return;
   }
 
-  grid.innerHTML = portfolio.map(s => buildPortfolioCard(s)).join('');
+  let totalValue = 0;
+  let totalCost = 0;
+  let hasShares = false;
+
+  portfolio.forEach(s => {
+    if (s.shares && s.price && s.cost_price) {
+      hasShares = true;
+      totalValue += s.price * s.shares;
+      totalCost += s.cost_price * s.shares;
+    }
+  });
+
+  if(summaryEl) {
+    if (hasShares) {
+      const totalPnl = totalValue - totalCost;
+      const pnlColor = totalPnl >= 0 ? 'var(--color-red)' : 'var(--color-green)';
+      summaryEl.innerHTML = `總市值: <b style="color:white;">NT$ ${Math.round(totalValue).toLocaleString()}</b> | 總損益: <b style="color:${pnlColor};">NT$ ${Math.round(totalPnl).toLocaleString()}</b>`;
+    } else {
+      summaryEl.innerHTML = '';
+    }
+  }
+
+  grid.innerHTML = portfolio.map(s => {
+    let concentrationWarning = '';
+    if (hasShares && s.shares && s.price && totalValue > 0) {
+      const weight = (s.price * s.shares) / totalValue;
+      if (weight > 0.3) {
+        concentrationWarning = `<span style="font-size:11px; padding:2px 6px; background:rgba(255,0,0,0.2); border-radius:12px; color:#ff4444; border:1px solid #ff4444; margin-left:8px;">⚠️ 佔比 ${(weight*100).toFixed(0)}% 過高</span>`;
+      }
+    }
+    return buildPortfolioCard(s, concentrationWarning);
+  }).join('');
 }
 
-function buildPortfolioCard(s) {
+function buildPortfolioCard(s, concentrationWarning="") {
   const price    = s.price ?? 0;
   const ma60     = s.ma60  ?? 0;
   const stopLoss = s.suggested_stop_loss ?? 0;
@@ -1688,6 +1763,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 </body>
 </html>
+
+
 
 
 

@@ -1,5 +1,23 @@
 [
-  {"code": "0050",  "name": "元大台灣50",        "is_etf": true,  "cost_price": 150.0},
-  {"code": "2330",  "name": "台積電",             "is_etf": false, "cost_price": 850.0},
-  {"code": "00878", "name": "國泰永續高股息",      "is_etf": true,  "cost_price": 20.0}
+  {
+    "code": "0050",
+    "name": "元大台灣50",
+    "is_etf": true,
+    "cost_price": 150.0,
+    "shares": 2000
+  },
+  {
+    "code": "2330",
+    "name": "台積電",
+    "is_etf": false,
+    "cost_price": 850.0,
+    "shares": 500
+  },
+  {
+    "code": "00878",
+    "name": "國泰永續高股息",
+    "is_etf": true,
+    "cost_price": 20.0,
+    "shares": 1000
+  }
 ]
