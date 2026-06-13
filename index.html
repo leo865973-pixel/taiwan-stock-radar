@@ -932,6 +932,13 @@
       <span class="section-meta" id="scan-count"></span>
     </div>
 
+    <!-- 個股分類 Tab -->
+    <div id="scan-type-bar" style="display:flex;gap:8px;margin-bottom:10px;">
+      <button class="filter-btn active" id="stab-all"   onclick="setScanType('all',   this)">📋 全部</button>
+      <button class="filter-btn"        id="stab-stock" onclick="setScanType('stock', this)">🏭 純個股（不含ETF）</button>
+      <button class="filter-btn"        id="stab-etf"   onclick="setScanType('etf',   this)">💹 純ETF</button>
+    </div>
+
     <!-- 【2-F】排序與篩選工具列 -->
     <div id="filter-bar">
       <button class="filter-btn active" id="btn-all"     onclick="setFilter('all', this)">全部</button>
@@ -947,6 +954,7 @@
       <div class="empty-state">🔄 載入掃描資料中...</div>
     </div>
   </section>
+
 
 </div><!-- /app-container -->
 
@@ -1521,10 +1529,26 @@ function renderScan(scanned) {
   applyFilter();
 }
 
+let currentScanType = 'all';
+
+function setScanType(type, btn) {
+  currentScanType = type;
+  document.querySelectorAll('#scan-type-bar .filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  applyFilter();
+}
+
 function applyFilter() {
   const scanned = globalData?._scanned_cache || [];
   const query   = (document.getElementById('search-input')?.value || '').toLowerCase().trim();
   let filtered  = [...scanned];
+
+  // 個股 / ETF 類型過濾
+  if (currentScanType === 'stock') {
+    filtered = filtered.filter(s => !s.is_etf);
+  } else if (currentScanType === 'etf') {
+    filtered = filtered.filter(s => s.is_etf);
+  }
 
   // 關鍵字 Tag 過濾
   if (activeKwFilter) {

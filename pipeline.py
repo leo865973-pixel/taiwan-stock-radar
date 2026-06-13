@@ -5,6 +5,14 @@ import logging
 import datetime
 import xml.etree.ElementTree as ET
 
+if os.path.exists(".env"):
+    with open(".env", "r", encoding="utf-8") as f:
+        for line in f:
+            line = line.strip()
+            if line and not line.startswith("#"):
+                key, _, value = line.partition("=")
+                os.environ[key.strip()] = value.strip()
+
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
@@ -227,7 +235,7 @@ def fetch_tpex_prices(date_str: str) -> dict[str, float]:
 # ============================================================
 # 【1-C】三大法人與投信（TWSE T86，僅上市，ETF 跳過）
 # ============================================================
-def fetch_institutional(target_codes: list[str], dates: list[str]) -> dict[str, dict]:
+def fetch_institutional(target_codes: list[str] | None, dates: list[str]) -> dict[str, dict]:
     """
     累加 dates 列表中每一天的三大法人淨買超張數，以及投信連買狀況。
     回傳 {股票代號: {"net_buy_3d": 123, "it_continuous_buy": True}}
@@ -263,7 +271,7 @@ def fetch_institutional(target_codes: list[str], dates: list[str]) -> dict[str, 
         for row in data.get("data", []):
             try:
                 code = row[code_idx].strip()
-                if code not in target_codes: continue
+                if target_codes is not None and code not in target_codes: continue
                 
                 net_shares = int(str(row[net_idx]).replace(",", "").strip())
                 net_lots   = net_shares // 1000
@@ -694,7 +702,19 @@ def run_pipeline() -> None:
 
     twse_prices, twse_names = fetch_twse_prices(today_str)
     if not twse_prices:
-        logger.info("📅 今日為非交易日或 TWSE 尚未更新，跳過執行。")
+        logger.info(f"📅 {today_str} 為非交易日或 TWSE 尚未更新，嘗試抓取最近的交易日...")
+        recent_dates = get_recent_trading_dates(5)
+        for date_str in recent_dates:
+            if date_str == today_str:
+                continue
+            twse_prices, twse_names = fetch_twse_prices(date_str)
+            if twse_prices:
+                logger.info(f"📅 成功抓取最近交易日 {date_str} 的 TWSE 收盤資料。")
+                today_str = date_str
+                break
+
+    if not twse_prices:
+        logger.info("📅 無法取得最近的交易日資料，跳過執行。")
         return
 
     tpex_prices, tpex_names = fetch_tpex_prices(today_str)
@@ -706,11 +726,7 @@ def run_pipeline() -> None:
 
     logger.info("正在抓取三大法人與投信資料（近3日）...")
     recent_dates = get_recent_trading_dates(3)
-    candidate_non_etf_codes = [
-        code for code in list(twse_prices.keys())[:SCAN_LIMIT * 2]
-        if code not in etf_codes
-    ]
-    inst_data = fetch_institutional(candidate_non_etf_codes, recent_dates)
+    inst_data = fetch_institutional(None, recent_dates)
     
     logger.info("正在抓取上市月營收資料...")
     revenue_data = fetch_monthly_revenue()
@@ -783,10 +799,12 @@ def run_pipeline() -> None:
         }
         health = calc_health_score_and_advice(scan_item_for_advice)
 
+        is_etf = code.startswith("00")
+
         market_result.append({
             "code":               code,
             "name":               name,
-            "is_etf":             False,  # 市場掃描只掃非ETF個股
+            "is_etf":             is_etf,
             "price":              price,
             "ma60":               ma60,
             "suggested_stop_loss": s["stop_loss"],
@@ -828,8 +846,7 @@ def run_pipeline() -> None:
         inst_net = None
         it_continuous_buy = False
         if not is_etf:
-            inst_res = fetch_institutional([code], recent_dates)
-            inst_info = inst_res.get(code, {"net_buy_3d": 0, "it_continuous_buy": False})
+            inst_info = inst_data.get(code, {"net_buy_3d": 0, "it_continuous_buy": False})
             inst_net = inst_info["net_buy_3d"]
             it_continuous_buy = inst_info["it_continuous_buy"]
 

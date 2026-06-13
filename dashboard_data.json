@@ -1,19 +1,10 @@
 {
-<<<<<<< HEAD
-  "updated_at": "2026-06-12T11:57:17",
-  "run_summary": {
-    "scanned_total": 80,
-    "passed_filter": 62,
-    "alert_count": 3,
-    "elapsed_seconds": 504.6
-=======
   "updated_at": "2026-06-12T15:08:32",
   "run_summary": {
     "scanned_total": 80,
     "passed_filter": 55,
     "alert_count": 2,
     "elapsed_seconds": 507.7
->>>>>>> 7fb976a (fix: fetch stock names from TWSE, add advice to market_scanned, add ETF/stock tab)
   },
   "market_weather": null,
   "portfolio": [
@@ -22,14 +13,6 @@
       "name": "元大台灣50",
       "is_etf": true,
       "cost_price": 150.0,
-<<<<<<< HEAD
-      "price": 101.95,
-      "ma60": 90.18,
-      "suggested_stop_loss": 87.47,
-      "pnl_percent": -32.03,
-      "news_heat_today": 8,
-      "news_heat_yesterday": 8,
-=======
       "shares": 2000,
       "price": 101.95,
       "ma60": 90.18,
@@ -39,7 +22,6 @@
       "pnl_value": -96100,
       "news_heat_today": 3,
       "news_heat_yesterday": 11,
->>>>>>> 7fb976a (fix: fetch stock names from TWSE, add advice to market_scanned, add ETF/stock tab)
       "ptt_push": 0,
       "ptt_boo": 0,
       "keywords_hit": [
@@ -84,11 +66,6 @@
           "weight": 3
         }
       ],
-<<<<<<< HEAD
-      "it_continuous_buy": false,
-      "revenue_double_growth": false,
-      "alert": null
-=======
       "inst_net_buy_3d": null,
       "it_continuous_buy": false,
       "revenue_double_growth": false,
@@ -96,21 +73,12 @@
       "score": 0,
       "light": "🔴 破線警報",
       "advice": "【🚨 強制停損】股價已跌破你的成本價 10% (150.0 -> 101.95)，觸發強制停損底線！ 資金控管是活下去的唯一原則，請立刻評估出場以保護本金！"
->>>>>>> 7fb976a (fix: fetch stock names from TWSE, add advice to market_scanned, add ETF/stock tab)
     },
     {
       "code": "2330",
       "name": "台積電",
       "is_etf": false,
       "cost_price": 850.0,
-<<<<<<< HEAD
-      "price": 2310.0,
-      "ma60": 2128.42,
-      "suggested_stop_loss": 2064.57,
-      "pnl_percent": 171.76,
-      "news_heat_today": 5,
-      "news_heat_yesterday": 25,
-=======
       "shares": 500,
       "price": 2310.0,
       "ma60": 2128.42,
@@ -120,7 +88,6 @@
       "pnl_value": 730000,
       "news_heat_today": 6,
       "news_heat_yesterday": 18,
->>>>>>> 7fb976a (fix: fetch stock names from TWSE, add advice to market_scanned, add ETF/stock tab)
       "ptt_push": 0,
       "ptt_boo": 0,
       "keywords_hit": [
@@ -141,13 +108,6 @@
           "weight": 4
         },
         {
-<<<<<<< HEAD
-          "tag": "AI伺服器",
-          "weight": 4
-        },
-        {
-=======
->>>>>>> 7fb976a (fix: fetch stock names from TWSE, add advice to market_scanned, add ETF/stock tab)
           "tag": "HBM",
           "weight": 3
         },
@@ -160,11 +120,6 @@
           "weight": 3
         }
       ],
-<<<<<<< HEAD
-      "it_continuous_buy": false,
-      "revenue_double_growth": false,
-      "alert": null
-=======
       "inst_net_buy_3d": -17661,
       "it_continuous_buy": false,
       "revenue_double_growth": false,
@@ -172,20 +127,12 @@
       "score": 60,
       "light": "🟡 中立觀望",
       "advice": "【表現平平】股價穩站季線之上，趨勢強勢。近期法人在倒貨，要小心賣壓。 目前沒有特別突出的表現，建議多看少做。"
->>>>>>> 7fb976a (fix: fetch stock names from TWSE, add advice to market_scanned, add ETF/stock tab)
     },
     {
       "code": "00878",
       "name": "國泰永續高股息",
       "is_etf": true,
       "cost_price": 20.0,
-<<<<<<< HEAD
-      "price": 32.05,
-      "ma60": 26.45,
-      "suggested_stop_loss": 25.66,
-      "pnl_percent": 60.25,
-      "news_heat_today": 9,
-=======
       "shares": 1000,
       "price": 32.05,
       "ma60": 26.45,
@@ -194,7 +141,6 @@
       "pnl_percent": 60.25,
       "pnl_value": 12050,
       "news_heat_today": 7,
->>>>>>> 7fb976a (fix: fetch stock names from TWSE, add advice to market_scanned, add ETF/stock tab)
       "news_heat_yesterday": 7,
       "ptt_push": 0,
       "ptt_boo": 0,
@@ -232,11 +178,6 @@
           "weight": 3
         }
       ],
-<<<<<<< HEAD
-      "it_continuous_buy": false,
-      "revenue_double_growth": false,
-      "alert": null
-=======
       "inst_net_buy_3d": null,
       "it_continuous_buy": false,
       "revenue_double_growth": false,
@@ -244,7 +185,6 @@
       "score": 70,
       "light": "🟡 中立觀望",
       "advice": "【表現平平】股價穩站季線之上，趨勢強勢。 目前沒有特別突出的表現，建議多看少做。"
->>>>>>> 7fb976a (fix: fetch stock names from TWSE, add advice to market_scanned, add ETF/stock tab)
     }
   ],
   "market_scanned": [
@@ -254,11 +194,7 @@
       "price": 6.97,
       "ma60": 6.95,
       "suggested_stop_loss": 6.74,
-<<<<<<< HEAD
-      "inst_net_buy_3d": 32033,
-=======
       "inst_net_buy_3d": 17845,
->>>>>>> 7fb976a (fix: fetch stock names from TWSE, add advice to market_scanned, add ETF/stock tab)
       "it_continuous_buy": false,
       "revenue_double_growth": false,
       "news_heat_today": 0,
@@ -274,11 +210,7 @@
       "price": 16.06,
       "ma60": 15.77,
       "suggested_stop_loss": 15.3,
-<<<<<<< HEAD
-      "inst_net_buy_3d": 23324,
-=======
       "inst_net_buy_3d": 15557,
->>>>>>> 7fb976a (fix: fetch stock names from TWSE, add advice to market_scanned, add ETF/stock tab)
       "it_continuous_buy": false,
       "revenue_double_growth": false,
       "news_heat_today": 0,
@@ -289,35 +221,12 @@
       "alert": null
     },
     {
-<<<<<<< HEAD
-      "code": "00637L",
-      "name": "00637L",
-      "price": 21.74,
-      "ma60": 20.78,
-      "suggested_stop_loss": 20.16,
-      "inst_net_buy_3d": 17302,
-      "it_continuous_buy": false,
-      "revenue_double_growth": false,
-      "news_heat_today": 0,
-      "news_heat_yesterday": 0,
-      "ptt_push": 0,
-      "ptt_boo": 0,
-      "keywords_hit": [],
-      "alert": null
-    },
-    {
-=======
->>>>>>> 7fb976a (fix: fetch stock names from TWSE, add advice to market_scanned, add ETF/stock tab)
       "code": "00688L",
       "name": "00688L",
       "price": 6.95,
       "ma60": 6.93,
       "suggested_stop_loss": 6.72,
-<<<<<<< HEAD
-      "inst_net_buy_3d": 15968,
-=======
       "inst_net_buy_3d": 9275,
->>>>>>> 7fb976a (fix: fetch stock names from TWSE, add advice to market_scanned, add ETF/stock tab)
       "it_continuous_buy": false,
       "revenue_double_growth": false,
       "news_heat_today": 0,
@@ -333,17 +242,10 @@
       "price": 59.8,
       "ma60": 54.49,
       "suggested_stop_loss": 52.86,
-<<<<<<< HEAD
-      "inst_net_buy_3d": 11349,
-      "it_continuous_buy": false,
-      "revenue_double_growth": false,
-      "news_heat_today": 5,
-=======
       "inst_net_buy_3d": 6199,
       "it_continuous_buy": false,
       "revenue_double_growth": false,
       "news_heat_today": 4,
->>>>>>> 7fb976a (fix: fetch stock names from TWSE, add advice to market_scanned, add ETF/stock tab)
       "news_heat_yesterday": 1,
       "ptt_push": 0,
       "ptt_boo": 0,
@@ -365,11 +267,7 @@
       "price": 19.11,
       "ma60": 16.24,
       "suggested_stop_loss": 15.75,
-<<<<<<< HEAD
-      "inst_net_buy_3d": 7916,
-=======
       "inst_net_buy_3d": 3505,
->>>>>>> 7fb976a (fix: fetch stock names from TWSE, add advice to market_scanned, add ETF/stock tab)
       "it_continuous_buy": false,
       "revenue_double_growth": false,
       "news_heat_today": 0,
@@ -397,64 +295,12 @@
       "alert": null
     },
     {
-<<<<<<< HEAD
-      "code": "00891",
-      "name": "00891",
-      "price": 34.92,
-      "ma60": 30.56,
-      "suggested_stop_loss": 29.64,
-      "inst_net_buy_3d": 9061,
-      "it_continuous_buy": false,
-      "revenue_double_growth": false,
-      "news_heat_today": 0,
-      "news_heat_yesterday": 0,
-      "ptt_push": 0,
-      "ptt_boo": 0,
-      "keywords_hit": [],
-      "alert": null
-    },
-    {
-      "code": "00400A",
-      "name": "00400A",
-      "price": 14.24,
-      "ma60": 13.37,
-      "suggested_stop_loss": 12.97,
-      "inst_net_buy_3d": 7746,
-      "it_continuous_buy": false,
-      "revenue_double_growth": false,
-      "news_heat_today": 0,
-      "news_heat_yesterday": 1,
-      "ptt_push": 0,
-      "ptt_boo": 0,
-      "keywords_hit": [
-        {
-          "tag": "矽光子",
-          "weight": 5
-        },
-        {
-          "tag": "AI伺服器",
-          "weight": 4
-        },
-        {
-          "tag": "先進封裝",
-          "weight": 3
-        }
-      ],
-      "alert": null
-    },
-    {
-=======
->>>>>>> 7fb976a (fix: fetch stock names from TWSE, add advice to market_scanned, add ETF/stock tab)
       "code": "00915",
       "name": "00915",
       "price": 30.73,
       "ma60": 25.97,
       "suggested_stop_loss": 25.19,
-<<<<<<< HEAD
-      "inst_net_buy_3d": 6704,
-=======
       "inst_net_buy_3d": 4255,
->>>>>>> 7fb976a (fix: fetch stock names from TWSE, add advice to market_scanned, add ETF/stock tab)
       "it_continuous_buy": false,
       "revenue_double_growth": false,
       "news_heat_today": 3,
@@ -470,29 +316,13 @@
       "price": 73.55,
       "ma60": 70.82,
       "suggested_stop_loss": 68.7,
-<<<<<<< HEAD
-      "inst_net_buy_3d": 3368,
-=======
       "inst_net_buy_3d": 3394,
->>>>>>> 7fb976a (fix: fetch stock names from TWSE, add advice to market_scanned, add ETF/stock tab)
       "it_continuous_buy": false,
       "revenue_double_growth": false,
       "news_heat_today": 0,
       "news_heat_yesterday": 0,
       "ptt_push": 0,
       "ptt_boo": 0,
-<<<<<<< HEAD
-      "keywords_hit": [
-        {
-          "tag": "液冷",
-          "weight": 3
-        },
-        {
-          "tag": "先進封裝",
-          "weight": 3
-        }
-      ],
-=======
       "keywords_hit": [],
       "alert": null
     },
@@ -510,7 +340,6 @@
       "ptt_push": 0,
       "ptt_boo": 0,
       "keywords_hit": [],
->>>>>>> 7fb976a (fix: fetch stock names from TWSE, add advice to market_scanned, add ETF/stock tab)
       "alert": null
     },
     {
@@ -519,9 +348,6 @@
       "price": 52.6,
       "ma60": 50.32,
       "suggested_stop_loss": 48.81,
-<<<<<<< HEAD
-      "inst_net_buy_3d": 3413,
-=======
       "inst_net_buy_3d": 1936,
       "it_continuous_buy": false,
       "revenue_double_growth": false,
@@ -555,7 +381,6 @@
       "ma60": 47.99,
       "suggested_stop_loss": 46.55,
       "inst_net_buy_3d": 1454,
->>>>>>> 7fb976a (fix: fetch stock names from TWSE, add advice to market_scanned, add ETF/stock tab)
       "it_continuous_buy": false,
       "revenue_double_growth": false,
       "news_heat_today": 0,
@@ -571,11 +396,7 @@
       "price": 20.55,
       "ma60": 19.1,
       "suggested_stop_loss": 18.53,
-<<<<<<< HEAD
-      "inst_net_buy_3d": 869,
-=======
       "inst_net_buy_3d": 706,
->>>>>>> 7fb976a (fix: fetch stock names from TWSE, add advice to market_scanned, add ETF/stock tab)
       "it_continuous_buy": false,
       "revenue_double_growth": false,
       "news_heat_today": 1,
@@ -584,17 +405,6 @@
       "ptt_boo": 0,
       "keywords_hit": [
         {
-<<<<<<< HEAD
-          "tag": "矽光子",
-          "weight": 5
-        },
-        {
-          "tag": "全液冷",
-          "weight": 4
-        },
-        {
-=======
->>>>>>> 7fb976a (fix: fetch stock names from TWSE, add advice to market_scanned, add ETF/stock tab)
           "tag": "AI伺服器",
           "weight": 4
         },
@@ -611,11 +421,7 @@
       "price": 13.54,
       "ma60": 12.55,
       "suggested_stop_loss": 12.17,
-<<<<<<< HEAD
-      "inst_net_buy_3d": 909,
-=======
       "inst_net_buy_3d": 421,
->>>>>>> 7fb976a (fix: fetch stock names from TWSE, add advice to market_scanned, add ETF/stock tab)
       "it_continuous_buy": false,
       "revenue_double_growth": false,
       "news_heat_today": 0,
@@ -635,99 +441,12 @@
       "alert": null
     },
     {
-<<<<<<< HEAD
-      "code": "00645",
-      "name": "00645",
-      "price": 54.8,
-      "ma60": 53.18,
-      "suggested_stop_loss": 51.58,
-      "inst_net_buy_3d": 1756,
-      "it_continuous_buy": false,
-      "revenue_double_growth": false,
-      "news_heat_today": 0,
-      "news_heat_yesterday": 0,
-      "ptt_push": 0,
-      "ptt_boo": 0,
-      "keywords_hit": [],
-      "alert": null
-    },
-    {
-      "code": "00932",
-      "name": "00932",
-      "price": 17.59,
-      "ma60": 16.03,
-      "suggested_stop_loss": 15.55,
-      "inst_net_buy_3d": 1511,
-      "it_continuous_buy": false,
-      "revenue_double_growth": false,
-      "news_heat_today": 0,
-      "news_heat_yesterday": 0,
-      "ptt_push": 0,
-      "ptt_boo": 0,
-      "keywords_hit": [],
-      "alert": null
-    },
-    {
-      "code": "00909",
-      "name": "00909",
-      "price": 48.41,
-      "ma60": 44.48,
-      "suggested_stop_loss": 43.15,
-      "inst_net_buy_3d": 1496,
-      "it_continuous_buy": false,
-      "revenue_double_growth": false,
-      "news_heat_today": 0,
-      "news_heat_yesterday": 0,
-      "ptt_push": 0,
-      "ptt_boo": 0,
-      "keywords_hit": [],
-      "alert": null
-    },
-    {
-      "code": "00655L",
-      "name": "00655L",
-      "price": 36.7,
-      "ma60": 35.08,
-      "suggested_stop_loss": 34.03,
-      "inst_net_buy_3d": 1240,
-      "it_continuous_buy": false,
-      "revenue_double_growth": false,
-      "news_heat_today": 0,
-      "news_heat_yesterday": 0,
-      "ptt_push": 0,
-      "ptt_boo": 0,
-      "keywords_hit": [],
-      "alert": null
-    },
-    {
-      "code": "00907",
-      "name": "00907",
-      "price": 16.25,
-      "ma60": 14.98,
-      "suggested_stop_loss": 14.53,
-      "inst_net_buy_3d": 1162,
-      "it_continuous_buy": false,
-      "revenue_double_growth": false,
-      "news_heat_today": 0,
-      "news_heat_yesterday": 0,
-      "ptt_push": 0,
-      "ptt_boo": 0,
-      "keywords_hit": [],
-      "alert": null
-    },
-    {
-=======
->>>>>>> 7fb976a (fix: fetch stock names from TWSE, add advice to market_scanned, add ETF/stock tab)
       "code": "00714",
       "name": "00714",
       "price": 21.84,
       "ma60": 21.17,
       "suggested_stop_loss": 20.53,
-<<<<<<< HEAD
-      "inst_net_buy_3d": 211,
-=======
       "inst_net_buy_3d": 202,
->>>>>>> 7fb976a (fix: fetch stock names from TWSE, add advice to market_scanned, add ETF/stock tab)
       "it_continuous_buy": false,
       "revenue_double_growth": false,
       "news_heat_today": 0,
@@ -747,53 +466,18 @@
       "alert": null
     },
     {
-<<<<<<< HEAD
-      "code": "00898",
-      "name": "00898",
-      "price": 8.37,
-      "ma60": 8.12,
-      "suggested_stop_loss": 7.88,
-      "inst_net_buy_3d": 1107,
-      "it_continuous_buy": false,
-      "revenue_double_growth": false,
-      "news_heat_today": 0,
-      "news_heat_yesterday": 0,
-      "ptt_push": 0,
-      "ptt_boo": 0,
-      "keywords_hit": [],
-      "alert": null
-    },
-    {
-=======
->>>>>>> 7fb976a (fix: fetch stock names from TWSE, add advice to market_scanned, add ETF/stock tab)
       "code": "00892",
       "name": "00892",
       "price": 43.34,
       "ma60": 37.78,
       "suggested_stop_loss": 36.65,
-<<<<<<< HEAD
-      "inst_net_buy_3d": 1101,
-=======
       "inst_net_buy_3d": 363,
->>>>>>> 7fb976a (fix: fetch stock names from TWSE, add advice to market_scanned, add ETF/stock tab)
       "it_continuous_buy": false,
       "revenue_double_growth": false,
       "news_heat_today": 0,
       "news_heat_yesterday": 0,
       "ptt_push": 0,
       "ptt_boo": 0,
-<<<<<<< HEAD
-      "keywords_hit": [],
-      "alert": null
-    },
-    {
-      "code": "00636",
-      "name": "00636",
-      "price": 28.94,
-      "ma60": 28.02,
-      "suggested_stop_loss": 27.18,
-      "inst_net_buy_3d": 1002,
-=======
       "keywords_hit": [
         {
           "tag": "CoWoS",
@@ -813,7 +497,6 @@
       "ma60": 16.03,
       "suggested_stop_loss": 15.55,
       "inst_net_buy_3d": 1033,
->>>>>>> 7fb976a (fix: fetch stock names from TWSE, add advice to market_scanned, add ETF/stock tab)
       "it_continuous_buy": false,
       "revenue_double_growth": false,
       "news_heat_today": 0,
@@ -829,11 +512,7 @@
       "price": 15.01,
       "ma60": 14.12,
       "suggested_stop_loss": 13.7,
-<<<<<<< HEAD
-      "inst_net_buy_3d": 265,
-=======
       "inst_net_buy_3d": 207,
->>>>>>> 7fb976a (fix: fetch stock names from TWSE, add advice to market_scanned, add ETF/stock tab)
       "it_continuous_buy": false,
       "revenue_double_growth": false,
       "news_heat_today": 0,
@@ -853,8 +532,6 @@
       "alert": null
     },
     {
-<<<<<<< HEAD
-=======
       "code": "00904",
       "name": "00904",
       "price": 40.5,
@@ -876,17 +553,12 @@
       "alert": null
     },
     {
->>>>>>> 7fb976a (fix: fetch stock names from TWSE, add advice to market_scanned, add ETF/stock tab)
       "code": "00639",
       "name": "00639",
       "price": 17.9,
       "ma60": 17.08,
       "suggested_stop_loss": 16.57,
-<<<<<<< HEAD
-      "inst_net_buy_3d": 897,
-=======
       "inst_net_buy_3d": 693,
->>>>>>> 7fb976a (fix: fetch stock names from TWSE, add advice to market_scanned, add ETF/stock tab)
       "it_continuous_buy": false,
       "revenue_double_growth": false,
       "news_heat_today": 0,
@@ -897,42 +569,6 @@
       "alert": null
     },
     {
-<<<<<<< HEAD
-      "code": "00728",
-      "name": "00728",
-      "price": 61.65,
-      "ma60": 53.9,
-      "suggested_stop_loss": 52.28,
-      "inst_net_buy_3d": 26,
-      "it_continuous_buy": false,
-      "revenue_double_growth": false,
-      "news_heat_today": 3,
-      "news_heat_yesterday": 0,
-      "ptt_push": 0,
-      "ptt_boo": 0,
-      "keywords_hit": [
-        {
-          "tag": "AI伺服器",
-          "weight": 4
-        },
-        {
-          "tag": "先進封裝",
-          "weight": 3
-        }
-      ],
-      "alert": "news_surge"
-    },
-    {
-      "code": "00757",
-      "name": "00757",
-      "price": 127.05,
-      "ma60": 120.57,
-      "suggested_stop_loss": 116.95,
-      "inst_net_buy_3d": 106,
-      "it_continuous_buy": false,
-      "revenue_double_growth": false,
-      "news_heat_today": 1,
-=======
       "code": "00636",
       "name": "00636",
       "price": 28.94,
@@ -974,39 +610,18 @@
       "it_continuous_buy": false,
       "revenue_double_growth": false,
       "news_heat_today": 0,
->>>>>>> 7fb976a (fix: fetch stock names from TWSE, add advice to market_scanned, add ETF/stock tab)
       "news_heat_yesterday": 0,
       "ptt_push": 0,
       "ptt_boo": 0,
       "keywords_hit": [
         {
-<<<<<<< HEAD
-          "tag": "液冷",
-          "weight": 3
-        },
-        {
-          "tag": "先進封裝",
-=======
           "tag": "HBM",
->>>>>>> 7fb976a (fix: fetch stock names from TWSE, add advice to market_scanned, add ETF/stock tab)
           "weight": 3
         }
       ],
       "alert": null
     },
     {
-<<<<<<< HEAD
-      "code": "00904",
-      "name": "00904",
-      "price": 40.5,
-      "ma60": 35.38,
-      "suggested_stop_loss": 34.32,
-      "inst_net_buy_3d": 702,
-      "it_continuous_buy": false,
-      "revenue_double_growth": false,
-      "news_heat_today": 1,
-      "news_heat_yesterday": 1,
-=======
       "code": "00907",
       "name": "00907",
       "price": 16.25,
@@ -1033,7 +648,6 @@
       "revenue_double_growth": false,
       "news_heat_today": 0,
       "news_heat_yesterday": 0,
->>>>>>> 7fb976a (fix: fetch stock names from TWSE, add advice to market_scanned, add ETF/stock tab)
       "ptt_push": 0,
       "ptt_boo": 0,
       "keywords_hit": [],
@@ -1045,11 +659,7 @@
       "price": 36.71,
       "ma60": 31.3,
       "suggested_stop_loss": 30.36,
-<<<<<<< HEAD
-      "inst_net_buy_3d": 681,
-=======
       "inst_net_buy_3d": 488,
->>>>>>> 7fb976a (fix: fetch stock names from TWSE, add advice to market_scanned, add ETF/stock tab)
       "it_continuous_buy": false,
       "revenue_double_growth": false,
       "news_heat_today": 0,
@@ -1065,80 +675,7 @@
       "price": 24.17,
       "ma60": 20.43,
       "suggested_stop_loss": 19.82,
-<<<<<<< HEAD
-      "inst_net_buy_3d": 672,
-      "it_continuous_buy": false,
-      "revenue_double_growth": false,
-      "news_heat_today": 0,
-      "news_heat_yesterday": 0,
-      "ptt_push": 0,
-      "ptt_boo": 0,
-      "keywords_hit": [],
-      "alert": null
-    },
-    {
-      "code": "00651R",
-      "name": "00651R",
-      "price": 5.38,
-      "ma60": 5.27,
-      "suggested_stop_loss": 5.11,
-      "inst_net_buy_3d": 534,
-      "it_continuous_buy": false,
-      "revenue_double_growth": false,
-      "news_heat_today": 0,
-      "news_heat_yesterday": 0,
-      "ptt_push": 0,
-      "ptt_boo": 0,
-      "keywords_hit": [],
-      "alert": null
-    },
-    {
-      "code": "00893",
-      "name": "00893",
-      "price": 45.37,
-      "ma60": 40.58,
-      "suggested_stop_loss": 39.36,
-      "inst_net_buy_3d": 502,
-      "it_continuous_buy": false,
-      "revenue_double_growth": false,
-      "news_heat_today": 1,
-      "news_heat_yesterday": 2,
-      "ptt_push": 0,
-      "ptt_boo": 0,
-      "keywords_hit": [],
-      "alert": null
-    },
-    {
-      "code": "00901",
-      "name": "00901",
-      "price": 45.23,
-      "ma60": 38.02,
-      "suggested_stop_loss": 36.88,
-      "inst_net_buy_3d": 52,
-      "it_continuous_buy": false,
-      "revenue_double_growth": false,
-      "news_heat_today": 0,
-      "news_heat_yesterday": 0,
-      "ptt_push": 0,
-      "ptt_boo": 0,
-      "keywords_hit": [
-        {
-          "tag": "AI伺服器",
-          "weight": 4
-        }
-      ],
-      "alert": null
-    },
-    {
-      "code": "00917",
-      "name": "00917",
-      "price": 21.97,
-      "ma60": 21.37,
-      "suggested_stop_loss": 20.73,
-      "inst_net_buy_3d": 436,
-=======
       "inst_net_buy_3d": 448,
->>>>>>> 7fb976a (fix: fetch stock names from TWSE, add advice to market_scanned, add ETF/stock tab)
       "it_continuous_buy": false,
       "revenue_double_growth": false,
       "news_heat_today": 0,
@@ -1154,11 +691,7 @@
       "price": 35.99,
       "ma60": 35.64,
       "suggested_stop_loss": 34.57,
-<<<<<<< HEAD
-      "inst_net_buy_3d": 30,
-=======
       "inst_net_buy_3d": 8,
->>>>>>> 7fb976a (fix: fetch stock names from TWSE, add advice to market_scanned, add ETF/stock tab)
       "it_continuous_buy": false,
       "revenue_double_growth": false,
       "news_heat_today": 0,
@@ -1174,8 +707,6 @@
       "alert": null
     },
     {
-<<<<<<< HEAD
-=======
       "code": "00901",
       "name": "00901",
       "price": 45.23,
@@ -1213,219 +744,12 @@
       "alert": null
     },
     {
->>>>>>> 7fb976a (fix: fetch stock names from TWSE, add advice to market_scanned, add ETF/stock tab)
       "code": "00926",
       "name": "00926",
       "price": 24.63,
       "ma60": 24.17,
       "suggested_stop_loss": 23.44,
-<<<<<<< HEAD
-      "inst_net_buy_3d": 429,
-      "it_continuous_buy": false,
-      "revenue_double_growth": false,
-      "news_heat_today": 0,
-      "news_heat_yesterday": 0,
-      "ptt_push": 0,
-      "ptt_boo": 0,
-      "keywords_hit": [],
-      "alert": null
-    },
-    {
-      "code": "0055",
-      "name": "0055",
-      "price": 39.72,
-      "ma60": 34.2,
-      "suggested_stop_loss": 33.17,
-      "inst_net_buy_3d": 28,
-      "it_continuous_buy": false,
-      "revenue_double_growth": false,
-      "news_heat_today": 0,
-      "news_heat_yesterday": 0,
-      "ptt_push": 0,
-      "ptt_boo": 0,
-      "keywords_hit": [
-        {
-          "tag": "AI伺服器",
-          "weight": 4
-        }
-      ],
-      "alert": null
-    },
-    {
-      "code": "00895",
-      "name": "00895",
-      "price": 50.35,
-      "ma60": 45.94,
-      "suggested_stop_loss": 44.56,
-      "inst_net_buy_3d": 108,
-      "it_continuous_buy": false,
-      "revenue_double_growth": false,
-      "news_heat_today": 0,
-      "news_heat_yesterday": 0,
-      "ptt_push": 0,
-      "ptt_boo": 0,
-      "keywords_hit": [
-        {
-          "tag": "HBM",
-          "weight": 3
-        }
-      ],
-      "alert": null
-    },
-    {
-      "code": "0061",
-      "name": "0061",
-      "price": 24.83,
-      "ma60": 24.26,
-      "suggested_stop_loss": 23.53,
-      "inst_net_buy_3d": 354,
-      "it_continuous_buy": false,
-      "revenue_double_growth": false,
-      "news_heat_today": 0,
-      "news_heat_yesterday": 0,
-      "ptt_push": 0,
-      "ptt_boo": 0,
-      "keywords_hit": [],
-      "alert": null
-    },
-    {
-      "code": "00709",
-      "name": "00709",
-      "price": 39.2,
-      "ma60": 37.87,
-      "suggested_stop_loss": 36.73,
-      "inst_net_buy_3d": 306,
-      "it_continuous_buy": false,
-      "revenue_double_growth": false,
-      "news_heat_today": 0,
-      "news_heat_yesterday": 0,
-      "ptt_push": 0,
-      "ptt_boo": 0,
-      "keywords_hit": [],
-      "alert": null
-    },
-    {
-      "code": "00852L",
-      "name": "00852L",
-      "price": 32.92,
-      "ma60": 30.73,
-      "suggested_stop_loss": 29.81,
-      "inst_net_buy_3d": 291,
-      "it_continuous_buy": false,
-      "revenue_double_growth": false,
-      "news_heat_today": 0,
-      "news_heat_yesterday": 0,
-      "ptt_push": 0,
-      "ptt_boo": 0,
-      "keywords_hit": [],
-      "alert": null
-    },
-    {
-      "code": "006205",
-      "name": "006205",
-      "price": 40.95,
-      "ma60": 40.4,
-      "suggested_stop_loss": 39.19,
-      "inst_net_buy_3d": 269,
-      "it_continuous_buy": false,
-      "revenue_double_growth": false,
-      "news_heat_today": 0,
-      "news_heat_yesterday": 0,
-      "ptt_push": 0,
-      "ptt_boo": 0,
-      "keywords_hit": [],
-      "alert": null
-    },
-    {
-      "code": "00661",
-      "name": "00661",
-      "price": 85.85,
-      "ma60": 77.35,
-      "suggested_stop_loss": 75.03,
-      "inst_net_buy_3d": 231,
-      "it_continuous_buy": false,
-      "revenue_double_growth": false,
-      "news_heat_today": 1,
-      "news_heat_yesterday": 1,
-      "ptt_push": 0,
-      "ptt_boo": 0,
-      "keywords_hit": [],
-      "alert": null
-    },
-    {
-      "code": "00903",
-      "name": "00903",
-      "price": 21.32,
-      "ma60": 19.07,
-      "suggested_stop_loss": 18.5,
-      "inst_net_buy_3d": 207,
-      "it_continuous_buy": false,
-      "revenue_double_growth": false,
-      "news_heat_today": 0,
-      "news_heat_yesterday": 0,
-      "ptt_push": 0,
-      "ptt_boo": 0,
-      "keywords_hit": [],
-      "alert": null
-    },
-    {
-      "code": "00643",
-      "name": "00643",
-      "price": 19.56,
-      "ma60": 19.25,
-      "suggested_stop_loss": 18.67,
-      "inst_net_buy_3d": 196,
-      "it_continuous_buy": false,
-      "revenue_double_growth": false,
-      "news_heat_today": 0,
-      "news_heat_yesterday": 0,
-      "ptt_push": 0,
-      "ptt_boo": 0,
-      "keywords_hit": [],
-      "alert": null
-    },
-    {
-      "code": "00733",
-      "name": "00733",
-      "price": 70.95,
-      "ma60": 64.87,
-      "suggested_stop_loss": 62.92,
-      "inst_net_buy_3d": 173,
-      "it_continuous_buy": false,
-      "revenue_double_growth": false,
-      "news_heat_today": 0,
-      "news_heat_yesterday": 1,
-      "ptt_push": 0,
-      "ptt_boo": 0,
-      "keywords_hit": [],
-      "alert": null
-    },
-    {
-      "code": "00731",
-      "name": "00731",
-      "price": 85.5,
-      "ma60": 74.78,
-      "suggested_stop_loss": 72.54,
-      "inst_net_buy_3d": 171,
-      "it_continuous_buy": false,
-      "revenue_double_growth": false,
-      "news_heat_today": 0,
-      "news_heat_yesterday": 0,
-      "ptt_push": 0,
-      "ptt_boo": 0,
-      "keywords_hit": [],
-      "alert": null
-    },
-    {
-      "code": "006207",
-      "name": "006207",
-      "price": 33.42,
-      "ma60": 32.54,
-      "suggested_stop_loss": 31.56,
-      "inst_net_buy_3d": 156,
-=======
       "inst_net_buy_3d": 320,
->>>>>>> 7fb976a (fix: fetch stock names from TWSE, add advice to market_scanned, add ETF/stock tab)
       "it_continuous_buy": false,
       "revenue_double_growth": false,
       "news_heat_today": 0,
@@ -1441,12 +765,6 @@
       "price": 34.33,
       "ma60": 32.62,
       "suggested_stop_loss": 31.64,
-<<<<<<< HEAD
-      "inst_net_buy_3d": 156,
-      "it_continuous_buy": false,
-      "revenue_double_growth": false,
-      "news_heat_today": 2,
-=======
       "inst_net_buy_3d": 300,
       "it_continuous_buy": false,
       "revenue_double_growth": false,
@@ -1579,7 +897,6 @@
       "it_continuous_buy": false,
       "revenue_double_growth": false,
       "news_heat_today": 1,
->>>>>>> 7fb976a (fix: fetch stock names from TWSE, add advice to market_scanned, add ETF/stock tab)
       "news_heat_yesterday": 1,
       "ptt_push": 0,
       "ptt_boo": 0,
@@ -1587,8 +904,6 @@
       "alert": null
     },
     {
-<<<<<<< HEAD
-=======
       "code": "006205",
       "name": "006205",
       "price": 40.95,
@@ -1605,17 +920,12 @@
       "alert": null
     },
     {
->>>>>>> 7fb976a (fix: fetch stock names from TWSE, add advice to market_scanned, add ETF/stock tab)
       "code": "006206",
       "name": "006206",
       "price": 36.92,
       "ma60": 36.74,
       "suggested_stop_loss": 35.64,
-<<<<<<< HEAD
-      "inst_net_buy_3d": 153,
-=======
       "inst_net_buy_3d": 94,
->>>>>>> 7fb976a (fix: fetch stock names from TWSE, add advice to market_scanned, add ETF/stock tab)
       "it_continuous_buy": false,
       "revenue_double_growth": false,
       "news_heat_today": 0,
@@ -1626,53 +936,12 @@
       "alert": null
     },
     {
-<<<<<<< HEAD
-      "code": "00921",
-      "name": "00921",
-      "price": 22.7,
-      "ma60": 20.65,
-      "suggested_stop_loss": 20.03,
-      "inst_net_buy_3d": 148,
-      "it_continuous_buy": false,
-      "revenue_double_growth": false,
-      "news_heat_today": 0,
-      "news_heat_yesterday": 3,
-      "ptt_push": 0,
-      "ptt_boo": 0,
-      "keywords_hit": [],
-      "alert": null
-    },
-    {
-      "code": "00735",
-      "name": "00735",
-      "price": 109.8,
-      "ma60": 88.61,
-      "suggested_stop_loss": 85.95,
-      "inst_net_buy_3d": 107,
-      "it_continuous_buy": false,
-      "revenue_double_growth": false,
-      "news_heat_today": 1,
-      "news_heat_yesterday": 0,
-      "ptt_push": 0,
-      "ptt_boo": 0,
-      "keywords_hit": [],
-      "alert": null
-    },
-    {
-      "code": "00683L",
-      "name": "00683L",
-      "price": 21.43,
-      "ma60": 21.17,
-      "suggested_stop_loss": 20.53,
-      "inst_net_buy_3d": 72,
-=======
       "code": "00731",
       "name": "00731",
       "price": 85.5,
       "ma60": 74.78,
       "suggested_stop_loss": 72.54,
       "inst_net_buy_3d": 89,
->>>>>>> 7fb976a (fix: fetch stock names from TWSE, add advice to market_scanned, add ETF/stock tab)
       "it_continuous_buy": false,
       "revenue_double_growth": false,
       "news_heat_today": 0,
@@ -1688,11 +957,7 @@
       "price": 19.04,
       "ma60": 18.88,
       "suggested_stop_loss": 18.31,
-<<<<<<< HEAD
-      "inst_net_buy_3d": 61,
-=======
       "inst_net_buy_3d": 83,
->>>>>>> 7fb976a (fix: fetch stock names from TWSE, add advice to market_scanned, add ETF/stock tab)
       "it_continuous_buy": false,
       "revenue_double_growth": false,
       "news_heat_today": 0,
@@ -1703,18 +968,6 @@
       "alert": null
     },
     {
-<<<<<<< HEAD
-      "code": "00739",
-      "name": "00739",
-      "price": 28.81,
-      "ma60": 28.07,
-      "suggested_stop_loss": 27.23,
-      "inst_net_buy_3d": 51,
-      "it_continuous_buy": false,
-      "revenue_double_growth": false,
-      "news_heat_today": 1,
-      "news_heat_yesterday": 0,
-=======
       "code": "00921",
       "name": "00921",
       "price": 22.7,
@@ -1725,28 +978,18 @@
       "revenue_double_growth": false,
       "news_heat_today": 0,
       "news_heat_yesterday": 3,
->>>>>>> 7fb976a (fix: fetch stock names from TWSE, add advice to market_scanned, add ETF/stock tab)
       "ptt_push": 0,
       "ptt_boo": 0,
       "keywords_hit": [],
       "alert": null
     },
     {
-<<<<<<< HEAD
-      "code": "00875",
-      "name": "00875",
-      "price": 47.22,
-      "ma60": 42.21,
-      "suggested_stop_loss": 40.94,
-      "inst_net_buy_3d": 51,
-=======
       "code": "00683L",
       "name": "00683L",
       "price": 21.43,
       "ma60": 21.17,
       "suggested_stop_loss": 20.53,
       "inst_net_buy_3d": 50,
->>>>>>> 7fb976a (fix: fetch stock names from TWSE, add advice to market_scanned, add ETF/stock tab)
       "it_continuous_buy": false,
       "revenue_double_growth": false,
       "news_heat_today": 0,
@@ -1757,101 +1000,12 @@
       "alert": null
     },
     {
-<<<<<<< HEAD
-      "code": "00783",
-      "name": "00783",
-      "price": 29.17,
-      "ma60": 28.92,
-      "suggested_stop_loss": 28.05,
-      "inst_net_buy_3d": 47,
-      "it_continuous_buy": false,
-      "revenue_double_growth": false,
-      "news_heat_today": 0,
-      "news_heat_yesterday": 0,
-      "ptt_push": 0,
-      "ptt_boo": 0,
-      "keywords_hit": [],
-      "alert": null
-    },
-    {
-      "code": "00660",
-      "name": "00660",
-      "price": 44.85,
-      "ma60": 42.77,
-      "suggested_stop_loss": 41.49,
-      "inst_net_buy_3d": 43,
-      "it_continuous_buy": false,
-      "revenue_double_growth": false,
-      "news_heat_today": 0,
-      "news_heat_yesterday": 1,
-      "ptt_push": 0,
-      "ptt_boo": 0,
-      "keywords_hit": [],
-      "alert": null
-    },
-    {
-      "code": "00876",
-      "name": "00876",
-      "price": 94.55,
-      "ma60": 77.61,
-      "suggested_stop_loss": 75.28,
-      "inst_net_buy_3d": 35,
-      "it_continuous_buy": false,
-      "revenue_double_growth": false,
-      "news_heat_today": 0,
-      "news_heat_yesterday": 2,
-      "ptt_push": 0,
-      "ptt_boo": 0,
-      "keywords_hit": [],
-      "alert": null
-    },
-    {
-      "code": "00736",
-      "name": "00736",
-      "price": 30.32,
-      "ma60": 29.64,
-      "suggested_stop_loss": 28.75,
-      "inst_net_buy_3d": 30,
-      "it_continuous_buy": false,
-      "revenue_double_growth": false,
-      "news_heat_today": 0,
-      "news_heat_yesterday": 0,
-      "ptt_push": 0,
-      "ptt_boo": 0,
-      "keywords_hit": [],
-      "alert": null
-    },
-    {
-      "code": "00666R",
-      "name": "00666R",
-      "price": 9.21,
-      "ma60": 8.92,
-      "suggested_stop_loss": 8.65,
-      "inst_net_buy_3d": 28,
-      "it_continuous_buy": false,
-      "revenue_double_growth": false,
-      "news_heat_today": 0,
-      "news_heat_yesterday": 0,
-      "ptt_push": 0,
-      "ptt_boo": 0,
-      "keywords_hit": [],
-      "alert": null
-    },
-    {
-      "code": "00668",
-      "name": "00668",
-      "price": 58.95,
-      "ma60": 56.44,
-      "suggested_stop_loss": 54.75,
-      "inst_net_buy_3d": 26,
-=======
       "code": "00643",
       "name": "00643",
       "price": 19.56,
       "ma60": 19.25,
       "suggested_stop_loss": 18.67,
       "inst_net_buy_3d": 49,
->>>>>>> 7fb976a (fix: fetch stock names from TWSE, add advice to market_scanned, add ETF/stock tab)
       "it_continuous_buy": false,
       "revenue_double_growth": false,
       "news_heat_today": 0,
@@ -1867,9 +1021,6 @@
       "price": 131.2,
       "ma60": 122.65,
       "suggested_stop_loss": 118.97,
-<<<<<<< HEAD
-      "inst_net_buy_3d": 26,
-=======
       "inst_net_buy_3d": 35,
       "it_continuous_buy": false,
       "revenue_double_growth": false,
@@ -1999,7 +1150,6 @@
       "ma60": 164.26,
       "suggested_stop_loss": 159.33,
       "inst_net_buy_3d": 2,
->>>>>>> 7fb976a (fix: fetch stock names from TWSE, add advice to market_scanned, add ETF/stock tab)
       "it_continuous_buy": false,
       "revenue_double_growth": false,
       "news_heat_today": 0,
