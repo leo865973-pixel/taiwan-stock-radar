@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-10-01T15:32:29",
+  "updated_at": "2026-10-02T14:50:12",
   "run_summary": {
     "scanned_total": 80,
-    "passed_filter": 66,
-    "alert_count": 16,
-    "elapsed_seconds": 526.2
+    "passed_filter": 73,
+    "alert_count": 11,
+    "elapsed_seconds": 590.0
   },
   "market_weather": null,
   "portfolio": [
@@ -14,14 +14,14 @@
       "is_etf": true,
       "cost_price": 150.0,
       "shares": 2000,
-      "price": 112.9,
-      "ma60": 105.58,
-      "ma20": 109.46,
+      "price": 112.8,
+      "ma60": 105.69,
+      "ma20": 109.76,
       "suggested_stop_loss": 135.0,
-      "pnl_percent": -24.73,
-      "pnl_value": -74200,
-      "news_heat_today": 5,
-      "news_heat_yesterday": 11,
+      "pnl_percent": -24.8,
+      "pnl_value": -74400,
+      "news_heat_today": 23,
+      "news_heat_yesterday": 5,
       "ptt_push": 0,
       "ptt_boo": 0,
       "keywords_hit": [
@@ -38,42 +38,12 @@
           "weight": 5
         },
         {
-          "tag": "快接頭",
+          "tag": "CoWoS",
           "weight": 4
         },
         {
-          "tag": "HBM",
-          "weight": 3
-        }
-      ],
-      "inst_net_buy_3d": null,
-      "it_continuous_buy": false,
-      "revenue_double_growth": false,
-      "alert": null,
-      "score": 0,
-      "light": "🔴 破線警報",
-      "advice": "【🚨 強制停損】股價已跌破你的成本價 10% (150.0 -> 112.9)，觸發強制停損底線！ 資金控管是活下去的唯一原則，請立刻評估出場以保護本金！"
-    },
-    {
-      "code": "2330",
-      "name": "台積電",
-      "is_etf": false,
-      "cost_price": 850.0,
-      "shares": 500,
-      "price": 2510.0,
-      "ma60": 2403.42,
-      "ma20": 2442.5,
-      "suggested_stop_loss": 2331.32,
-      "pnl_percent": 195.29,
-      "pnl_value": 830000,
-      "news_heat_today": 15,
-      "news_heat_yesterday": 25,
-      "ptt_push": 0,
-      "ptt_boo": 0,
-      "keywords_hit": [
-        {
-          "tag": "矽光子",
-          "weight": 5
+          "tag": "全液冷",
+          "weight": 4
         },
         {
           "tag": "快接頭",
@@ -92,28 +62,28 @@
           "weight": 3
         }
       ],
-      "inst_net_buy_3d": 3162,
-      "it_continuous_buy": true,
+      "inst_net_buy_3d": null,
+      "it_continuous_buy": false,
       "revenue_double_growth": false,
-      "alert": null,
-      "score": 75,
-      "light": "🟢 偏多觀察",
-      "advice": "【體檢優良】股價維持在季線之上，長線算安全。有投信大哥在默默連買吃貨，背後有靠山。 整體看來是好學生，可加入自選股觀察找買點。"
+      "alert": "news_surge",
+      "score": 0,
+      "light": "🔴 破線警報",
+      "advice": "【🚨 強制停損】股價已跌破你的成本價 10% (150.0 -> 112.8)，觸發強制停損底線！ 資金控管是活下去的唯一原則，請立刻評估出場以保護本金！"
     },
     {
-      "code": "00878",
-      "name": "國泰永續高股息",
-      "is_etf": true,
-      "cost_price": 20.0,
-      "shares": 1000,
-      "price": 34.89,
-      "ma60": 33.3,
-      "ma20": 34.47,
-      "suggested_stop_loss": 32.3,
-      "pnl_percent": 74.45,
-      "pnl_value": 14890,
-      "news_heat_today": 7,
-      "news_heat_yesterday": 6,
+      "code": "2330",
+      "name": "台積電",
+      "is_etf": false,
+      "cost_price": 850.0,
+      "shares": 500,
+      "price": 2500.0,
+      "ma60": 2404.42,
+      "ma20": 2448.25,
+      "suggested_stop_loss": 2332.29,
+      "pnl_percent": 194.12,
+      "pnl_value": 825000,
+      "news_heat_today": 20,
+      "news_heat_yesterday": 32,
       "ptt_push": 0,
       "ptt_boo": 0,
       "keywords_hit": [
@@ -130,7 +100,53 @@
           "weight": 3
         },
         {
-          "tag": "液冷",
+          "tag": "先進封裝",
+          "weight": 3
+        }
+      ],
+      "inst_net_buy_3d": 809,
+      "it_continuous_buy": true,
+      "revenue_double_growth": false,
+      "alert": null,
+      "score": 75,
+      "light": "🟢 偏多觀察",
+      "advice": "【體檢優良】股價維持在季線之上，長線算安全。有投信大哥在默默連買吃貨，背後有靠山。 整體看來是好學生，可加入自選股觀察找買點。"
+    },
+    {
+      "code": "00878",
+      "name": "國泰永續高股息",
+      "is_etf": true,
+      "cost_price": 20.0,
+      "shares": 1000,
+      "price": 34.89,
+      "ma60": 33.33,
+      "ma20": 34.53,
+      "suggested_stop_loss": 32.33,
+      "pnl_percent": 74.45,
+      "pnl_value": 14890,
+      "news_heat_today": 1,
+      "news_heat_yesterday": 7,
+      "ptt_push": 0,
+      "ptt_boo": 0,
+      "keywords_hit": [
+        {
+          "tag": "矽光子",
+          "weight": 5
+        },
+        {
+          "tag": "GB200",
+          "weight": 5
+        },
+        {
+          "tag": "全液冷",
+          "weight": 4
+        },
+        {
+          "tag": "AI伺服器",
+          "weight": 4
+        },
+        {
+          "tag": "HBM",
           "weight": 3
         },
         {
@@ -152,145 +168,22 @@
       "code": "00403A",
       "name": "主動統一升級50",
       "is_etf": true,
-      "price": 10.92,
-      "ma60": 10.06,
-      "suggested_stop_loss": 9.76,
-      "inst_net_buy_3d": 260683,
+      "price": 11.07,
+      "ma60": 10.08,
+      "suggested_stop_loss": 9.78,
+      "inst_net_buy_3d": 447810,
       "it_continuous_buy": false,
       "revenue_double_growth": false,
-      "news_heat_today": 10,
-      "news_heat_yesterday": 3,
-      "ptt_push": 0,
-      "ptt_boo": 0,
-      "keywords_hit": [
-        {
-          "tag": "Vera Rubin",
-          "weight": 5
-        },
-        {
-          "tag": "矽光子",
-          "weight": 5
-        },
-        {
-          "tag": "GB200",
-          "weight": 5
-        },
-        {
-          "tag": "CoWoS",
-          "weight": 4
-        },
-        {
-          "tag": "快接頭",
-          "weight": 4
-        },
-        {
-          "tag": "液冷",
-          "weight": 3
-        },
-        {
-          "tag": "先進封裝",
-          "weight": 3
-        }
-      ],
-      "alert": "news_surge",
-      "score": 80,
-      "light": "🟢 偏多觀察",
-      "advice": "【體檢優良】股價穩站季線之上，趨勢強勢。三大法人近期有明顯的大量買單。 整體看來是好學生，可加入自選股觀察找買點。"
-    },
-    {
-      "code": "00409A",
-      "name": "主動復華全球50",
-      "is_etf": true,
-      "price": 10.3,
-      "ma60": 9.83,
-      "suggested_stop_loss": 9.54,
-      "inst_net_buy_3d": 65807,
-      "it_continuous_buy": false,
-      "revenue_double_growth": false,
-      "news_heat_today": 5,
-      "news_heat_yesterday": 4,
-      "ptt_push": 0,
-      "ptt_boo": 0,
-      "keywords_hit": [
-        {
-          "tag": "全液冷",
-          "weight": 4
-        },
-        {
-          "tag": "AI伺服器",
-          "weight": 4
-        },
-        {
-          "tag": "液冷",
-          "weight": 3
-        },
-        {
-          "tag": "先進封裝",
-          "weight": 3
-        }
-      ],
-      "alert": null,
-      "score": 70,
-      "light": "🟡 中立觀望",
-      "advice": "【表現平平】股價維持在季線之上，長線算安全。三大法人近期有明顯的大量買單。 目前沒有特別突出的表現，建議多看少做。"
-    },
-    {
-      "code": "6770",
-      "name": "力積電",
-      "is_etf": false,
-      "price": 74.5,
-      "ma60": 68.59,
-      "suggested_stop_loss": 66.53,
-      "inst_net_buy_3d": 63092,
-      "it_continuous_buy": true,
-      "revenue_double_growth": false,
-      "news_heat_today": 4,
-      "news_heat_yesterday": 3,
-      "ptt_push": 0,
-      "ptt_boo": 0,
-      "keywords_hit": [
-        {
-          "tag": "矽光子",
-          "weight": 5
-        },
-        {
-          "tag": "全液冷",
-          "weight": 4
-        },
-        {
-          "tag": "AI伺服器",
-          "weight": 4
-        },
-        {
-          "tag": "液冷",
-          "weight": 3
-        },
-        {
-          "tag": "先進封裝",
-          "weight": 3
-        }
-      ],
-      "alert": null,
-      "score": 85,
-      "light": "🟢 偏多觀察",
-      "advice": "【體檢優良】股價穩站季線之上，趨勢強勢。有投信大哥在默默連買吃貨，背後有靠山。 整體看來是好學生，可加入自選股觀察找買點。"
-    },
-    {
-      "code": "2344",
-      "name": "華邦電",
-      "is_etf": false,
-      "price": 180.0,
-      "ma60": 169.39,
-      "suggested_stop_loss": 164.31,
-      "inst_net_buy_3d": 62609,
-      "it_continuous_buy": false,
-      "revenue_double_growth": false,
-      "news_heat_today": 5,
+      "news_heat_today": 8,
       "news_heat_yesterday": 6,
       "ptt_push": 0,
       "ptt_boo": 0,
       "keywords_hit": [
         {
+          "tag": "Vera Rubin",
+          "weight": 5
+        },
+        {
           "tag": "矽光子",
           "weight": 5
         },
@@ -303,98 +196,12 @@
           "weight": 4
         },
         {
-          "tag": "AI伺服器",
-          "weight": 4
-        },
-        {
-          "tag": "先進封裝",
-          "weight": 3
-        }
-      ],
-      "alert": null,
-      "score": 80,
-      "light": "🟢 偏多觀察",
-      "advice": "【體檢優良】股價穩站季線之上，趨勢強勢。三大法人近期有明顯的大量買單。 整體看來是好學生，可加入自選股觀察找買點。"
-    },
-    {
-      "code": "00991A",
-      "name": "主動復華未來50",
-      "is_etf": true,
-      "price": 18.33,
-      "ma60": 17.49,
-      "suggested_stop_loss": 16.97,
-      "inst_net_buy_3d": 55783,
-      "it_continuous_buy": false,
-      "revenue_double_growth": false,
-      "news_heat_today": 8,
-      "news_heat_yesterday": 10,
-      "ptt_push": 0,
-      "ptt_boo": 0,
-      "keywords_hit": [
-        {
-          "tag": "Vera Rubin",
-          "weight": 5
-        },
-        {
-          "tag": "GB200",
-          "weight": 5
-        },
-        {
-          "tag": "CoWoS",
-          "weight": 4
-        },
-        {
           "tag": "全液冷",
           "weight": 4
         },
         {
-          "tag": "先進封裝",
-          "weight": 3
-        }
-      ],
-      "alert": null,
-      "score": 70,
-      "light": "🟡 中立觀望",
-      "advice": "【表現平平】股價維持在季線之上，長線算安全。三大法人近期有明顯的大量買單。 目前沒有特別突出的表現，建議多看少做。"
-    },
-    {
-      "code": "2409",
-      "name": "友達",
-      "is_etf": false,
-      "price": 38.3,
-      "ma60": 27.78,
-      "suggested_stop_loss": 26.95,
-      "inst_net_buy_3d": 54697,
-      "it_continuous_buy": false,
-      "revenue_double_growth": false,
-      "news_heat_today": 9,
-      "news_heat_yesterday": 17,
-      "ptt_push": 0,
-      "ptt_boo": 0,
-      "keywords_hit": [
-        {
-          "tag": "Vera Rubin",
-          "weight": 5
-        },
-        {
-          "tag": "CoWoS",
+          "tag": "快接頭",
           "weight": 4
-        },
-        {
-          "tag": "全液冷",
-          "weight": 4
-        },
-        {
-          "tag": "AI伺服器",
-          "weight": 4
-        },
-        {
-          "tag": "HBM",
-          "weight": 3
-        },
-        {
-          "tag": "液冷",
-          "weight": 3
         },
         {
           "tag": "先進封裝",
@@ -410,14 +217,14 @@
       "code": "00981A",
       "name": "主動統一台股增長",
       "is_etf": true,
-      "price": 31.0,
-      "ma60": 28.86,
-      "suggested_stop_loss": 27.99,
-      "inst_net_buy_3d": 52393,
+      "price": 31.44,
+      "ma60": 28.89,
+      "suggested_stop_loss": 28.02,
+      "inst_net_buy_3d": 169411,
       "it_continuous_buy": false,
       "revenue_double_growth": false,
-      "news_heat_today": 8,
-      "news_heat_yesterday": 2,
+      "news_heat_today": 11,
+      "news_heat_yesterday": 4,
       "ptt_push": 0,
       "ptt_boo": 0,
       "keywords_hit": [
@@ -430,7 +237,11 @@
           "weight": 5
         },
         {
-          "tag": "CoWoS",
+          "tag": "GB200",
+          "weight": 5
+        },
+        {
+          "tag": "全液冷",
           "weight": 4
         },
         {
@@ -452,17 +263,17 @@
       "advice": "【體檢優良】股價穩站季線之上，趨勢強勢。三大法人近期有明顯的大量買單。 整體看來是好學生，可加入自選股觀察找買點。"
     },
     {
-      "code": "3231",
-      "name": "緯創",
+      "code": "2409",
+      "name": "友達",
       "is_etf": false,
-      "price": 190.5,
-      "ma60": 177.1,
-      "suggested_stop_loss": 171.79,
-      "inst_net_buy_3d": 37575,
+      "price": 40.45,
+      "ma60": 27.97,
+      "suggested_stop_loss": 27.13,
+      "inst_net_buy_3d": 122944,
       "it_continuous_buy": true,
       "revenue_double_growth": false,
-      "news_heat_today": 10,
-      "news_heat_yesterday": 5,
+      "news_heat_today": 17,
+      "news_heat_yesterday": 11,
       "ptt_push": 0,
       "ptt_boo": 0,
       "keywords_hit": [
@@ -471,8 +282,12 @@
           "weight": 5
         },
         {
-          "tag": "矽光子",
-          "weight": 5
+          "tag": "CoWoS",
+          "weight": 4
+        },
+        {
+          "tag": "全液冷",
+          "weight": 4
         },
         {
           "tag": "AI伺服器",
@@ -491,28 +306,249 @@
           "weight": 3
         }
       ],
-      "alert": "news_surge",
+      "alert": null,
       "score": 85,
       "light": "🟢 偏多觀察",
       "advice": "【體檢優良】股價穩站季線之上，趨勢強勢。有投信大哥在默默連買吃貨，背後有靠山。 整體看來是好學生，可加入自選股觀察找買點。"
     },
     {
-      "code": "00402A",
-      "name": "主動安聯美國科技",
+      "code": "00991A",
+      "name": "主動復華未來50",
       "is_etf": true,
-      "price": 10.22,
-      "ma60": 9.65,
-      "suggested_stop_loss": 9.36,
-      "inst_net_buy_3d": 36186,
+      "price": 18.69,
+      "ma60": 17.49,
+      "suggested_stop_loss": 16.97,
+      "inst_net_buy_3d": 119129,
       "it_continuous_buy": false,
       "revenue_double_growth": false,
-      "news_heat_today": 5,
-      "news_heat_yesterday": 0,
+      "news_heat_today": 11,
+      "news_heat_yesterday": 8,
       "ptt_push": 0,
       "ptt_boo": 0,
       "keywords_hit": [
         {
           "tag": "Vera Rubin",
+          "weight": 5
+        },
+        {
+          "tag": "矽光子",
+          "weight": 5
+        },
+        {
+          "tag": "GB200",
+          "weight": 5
+        },
+        {
+          "tag": "CoWoS",
+          "weight": 4
+        },
+        {
+          "tag": "全液冷",
+          "weight": 4
+        },
+        {
+          "tag": "液冷",
+          "weight": 3
+        },
+        {
+          "tag": "先進封裝",
+          "weight": 3
+        }
+      ],
+      "alert": null,
+      "score": 80,
+      "light": "🟢 偏多觀察",
+      "advice": "【體檢優良】股價穩站季線之上，趨勢強勢。三大法人近期有明顯的大量買單。 整體看來是好學生，可加入自選股觀察找買點。"
+    },
+    {
+      "code": "6770",
+      "name": "力積電",
+      "is_etf": false,
+      "price": 76.5,
+      "ma60": 68.7,
+      "suggested_stop_loss": 66.64,
+      "inst_net_buy_3d": 97414,
+      "it_continuous_buy": true,
+      "revenue_double_growth": false,
+      "news_heat_today": 6,
+      "news_heat_yesterday": 5,
+      "ptt_push": 0,
+      "ptt_boo": 0,
+      "keywords_hit": [
+        {
+          "tag": "矽光子",
+          "weight": 5
+        },
+        {
+          "tag": "全液冷",
+          "weight": 4
+        },
+        {
+          "tag": "AI伺服器",
+          "weight": 4
+        },
+        {
+          "tag": "HBM",
+          "weight": 3
+        },
+        {
+          "tag": "液冷",
+          "weight": 3
+        },
+        {
+          "tag": "先進封裝",
+          "weight": 3
+        }
+      ],
+      "alert": null,
+      "score": 85,
+      "light": "🟢 偏多觀察",
+      "advice": "【體檢優良】股價穩站季線之上，趨勢強勢。有投信大哥在默默連買吃貨，背後有靠山。 整體看來是好學生，可加入自選股觀察找買點。"
+    },
+    {
+      "code": "00409A",
+      "name": "主動復華全球50",
+      "is_etf": true,
+      "price": 10.3,
+      "ma60": 9.86,
+      "suggested_stop_loss": 9.56,
+      "inst_net_buy_3d": 91344,
+      "it_continuous_buy": false,
+      "revenue_double_growth": false,
+      "news_heat_today": 4,
+      "news_heat_yesterday": 6,
+      "ptt_push": 0,
+      "ptt_boo": 0,
+      "keywords_hit": [
+        {
+          "tag": "Vera Rubin",
+          "weight": 5
+        },
+        {
+          "tag": "GB200",
+          "weight": 5
+        },
+        {
+          "tag": "全液冷",
+          "weight": 4
+        },
+        {
+          "tag": "AI伺服器",
+          "weight": 4
+        },
+        {
+          "tag": "HBM",
+          "weight": 3
+        },
+        {
+          "tag": "液冷",
+          "weight": 3
+        },
+        {
+          "tag": "先進封裝",
+          "weight": 3
+        }
+      ],
+      "alert": null,
+      "score": 70,
+      "light": "🟡 中立觀望",
+      "advice": "【表現平平】股價維持在季線之上，長線算安全。三大法人近期有明顯的大量買單。 目前沒有特別突出的表現，建議多看少做。"
+    },
+    {
+      "code": "00405A",
+      "name": "主動富邦台灣龍耀",
+      "is_etf": true,
+      "price": 9.42,
+      "ma60": 8.44,
+      "suggested_stop_loss": 8.19,
+      "inst_net_buy_3d": 79199,
+      "it_continuous_buy": false,
+      "revenue_double_growth": false,
+      "news_heat_today": 8,
+      "news_heat_yesterday": 8,
+      "ptt_push": 0,
+      "ptt_boo": 0,
+      "keywords_hit": [
+        {
+          "tag": "矽光子",
+          "weight": 5
+        },
+        {
+          "tag": "GB200",
+          "weight": 5
+        },
+        {
+          "tag": "快接頭",
+          "weight": 4
+        }
+      ],
+      "alert": null,
+      "score": 80,
+      "light": "🟢 偏多觀察",
+      "advice": "【體檢優良】股價穩站季線之上，趨勢強勢。三大法人近期有明顯的大量買單。 整體看來是好學生，可加入自選股觀察找買點。"
+    },
+    {
+      "code": "00407A",
+      "name": "主動凱基台灣",
+      "is_etf": true,
+      "price": 10.24,
+      "ma60": 9.43,
+      "suggested_stop_loss": 9.15,
+      "inst_net_buy_3d": 76025,
+      "it_continuous_buy": false,
+      "revenue_double_growth": false,
+      "news_heat_today": 6,
+      "news_heat_yesterday": 6,
+      "ptt_push": 0,
+      "ptt_boo": 0,
+      "keywords_hit": [
+        {
+          "tag": "矽光子",
+          "weight": 5
+        },
+        {
+          "tag": "GB200",
+          "weight": 5
+        },
+        {
+          "tag": "AI伺服器",
+          "weight": 4
+        },
+        {
+          "tag": "先進封裝",
+          "weight": 3
+        }
+      ],
+      "alert": null,
+      "score": 80,
+      "light": "🟢 偏多觀察",
+      "advice": "【體檢優良】股價穩站季線之上，趨勢強勢。三大法人近期有明顯的大量買單。 整體看來是好學生，可加入自選股觀察找買點。"
+    },
+    {
+      "code": "2344",
+      "name": "華邦電",
+      "is_etf": false,
+      "price": 179.0,
+      "ma60": 169.47,
+      "suggested_stop_loss": 164.39,
+      "inst_net_buy_3d": 49396,
+      "it_continuous_buy": false,
+      "revenue_double_growth": false,
+      "news_heat_today": 18,
+      "news_heat_yesterday": 6,
+      "ptt_push": 0,
+      "ptt_boo": 0,
+      "keywords_hit": [
+        {
+          "tag": "Vera Rubin",
+          "weight": 5
+        },
+        {
+          "tag": "矽光子",
+          "weight": 5
+        },
+        {
+          "tag": "GB200",
           "weight": 5
         },
         {
@@ -528,7 +564,11 @@
           "weight": 4
         },
         {
-          "tag": "液冷",
+          "tag": "AI伺服器",
+          "weight": 4
+        },
+        {
+          "tag": "HBM",
           "weight": 3
         },
         {
@@ -542,24 +582,49 @@
       "advice": "【體檢優良】股價穩站季線之上，趨勢強勢。三大法人近期有明顯的大量買單。 整體看來是好學生，可加入自選股觀察找買點。"
     },
     {
-      "code": "1303",
-      "name": "南亞",
-      "is_etf": false,
-      "price": 254.0,
-      "ma60": 205.76,
-      "suggested_stop_loss": 199.59,
-      "inst_net_buy_3d": 32438,
-      "it_continuous_buy": true,
+      "code": "00402A",
+      "name": "主動安聯美國科技",
+      "is_etf": true,
+      "price": 10.24,
+      "ma60": 9.66,
+      "suggested_stop_loss": 9.37,
+      "inst_net_buy_3d": 45538,
+      "it_continuous_buy": false,
       "revenue_double_growth": false,
-      "news_heat_today": 2,
-      "news_heat_yesterday": 15,
+      "news_heat_today": 1,
+      "news_heat_yesterday": 7,
       "ptt_push": 0,
       "ptt_boo": 0,
       "keywords_hit": [
         {
-          "tag": "Vera Rubin",
+          "tag": "矽光子",
           "weight": 5
         },
+        {
+          "tag": "快接頭",
+          "weight": 4
+        }
+      ],
+      "alert": null,
+      "score": 80,
+      "light": "🟢 偏多觀察",
+      "advice": "【體檢優良】股價穩站季線之上，趨勢強勢。三大法人近期有明顯的大量買單。 整體看來是好學生，可加入自選股觀察找買點。"
+    },
+    {
+      "code": "00988A",
+      "name": "主動統一全球創新",
+      "is_etf": true,
+      "price": 17.26,
+      "ma60": 16.68,
+      "suggested_stop_loss": 16.18,
+      "inst_net_buy_3d": 44378,
+      "it_continuous_buy": false,
+      "revenue_double_growth": false,
+      "news_heat_today": 3,
+      "news_heat_yesterday": 6,
+      "ptt_push": 0,
+      "ptt_boo": 0,
+      "keywords_hit": [
         {
           "tag": "矽光子",
           "weight": 5
@@ -582,80 +647,22 @@
         }
       ],
       "alert": null,
-      "score": 85,
-      "light": "🟢 偏多觀察",
-      "advice": "【體檢優良】股價穩站季線之上，趨勢強勢。有投信大哥在默默連買吃貨，背後有靠山。 整體看來是好學生，可加入自選股觀察找買點。"
-    },
-    {
-      "code": "009820",
-      "name": "元大納斯達克精選",
-      "is_etf": true,
-      "price": 10.67,
-      "ma60": 9.89,
-      "suggested_stop_loss": 9.59,
-      "inst_net_buy_3d": 34325,
-      "it_continuous_buy": false,
-      "revenue_double_growth": false,
-      "news_heat_today": 3,
-      "news_heat_yesterday": 1,
-      "ptt_push": 0,
-      "ptt_boo": 0,
-      "keywords_hit": [
-        {
-          "tag": "AI伺服器",
-          "weight": 4
-        }
-      ],
-      "alert": "news_surge",
-      "score": 80,
-      "light": "🟢 偏多觀察",
-      "advice": "【體檢優良】股價穩站季線之上，趨勢強勢。三大法人近期有明顯的大量買單。 整體看來是好學生，可加入自選股觀察找買點。"
-    },
-    {
-      "code": "00407A",
-      "name": "主動凱基台灣",
-      "is_etf": true,
-      "price": 10.12,
-      "ma60": 9.42,
-      "suggested_stop_loss": 9.14,
-      "inst_net_buy_3d": 31713,
-      "it_continuous_buy": false,
-      "revenue_double_growth": false,
-      "news_heat_today": 4,
-      "news_heat_yesterday": 6,
-      "ptt_push": 0,
-      "ptt_boo": 0,
-      "keywords_hit": [
-        {
-          "tag": "矽光子",
-          "weight": 5
-        },
-        {
-          "tag": "AI伺服器",
-          "weight": 4
-        },
-        {
-          "tag": "先進封裝",
-          "weight": 3
-        }
-      ],
-      "alert": null,
-      "score": 80,
-      "light": "🟢 偏多觀察",
-      "advice": "【體檢優良】股價穩站季線之上，趨勢強勢。三大法人近期有明顯的大量買單。 整體看來是好學生，可加入自選股觀察找買點。"
+      "score": 70,
+      "light": "🟡 中立觀望",
+      "advice": "【表現平平】股價維持在季線之上，長線算安全。三大法人近期有明顯的大量買單。 目前沒有特別突出的表現，建議多看少做。"
     },
     {
       "code": "2303",
       "name": "聯電",
       "is_etf": false,
       "price": 161.5,
-      "ma60": 134.74,
-      "suggested_stop_loss": 130.7,
-      "inst_net_buy_3d": 30024,
+      "ma60": 134.85,
+      "suggested_stop_loss": 130.8,
+      "inst_net_buy_3d": 40010,
       "it_continuous_buy": true,
       "revenue_double_growth": false,
-      "news_heat_today": 5,
-      "news_heat_yesterday": 1,
+      "news_heat_today": 11,
+      "news_heat_yesterday": 8,
       "ptt_push": 0,
       "ptt_boo": 0,
       "keywords_hit": [
@@ -688,7 +695,7 @@
           "weight": 3
         }
       ],
-      "alert": "news_surge",
+      "alert": null,
       "score": 85,
       "light": "🟢 偏多觀察",
       "advice": "【體檢優良】股價穩站季線之上，趨勢強勢。有投信大哥在默默連買吃貨，背後有靠山。 整體看來是好學生，可加入自選股觀察找買點。"
@@ -697,14 +704,14 @@
       "code": "1301",
       "name": "台塑",
       "is_etf": false,
-      "price": 66.8,
-      "ma60": 61.27,
-      "suggested_stop_loss": 59.43,
-      "inst_net_buy_3d": 25389,
+      "price": 68.3,
+      "ma60": 61.46,
+      "suggested_stop_loss": 59.62,
+      "inst_net_buy_3d": 40224,
       "it_continuous_buy": false,
       "revenue_double_growth": false,
-      "news_heat_today": 6,
-      "news_heat_yesterday": 13,
+      "news_heat_today": 4,
+      "news_heat_yesterday": 9,
       "ptt_push": 0,
       "ptt_boo": 0,
       "keywords_hit": [
@@ -714,6 +721,841 @@
         },
         {
           "tag": "全液冷",
+          "weight": 4
+        },
+        {
+          "tag": "AI伺服器",
+          "weight": 4
+        },
+        {
+          "tag": "HBM",
+          "weight": 3
+        },
+        {
+          "tag": "液冷",
+          "weight": 3
+        },
+        {
+          "tag": "先進封裝",
+          "weight": 3
+        }
+      ],
+      "alert": null,
+      "score": 80,
+      "light": "🟢 偏多觀察",
+      "advice": "【體檢優良】股價穩站季線之上，趨勢強勢。三大法人近期有明顯的大量買單。 整體看來是好學生，可加入自選股觀察找買點。"
+    },
+    {
+      "code": "00982A",
+      "name": "主動群益台灣強棒",
+      "is_etf": true,
+      "price": 23.79,
+      "ma60": 22.38,
+      "suggested_stop_loss": 21.71,
+      "inst_net_buy_3d": 38194,
+      "it_continuous_buy": false,
+      "revenue_double_growth": false,
+      "news_heat_today": 6,
+      "news_heat_yesterday": 1,
+      "ptt_push": 0,
+      "ptt_boo": 0,
+      "keywords_hit": [
+        {
+          "tag": "Vera Rubin",
+          "weight": 5
+        },
+        {
+          "tag": "矽光子",
+          "weight": 5
+        },
+        {
+          "tag": "全液冷",
+          "weight": 4
+        },
+        {
+          "tag": "液冷",
+          "weight": 3
+        },
+        {
+          "tag": "先進封裝",
+          "weight": 3
+        }
+      ],
+      "alert": "news_surge",
+      "score": 80,
+      "light": "🟢 偏多觀察",
+      "advice": "【體檢優良】股價穩站季線之上，趨勢強勢。三大法人近期有明顯的大量買單。 整體看來是好學生，可加入自選股觀察找買點。"
+    },
+    {
+      "code": "2002",
+      "name": "中鋼",
+      "is_etf": false,
+      "price": 19.0,
+      "ma60": 18.96,
+      "suggested_stop_loss": 18.39,
+      "inst_net_buy_3d": 36139,
+      "it_continuous_buy": false,
+      "revenue_double_growth": false,
+      "news_heat_today": 4,
+      "news_heat_yesterday": 2,
+      "ptt_push": 0,
+      "ptt_boo": 0,
+      "keywords_hit": [
+        {
+          "tag": "Vera Rubin",
+          "weight": 5
+        },
+        {
+          "tag": "矽光子",
+          "weight": 5
+        },
+        {
+          "tag": "AI伺服器",
+          "weight": 4
+        },
+        {
+          "tag": "HBM",
+          "weight": 3
+        },
+        {
+          "tag": "液冷",
+          "weight": 3
+        },
+        {
+          "tag": "先進封裝",
+          "weight": 3
+        }
+      ],
+      "alert": "news_surge",
+      "score": 70,
+      "light": "🟡 中立觀望",
+      "advice": "【表現平平】股價維持在季線之上，長線算安全。三大法人近期有明顯的大量買單。 目前沒有特別突出的表現，建議多看少做。"
+    },
+    {
+      "code": "1314",
+      "name": "中石化",
+      "is_etf": false,
+      "price": 8.95,
+      "ma60": 8.25,
+      "suggested_stop_loss": 8.0,
+      "inst_net_buy_3d": 35217,
+      "it_continuous_buy": false,
+      "revenue_double_growth": false,
+      "news_heat_today": 0,
+      "news_heat_yesterday": 0,
+      "ptt_push": 0,
+      "ptt_boo": 0,
+      "keywords_hit": [
+        {
+          "tag": "矽光子",
+          "weight": 5
+        },
+        {
+          "tag": "AI伺服器",
+          "weight": 4
+        },
+        {
+          "tag": "液冷",
+          "weight": 3
+        },
+        {
+          "tag": "先進封裝",
+          "weight": 3
+        }
+      ],
+      "alert": null,
+      "score": 80,
+      "light": "🟢 偏多觀察",
+      "advice": "【體檢優良】股價穩站季線之上，趨勢強勢。三大法人近期有明顯的大量買單。 整體看來是好學生，可加入自選股觀察找買點。"
+    },
+    {
+      "code": "00685L",
+      "name": "群益臺灣加權正2",
+      "is_etf": true,
+      "price": 13.12,
+      "ma60": 11.66,
+      "suggested_stop_loss": 11.31,
+      "inst_net_buy_3d": 32137,
+      "it_continuous_buy": false,
+      "revenue_double_growth": false,
+      "news_heat_today": 5,
+      "news_heat_yesterday": 0,
+      "ptt_push": 0,
+      "ptt_boo": 0,
+      "keywords_hit": [
+        {
+          "tag": "Vera Rubin",
+          "weight": 5
+        },
+        {
+          "tag": "矽光子",
+          "weight": 5
+        },
+        {
+          "tag": "GB200",
+          "weight": 5
+        },
+        {
+          "tag": "AI伺服器",
+          "weight": 4
+        },
+        {
+          "tag": "HBM",
+          "weight": 3
+        },
+        {
+          "tag": "先進封裝",
+          "weight": 3
+        }
+      ],
+      "alert": "news_surge",
+      "score": 80,
+      "light": "🟢 偏多觀察",
+      "advice": "【體檢優良】股價穩站季線之上，趨勢強勢。三大法人近期有明顯的大量買單。 整體看來是好學生，可加入自選股觀察找買點。"
+    },
+    {
+      "code": "8150",
+      "name": "南茂",
+      "is_etf": false,
+      "price": 127.0,
+      "ma60": 94.61,
+      "suggested_stop_loss": 91.77,
+      "inst_net_buy_3d": 31046,
+      "it_continuous_buy": false,
+      "revenue_double_growth": false,
+      "news_heat_today": 5,
+      "news_heat_yesterday": 5,
+      "ptt_push": 0,
+      "ptt_boo": 0,
+      "keywords_hit": [
+        {
+          "tag": "Vera Rubin",
+          "weight": 5
+        },
+        {
+          "tag": "矽光子",
+          "weight": 5
+        },
+        {
+          "tag": "CoWoS",
+          "weight": 4
+        },
+        {
+          "tag": "全液冷",
+          "weight": 4
+        },
+        {
+          "tag": "AI伺服器",
+          "weight": 4
+        },
+        {
+          "tag": "液冷",
+          "weight": 3
+        },
+        {
+          "tag": "先進封裝",
+          "weight": 3
+        }
+      ],
+      "alert": null,
+      "score": 80,
+      "light": "🟢 偏多觀察",
+      "advice": "【體檢優良】股價穩站季線之上，趨勢強勢。三大法人近期有明顯的大量買單。 整體看來是好學生，可加入自選股觀察找買點。"
+    },
+    {
+      "code": "00631L",
+      "name": "元大台灣50正2",
+      "is_etf": true,
+      "price": 39.58,
+      "ma60": 35.5,
+      "suggested_stop_loss": 34.44,
+      "inst_net_buy_3d": 30104,
+      "it_continuous_buy": false,
+      "revenue_double_growth": false,
+      "news_heat_today": 11,
+      "news_heat_yesterday": 3,
+      "ptt_push": 0,
+      "ptt_boo": 0,
+      "keywords_hit": [
+        {
+          "tag": "Vera Rubin",
+          "weight": 5
+        },
+        {
+          "tag": "矽光子",
+          "weight": 5
+        },
+        {
+          "tag": "GB200",
+          "weight": 5
+        },
+        {
+          "tag": "CoWoS",
+          "weight": 4
+        },
+        {
+          "tag": "全液冷",
+          "weight": 4
+        },
+        {
+          "tag": "AI伺服器",
+          "weight": 4
+        },
+        {
+          "tag": "HBM",
+          "weight": 3
+        },
+        {
+          "tag": "液冷",
+          "weight": 3
+        },
+        {
+          "tag": "先進封裝",
+          "weight": 3
+        }
+      ],
+      "alert": "news_surge",
+      "score": 80,
+      "light": "🟢 偏多觀察",
+      "advice": "【體檢優良】股價穩站季線之上，趨勢強勢。三大法人近期有明顯的大量買單。 整體看來是好學生，可加入自選股觀察找買點。"
+    },
+    {
+      "code": "009820",
+      "name": "元大納斯達克精選",
+      "is_etf": true,
+      "price": 10.62,
+      "ma60": 9.9,
+      "suggested_stop_loss": 9.6,
+      "inst_net_buy_3d": 32494,
+      "it_continuous_buy": false,
+      "revenue_double_growth": false,
+      "news_heat_today": 0,
+      "news_heat_yesterday": 4,
+      "ptt_push": 0,
+      "ptt_boo": 0,
+      "keywords_hit": [],
+      "alert": null,
+      "score": 80,
+      "light": "🟢 偏多觀察",
+      "advice": "【體檢優良】股價穩站季線之上，趨勢強勢。三大法人近期有明顯的大量買單。 整體看來是好學生，可加入自選股觀察找買點。"
+    },
+    {
+      "code": "2327",
+      "name": "國巨*",
+      "is_etf": false,
+      "price": 626.0,
+      "ma60": 600.99,
+      "suggested_stop_loss": 582.96,
+      "inst_net_buy_3d": 28132,
+      "it_continuous_buy": false,
+      "revenue_double_growth": false,
+      "news_heat_today": 13,
+      "news_heat_yesterday": 15,
+      "ptt_push": 0,
+      "ptt_boo": 0,
+      "keywords_hit": [
+        {
+          "tag": "Vera Rubin",
+          "weight": 5
+        },
+        {
+          "tag": "矽光子",
+          "weight": 5
+        },
+        {
+          "tag": "AI伺服器",
+          "weight": 4
+        },
+        {
+          "tag": "HBM",
+          "weight": 3
+        },
+        {
+          "tag": "液冷",
+          "weight": 3
+        },
+        {
+          "tag": "先進封裝",
+          "weight": 3
+        }
+      ],
+      "alert": null,
+      "score": 70,
+      "light": "🟡 中立觀望",
+      "advice": "【表現平平】股價維持在季線之上，長線算安全。三大法人近期有明顯的大量買單。 目前沒有特別突出的表現，建議多看少做。"
+    },
+    {
+      "code": "1605",
+      "name": "華新",
+      "is_etf": false,
+      "price": 38.75,
+      "ma60": 36.12,
+      "suggested_stop_loss": 35.04,
+      "inst_net_buy_3d": 26761,
+      "it_continuous_buy": false,
+      "revenue_double_growth": false,
+      "news_heat_today": 1,
+      "news_heat_yesterday": 2,
+      "ptt_push": 0,
+      "ptt_boo": 0,
+      "keywords_hit": [
+        {
+          "tag": "Vera Rubin",
+          "weight": 5
+        },
+        {
+          "tag": "矽光子",
+          "weight": 5
+        },
+        {
+          "tag": "全液冷",
+          "weight": 4
+        },
+        {
+          "tag": "液冷",
+          "weight": 3
+        },
+        {
+          "tag": "先進封裝",
+          "weight": 3
+        }
+      ],
+      "alert": null,
+      "score": 80,
+      "light": "🟢 偏多觀察",
+      "advice": "【體檢優良】股價穩站季線之上，趨勢強勢。三大法人近期有明顯的大量買單。 整體看來是好學生，可加入自選股觀察找買點。"
+    },
+    {
+      "code": "2492",
+      "name": "華新科",
+      "is_etf": false,
+      "price": 361.5,
+      "ma60": 300.47,
+      "suggested_stop_loss": 291.46,
+      "inst_net_buy_3d": 25281,
+      "it_continuous_buy": false,
+      "revenue_double_growth": false,
+      "news_heat_today": 11,
+      "news_heat_yesterday": 21,
+      "ptt_push": 0,
+      "ptt_boo": 0,
+      "keywords_hit": [
+        {
+          "tag": "Vera Rubin",
+          "weight": 5
+        },
+        {
+          "tag": "矽光子",
+          "weight": 5
+        },
+        {
+          "tag": "全液冷",
+          "weight": 4
+        },
+        {
+          "tag": "快接頭",
+          "weight": 4
+        },
+        {
+          "tag": "AI伺服器",
+          "weight": 4
+        },
+        {
+          "tag": "HBM",
+          "weight": 3
+        },
+        {
+          "tag": "液冷",
+          "weight": 3
+        },
+        {
+          "tag": "先進封裝",
+          "weight": 3
+        }
+      ],
+      "alert": null,
+      "score": 80,
+      "light": "🟢 偏多觀察",
+      "advice": "【體檢優良】股價穩站季線之上，趨勢強勢。三大法人近期有明顯的大量買單。 整體看來是好學生，可加入自選股觀察找買點。"
+    },
+    {
+      "code": "00961",
+      "name": "FT臺灣永續高息",
+      "is_etf": true,
+      "price": 13.14,
+      "ma60": 13.07,
+      "suggested_stop_loss": 12.68,
+      "inst_net_buy_3d": 23731,
+      "it_continuous_buy": false,
+      "revenue_double_growth": false,
+      "news_heat_today": 1,
+      "news_heat_yesterday": 1,
+      "ptt_push": 0,
+      "ptt_boo": 0,
+      "keywords_hit": [
+        {
+          "tag": "矽光子",
+          "weight": 5
+        },
+        {
+          "tag": "CoWoS",
+          "weight": 4
+        },
+        {
+          "tag": "AI伺服器",
+          "weight": 4
+        }
+      ],
+      "alert": null,
+      "score": 50,
+      "light": "🟡 中立觀望",
+      "advice": "【表現平平】短線跌破月線轉弱，留意是否繼續向下測試季線。三大法人近期有明顯的大量買單。 目前沒有特別突出的表現，建議多看少做。"
+    },
+    {
+      "code": "1326",
+      "name": "台化",
+      "is_etf": false,
+      "price": 71.7,
+      "ma60": 64.58,
+      "suggested_stop_loss": 62.64,
+      "inst_net_buy_3d": 21997,
+      "it_continuous_buy": false,
+      "revenue_double_growth": false,
+      "news_heat_today": 4,
+      "news_heat_yesterday": 7,
+      "ptt_push": 0,
+      "ptt_boo": 0,
+      "keywords_hit": [
+        {
+          "tag": "矽光子",
+          "weight": 5
+        },
+        {
+          "tag": "全液冷",
+          "weight": 4
+        },
+        {
+          "tag": "HBM",
+          "weight": 3
+        },
+        {
+          "tag": "液冷",
+          "weight": 3
+        },
+        {
+          "tag": "先進封裝",
+          "weight": 3
+        }
+      ],
+      "alert": null,
+      "score": 80,
+      "light": "🟢 偏多觀察",
+      "advice": "【體檢優良】股價穩站季線之上，趨勢強勢。三大法人近期有明顯的大量買單。 整體看來是好學生，可加入自選股觀察找買點。"
+    },
+    {
+      "code": "2408",
+      "name": "南亞科",
+      "is_etf": false,
+      "price": 526.0,
+      "ma60": 474.84,
+      "suggested_stop_loss": 460.59,
+      "inst_net_buy_3d": 22374,
+      "it_continuous_buy": true,
+      "revenue_double_growth": false,
+      "news_heat_today": 12,
+      "news_heat_yesterday": 10,
+      "ptt_push": 0,
+      "ptt_boo": 0,
+      "keywords_hit": [
+        {
+          "tag": "矽光子",
+          "weight": 5
+        },
+        {
+          "tag": "HBM",
+          "weight": 3
+        },
+        {
+          "tag": "先進封裝",
+          "weight": 3
+        }
+      ],
+      "alert": null,
+      "score": 85,
+      "light": "🟢 偏多觀察",
+      "advice": "【體檢優良】股價穩站季線之上，趨勢強勢。有投信大哥在默默連買吃貨，背後有靠山。 整體看來是好學生，可加入自選股觀察找買點。"
+    },
+    {
+      "code": "00990A",
+      "name": "主動元大AI新經濟",
+      "is_etf": true,
+      "price": 16.39,
+      "ma60": 15.74,
+      "suggested_stop_loss": 15.27,
+      "inst_net_buy_3d": 21444,
+      "it_continuous_buy": false,
+      "revenue_double_growth": false,
+      "news_heat_today": 3,
+      "news_heat_yesterday": 3,
+      "ptt_push": 0,
+      "ptt_boo": 0,
+      "keywords_hit": [
+        {
+          "tag": "全液冷",
+          "weight": 4
+        },
+        {
+          "tag": "AI伺服器",
+          "weight": 4
+        },
+        {
+          "tag": "液冷",
+          "weight": 3
+        }
+      ],
+      "alert": null,
+      "score": 70,
+      "light": "🟡 中立觀望",
+      "advice": "【表現平平】股價維持在季線之上，長線算安全。三大法人近期有明顯的大量買單。 目前沒有特別突出的表現，建議多看少做。"
+    },
+    {
+      "code": "2340",
+      "name": "台亞",
+      "is_etf": false,
+      "price": 45.75,
+      "ma60": 33.04,
+      "suggested_stop_loss": 32.05,
+      "inst_net_buy_3d": 20623,
+      "it_continuous_buy": false,
+      "revenue_double_growth": false,
+      "news_heat_today": 1,
+      "news_heat_yesterday": 1,
+      "ptt_push": 0,
+      "ptt_boo": 0,
+      "keywords_hit": [
+        {
+          "tag": "Vera Rubin",
+          "weight": 5
+        },
+        {
+          "tag": "矽光子",
+          "weight": 5
+        },
+        {
+          "tag": "AI伺服器",
+          "weight": 4
+        },
+        {
+          "tag": "先進封裝",
+          "weight": 3
+        }
+      ],
+      "alert": null,
+      "score": 80,
+      "light": "🟢 偏多觀察",
+      "advice": "【體檢優良】股價穩站季線之上，趨勢強勢。三大法人近期有明顯的大量買單。 整體看來是好學生，可加入自選股觀察找買點。"
+    },
+    {
+      "code": "4958",
+      "name": "臻鼎-KY",
+      "is_etf": false,
+      "price": 561.0,
+      "ma60": 491.12,
+      "suggested_stop_loss": 476.39,
+      "inst_net_buy_3d": 18809,
+      "it_continuous_buy": false,
+      "revenue_double_growth": false,
+      "news_heat_today": 18,
+      "news_heat_yesterday": 3,
+      "ptt_push": 0,
+      "ptt_boo": 0,
+      "keywords_hit": [
+        {
+          "tag": "矽光子",
+          "weight": 5
+        },
+        {
+          "tag": "CoWoS",
+          "weight": 4
+        },
+        {
+          "tag": "AI伺服器",
+          "weight": 4
+        },
+        {
+          "tag": "HBM",
+          "weight": 3
+        },
+        {
+          "tag": "液冷",
+          "weight": 3
+        },
+        {
+          "tag": "先進封裝",
+          "weight": 3
+        }
+      ],
+      "alert": "news_surge",
+      "score": 80,
+      "light": "🟢 偏多觀察",
+      "advice": "【體檢優良】股價穩站季線之上，趨勢強勢。三大法人近期有明顯的大量買單。 整體看來是好學生，可加入自選股觀察找買點。"
+    },
+    {
+      "code": "6116",
+      "name": "彩晶",
+      "is_etf": false,
+      "price": 16.05,
+      "ma60": 14.4,
+      "suggested_stop_loss": 13.97,
+      "inst_net_buy_3d": 18507,
+      "it_continuous_buy": false,
+      "revenue_double_growth": false,
+      "news_heat_today": 4,
+      "news_heat_yesterday": 2,
+      "ptt_push": 0,
+      "ptt_boo": 0,
+      "keywords_hit": [
+        {
+          "tag": "矽光子",
+          "weight": 5
+        },
+        {
+          "tag": "AI伺服器",
+          "weight": 4
+        },
+        {
+          "tag": "HBM",
+          "weight": 3
+        },
+        {
+          "tag": "液冷",
+          "weight": 3
+        },
+        {
+          "tag": "先進封裝",
+          "weight": 3
+        }
+      ],
+      "alert": "news_surge",
+      "score": 80,
+      "light": "🟢 偏多觀察",
+      "advice": "【體檢優良】股價穩站季線之上，趨勢強勢。三大法人近期有明顯的大量買單。 整體看來是好學生，可加入自選股觀察找買點。"
+    },
+    {
+      "code": "3576",
+      "name": "聯合再生",
+      "is_etf": false,
+      "price": 19.35,
+      "ma60": 17.36,
+      "suggested_stop_loss": 16.84,
+      "inst_net_buy_3d": 16821,
+      "it_continuous_buy": false,
+      "revenue_double_growth": false,
+      "news_heat_today": 0,
+      "news_heat_yesterday": 6,
+      "ptt_push": 0,
+      "ptt_boo": 0,
+      "keywords_hit": [
+        {
+          "tag": "矽光子",
+          "weight": 5
+        },
+        {
+          "tag": "CoWoS",
+          "weight": 4
+        },
+        {
+          "tag": "AI伺服器",
+          "weight": 4
+        },
+        {
+          "tag": "HBM",
+          "weight": 3
+        },
+        {
+          "tag": "液冷",
+          "weight": 3
+        },
+        {
+          "tag": "先進封裝",
+          "weight": 3
+        }
+      ],
+      "alert": null,
+      "score": 80,
+      "light": "🟢 偏多觀察",
+      "advice": "【體檢優良】股價穩站季線之上，趨勢強勢。三大法人近期有明顯的大量買單。 整體看來是好學生，可加入自選股觀察找買點。"
+    },
+    {
+      "code": "1709",
+      "name": "和益",
+      "is_etf": false,
+      "price": 58.5,
+      "ma60": 32.92,
+      "suggested_stop_loss": 31.93,
+      "inst_net_buy_3d": 15857,
+      "it_continuous_buy": false,
+      "revenue_double_growth": false,
+      "news_heat_today": 1,
+      "news_heat_yesterday": 3,
+      "ptt_push": 0,
+      "ptt_boo": 0,
+      "keywords_hit": [
+        {
+          "tag": "Vera Rubin",
+          "weight": 5
+        },
+        {
+          "tag": "矽光子",
+          "weight": 5
+        },
+        {
+          "tag": "CoWoS",
+          "weight": 4
+        },
+        {
+          "tag": "AI伺服器",
+          "weight": 4
+        },
+        {
+          "tag": "先進封裝",
+          "weight": 3
+        }
+      ],
+      "alert": null,
+      "score": 80,
+      "light": "🟢 偏多觀察",
+      "advice": "【體檢優良】股價穩站季線之上，趨勢強勢。三大法人近期有明顯的大量買單。 整體看來是好學生，可加入自選股觀察找買點。"
+    },
+    {
+      "code": "3481",
+      "name": "群創",
+      "is_etf": false,
+      "price": 52.8,
+      "ma60": 49.96,
+      "suggested_stop_loss": 48.46,
+      "inst_net_buy_3d": 14212,
+      "it_continuous_buy": false,
+      "revenue_double_growth": false,
+      "news_heat_today": 10,
+      "news_heat_yesterday": 10,
+      "ptt_push": 0,
+      "ptt_boo": 0,
+      "keywords_hit": [
+        {
+          "tag": "Vera Rubin",
+          "weight": 5
+        },
+        {
+          "tag": "矽光子",
+          "weight": 5
+        },
+        {
+          "tag": "全液冷",
+          "weight": 4
+        },
+        {
+          "tag": "快接頭",
           "weight": 4
         },
         {
@@ -742,138 +1584,11 @@
       "code": "1101",
       "name": "台泥",
       "is_etf": false,
-      "price": 25.55,
-      "ma60": 24.28,
-      "suggested_stop_loss": 23.55,
-      "inst_net_buy_3d": 24943,
+      "price": 25.35,
+      "ma60": 24.31,
+      "suggested_stop_loss": 23.58,
+      "inst_net_buy_3d": 14745,
       "it_continuous_buy": false,
-      "revenue_double_growth": false,
-      "news_heat_today": 3,
-      "news_heat_yesterday": 7,
-      "ptt_push": 0,
-      "ptt_boo": 0,
-      "keywords_hit": [
-        {
-          "tag": "Vera Rubin",
-          "weight": 5
-        },
-        {
-          "tag": "矽光子",
-          "weight": 5
-        },
-        {
-          "tag": "AI伺服器",
-          "weight": 4
-        },
-        {
-          "tag": "液冷",
-          "weight": 3
-        },
-        {
-          "tag": "先進封裝",
-          "weight": 3
-        }
-      ],
-      "alert": null,
-      "score": 80,
-      "light": "🟢 偏多觀察",
-      "advice": "【體檢優良】股價穩站季線之上，趨勢強勢。三大法人近期有明顯的大量買單。 整體看來是好學生，可加入自選股觀察找買點。"
-    },
-    {
-      "code": "009828",
-      "name": "中信台日韓PCB",
-      "is_etf": true,
-      "price": 10.38,
-      "ma60": 9.63,
-      "suggested_stop_loss": 9.34,
-      "inst_net_buy_3d": 23765,
-      "it_continuous_buy": false,
-      "revenue_double_growth": false,
-      "news_heat_today": 1,
-      "news_heat_yesterday": 3,
-      "ptt_push": 0,
-      "ptt_boo": 0,
-      "keywords_hit": [
-        {
-          "tag": "Vera Rubin",
-          "weight": 5
-        },
-        {
-          "tag": "CoWoS",
-          "weight": 4
-        },
-        {
-          "tag": "全液冷",
-          "weight": 4
-        },
-        {
-          "tag": "AI伺服器",
-          "weight": 4
-        },
-        {
-          "tag": "HBM",
-          "weight": 3
-        },
-        {
-          "tag": "液冷",
-          "weight": 3
-        },
-        {
-          "tag": "先進封裝",
-          "weight": 3
-        }
-      ],
-      "alert": null,
-      "score": 80,
-      "light": "🟢 偏多觀察",
-      "advice": "【體檢優良】股價穩站季線之上，趨勢強勢。三大法人近期有明顯的大量買單。 整體看來是好學生，可加入自選股觀察找買點。"
-    },
-    {
-      "code": "00988A",
-      "name": "主動統一全球創新",
-      "is_etf": true,
-      "price": 17.18,
-      "ma60": 16.72,
-      "suggested_stop_loss": 16.22,
-      "inst_net_buy_3d": 24116,
-      "it_continuous_buy": false,
-      "revenue_double_growth": false,
-      "news_heat_today": 5,
-      "news_heat_yesterday": 0,
-      "ptt_push": 0,
-      "ptt_boo": 0,
-      "keywords_hit": [
-        {
-          "tag": "CoWoS",
-          "weight": 4
-        },
-        {
-          "tag": "AI伺服器",
-          "weight": 4
-        },
-        {
-          "tag": "液冷",
-          "weight": 3
-        },
-        {
-          "tag": "先進封裝",
-          "weight": 3
-        }
-      ],
-      "alert": "news_surge",
-      "score": 70,
-      "light": "🟡 中立觀望",
-      "advice": "【表現平平】股價維持在季線之上，長線算安全。三大法人近期有明顯的大量買單。 目前沒有特別突出的表現，建議多看少做。"
-    },
-    {
-      "code": "6505",
-      "name": "台塑化",
-      "is_etf": false,
-      "price": 94.2,
-      "ma60": 76.69,
-      "suggested_stop_loss": 74.39,
-      "inst_net_buy_3d": 19540,
-      "it_continuous_buy": true,
       "revenue_double_growth": false,
       "news_heat_today": 4,
       "news_heat_yesterday": 3,
@@ -889,424 +1604,6 @@
           "weight": 5
         },
         {
-          "tag": "GB200",
-          "weight": 5
-        },
-        {
-          "tag": "全液冷",
-          "weight": 4
-        },
-        {
-          "tag": "快接頭",
-          "weight": 4
-        },
-        {
-          "tag": "AI伺服器",
-          "weight": 4
-        },
-        {
-          "tag": "HBM",
-          "weight": 3
-        },
-        {
-          "tag": "液冷",
-          "weight": 3
-        },
-        {
-          "tag": "先進封裝",
-          "weight": 3
-        }
-      ],
-      "alert": null,
-      "score": 85,
-      "light": "🟢 偏多觀察",
-      "advice": "【體檢優良】股價穩站季線之上，趨勢強勢。有投信大哥在默默連買吃貨，背後有靠山。 整體看來是好學生，可加入自選股觀察找買點。"
-    },
-    {
-      "code": "2340",
-      "name": "台亞",
-      "is_etf": false,
-      "price": 43.85,
-      "ma60": 32.89,
-      "suggested_stop_loss": 31.9,
-      "inst_net_buy_3d": 19676,
-      "it_continuous_buy": false,
-      "revenue_double_growth": false,
-      "news_heat_today": 1,
-      "news_heat_yesterday": 2,
-      "ptt_push": 0,
-      "ptt_boo": 0,
-      "keywords_hit": [
-        {
-          "tag": "Vera Rubin",
-          "weight": 5
-        },
-        {
-          "tag": "矽光子",
-          "weight": 5
-        },
-        {
-          "tag": "AI伺服器",
-          "weight": 4
-        },
-        {
-          "tag": "液冷",
-          "weight": 3
-        },
-        {
-          "tag": "先進封裝",
-          "weight": 3
-        }
-      ],
-      "alert": null,
-      "score": 80,
-      "light": "🟢 偏多觀察",
-      "advice": "【體檢優良】股價穩站季線之上，趨勢強勢。三大法人近期有明顯的大量買單。 整體看來是好學生，可加入自選股觀察找買點。"
-    },
-    {
-      "code": "00405A",
-      "name": "主動富邦台灣龍耀",
-      "is_etf": true,
-      "price": 9.28,
-      "ma60": 8.43,
-      "suggested_stop_loss": 8.18,
-      "inst_net_buy_3d": 18973,
-      "it_continuous_buy": false,
-      "revenue_double_growth": false,
-      "news_heat_today": 8,
-      "news_heat_yesterday": 4,
-      "ptt_push": 0,
-      "ptt_boo": 0,
-      "keywords_hit": [
-        {
-          "tag": "矽光子",
-          "weight": 5
-        },
-        {
-          "tag": "全液冷",
-          "weight": 4
-        },
-        {
-          "tag": "快接頭",
-          "weight": 4
-        },
-        {
-          "tag": "液冷",
-          "weight": 3
-        }
-      ],
-      "alert": "news_surge",
-      "score": 80,
-      "light": "🟢 偏多觀察",
-      "advice": "【體檢優良】股價穩站季線之上，趨勢強勢。三大法人近期有明顯的大量買單。 整體看來是好學生，可加入自選股觀察找買點。"
-    },
-    {
-      "code": "3481",
-      "name": "群創",
-      "is_etf": false,
-      "price": 52.3,
-      "ma60": 50.15,
-      "suggested_stop_loss": 48.65,
-      "inst_net_buy_3d": 16718,
-      "it_continuous_buy": false,
-      "revenue_double_growth": false,
-      "news_heat_today": 14,
-      "news_heat_yesterday": 17,
-      "ptt_push": 0,
-      "ptt_boo": 0,
-      "keywords_hit": [
-        {
-          "tag": "Vera Rubin",
-          "weight": 5
-        },
-        {
-          "tag": "矽光子",
-          "weight": 5
-        },
-        {
-          "tag": "GB200",
-          "weight": 5
-        },
-        {
-          "tag": "全液冷",
-          "weight": 4
-        },
-        {
-          "tag": "快接頭",
-          "weight": 4
-        },
-        {
-          "tag": "AI伺服器",
-          "weight": 4
-        },
-        {
-          "tag": "HBM",
-          "weight": 3
-        },
-        {
-          "tag": "液冷",
-          "weight": 3
-        },
-        {
-          "tag": "先進封裝",
-          "weight": 3
-        }
-      ],
-      "alert": null,
-      "score": 70,
-      "light": "🟡 中立觀望",
-      "advice": "【表現平平】股價維持在季線之上，長線算安全。三大法人近期有明顯的大量買單。 目前沒有特別突出的表現，建議多看少做。"
-    },
-    {
-      "code": "1605",
-      "name": "華新",
-      "is_etf": false,
-      "price": 38.55,
-      "ma60": 36.05,
-      "suggested_stop_loss": 34.97,
-      "inst_net_buy_3d": 16003,
-      "it_continuous_buy": true,
-      "revenue_double_growth": false,
-      "news_heat_today": 1,
-      "news_heat_yesterday": 3,
-      "ptt_push": 0,
-      "ptt_boo": 0,
-      "keywords_hit": [
-        {
-          "tag": "矽光子",
-          "weight": 5
-        },
-        {
-          "tag": "全液冷",
-          "weight": 4
-        },
-        {
-          "tag": "HBM",
-          "weight": 3
-        },
-        {
-          "tag": "先進封裝",
-          "weight": 3
-        }
-      ],
-      "alert": null,
-      "score": 85,
-      "light": "🟢 偏多觀察",
-      "advice": "【體檢優良】股價穩站季線之上，趨勢強勢。有投信大哥在默默連買吃貨，背後有靠山。 整體看來是好學生，可加入自選股觀察找買點。"
-    },
-    {
-      "code": "2408",
-      "name": "南亞科",
-      "is_etf": false,
-      "price": 519.0,
-      "ma60": 472.79,
-      "suggested_stop_loss": 458.61,
-      "inst_net_buy_3d": 15232,
-      "it_continuous_buy": false,
-      "revenue_double_growth": false,
-      "news_heat_today": 6,
-      "news_heat_yesterday": 6,
-      "ptt_push": 0,
-      "ptt_boo": 0,
-      "keywords_hit": [
-        {
-          "tag": "矽光子",
-          "weight": 5
-        },
-        {
-          "tag": "AI伺服器",
-          "weight": 4
-        },
-        {
-          "tag": "HBM",
-          "weight": 3
-        },
-        {
-          "tag": "液冷",
-          "weight": 3
-        },
-        {
-          "tag": "先進封裝",
-          "weight": 3
-        }
-      ],
-      "alert": null,
-      "score": 80,
-      "light": "🟢 偏多觀察",
-      "advice": "【體檢優良】股價穩站季線之上，趨勢強勢。三大法人近期有明顯的大量買單。 整體看來是好學生，可加入自選股觀察找買點。"
-    },
-    {
-      "code": "00940",
-      "name": "元大台灣價值高息",
-      "is_etf": true,
-      "price": 13.18,
-      "ma60": 12.54,
-      "suggested_stop_loss": 12.16,
-      "inst_net_buy_3d": 15618,
-      "it_continuous_buy": false,
-      "revenue_double_growth": false,
-      "news_heat_today": 5,
-      "news_heat_yesterday": 2,
-      "ptt_push": 0,
-      "ptt_boo": 0,
-      "keywords_hit": [
-        {
-          "tag": "AI伺服器",
-          "weight": 4
-        },
-        {
-          "tag": "HBM",
-          "weight": 3
-        }
-      ],
-      "alert": "news_surge",
-      "score": 80,
-      "light": "🟢 偏多觀察",
-      "advice": "【體檢優良】股價穩站季線之上，趨勢強勢。三大法人近期有明顯的大量買單。 整體看來是好學生，可加入自選股觀察找買點。"
-    },
-    {
-      "code": "2317",
-      "name": "鴻海",
-      "is_etf": false,
-      "price": 254.0,
-      "ma60": 249.37,
-      "suggested_stop_loss": 241.89,
-      "inst_net_buy_3d": 13255,
-      "it_continuous_buy": false,
-      "revenue_double_growth": false,
-      "news_heat_today": 9,
-      "news_heat_yesterday": 15,
-      "ptt_push": 0,
-      "ptt_boo": 0,
-      "keywords_hit": [
-        {
-          "tag": "Vera Rubin",
-          "weight": 5
-        },
-        {
-          "tag": "矽光子",
-          "weight": 5
-        },
-        {
-          "tag": "全液冷",
-          "weight": 4
-        },
-        {
-          "tag": "AI伺服器",
-          "weight": 4
-        },
-        {
-          "tag": "HBM",
-          "weight": 3
-        },
-        {
-          "tag": "液冷",
-          "weight": 3
-        },
-        {
-          "tag": "先進封裝",
-          "weight": 3
-        }
-      ],
-      "alert": null,
-      "score": 70,
-      "light": "🟡 中立觀望",
-      "advice": "【表現平平】股價維持在季線之上，長線算安全。三大法人近期有明顯的大量買單。 目前沒有特別突出的表現，建議多看少做。"
-    },
-    {
-      "code": "1314",
-      "name": "中石化",
-      "is_etf": false,
-      "price": 8.89,
-      "ma60": 8.27,
-      "suggested_stop_loss": 8.02,
-      "inst_net_buy_3d": 14466,
-      "it_continuous_buy": false,
-      "revenue_double_growth": false,
-      "news_heat_today": 0,
-      "news_heat_yesterday": 1,
-      "ptt_push": 0,
-      "ptt_boo": 0,
-      "keywords_hit": [
-        {
-          "tag": "全液冷",
-          "weight": 4
-        },
-        {
-          "tag": "AI伺服器",
-          "weight": 4
-        },
-        {
-          "tag": "液冷",
-          "weight": 3
-        },
-        {
-          "tag": "先進封裝",
-          "weight": 3
-        }
-      ],
-      "alert": null,
-      "score": 80,
-      "light": "🟢 偏多觀察",
-      "advice": "【體檢優良】股價穩站季線之上，趨勢強勢。三大法人近期有明顯的大量買單。 整體看來是好學生，可加入自選股觀察找買點。"
-    },
-    {
-      "code": "00990A",
-      "name": "主動元大AI新經濟",
-      "is_etf": true,
-      "price": 16.29,
-      "ma60": 15.77,
-      "suggested_stop_loss": 15.3,
-      "inst_net_buy_3d": 14947,
-      "it_continuous_buy": false,
-      "revenue_double_growth": false,
-      "news_heat_today": 2,
-      "news_heat_yesterday": 5,
-      "ptt_push": 0,
-      "ptt_boo": 0,
-      "keywords_hit": [
-        {
-          "tag": "GB200",
-          "weight": 5
-        },
-        {
-          "tag": "AI伺服器",
-          "weight": 4
-        }
-      ],
-      "alert": null,
-      "score": 70,
-      "light": "🟡 中立觀望",
-      "advice": "【表現平平】股價維持在季線之上，長線算安全。三大法人近期有明顯的大量買單。 目前沒有特別突出的表現，建議多看少做。"
-    },
-    {
-      "code": "4958",
-      "name": "臻鼎-KY",
-      "is_etf": false,
-      "price": 510.0,
-      "ma60": 490.9,
-      "suggested_stop_loss": 476.17,
-      "inst_net_buy_3d": 13426,
-      "it_continuous_buy": false,
-      "revenue_double_growth": false,
-      "news_heat_today": 1,
-      "news_heat_yesterday": 1,
-      "ptt_push": 0,
-      "ptt_boo": 0,
-      "keywords_hit": [
-        {
-          "tag": "矽光子",
-          "weight": 5
-        },
-        {
-          "tag": "CoWoS",
-          "weight": 4
-        },
-        {
-          "tag": "快接頭",
-          "weight": 4
-        },
-        {
           "tag": "AI伺服器",
           "weight": 4
         },
@@ -1323,195 +1620,19 @@
       "score": 70,
       "light": "🟡 中立觀望",
       "advice": "【表現平平】股價維持在季線之上，長線算安全。三大法人近期有明顯的大量買單。 目前沒有特別突出的表現，建議多看少做。"
-    },
-    {
-      "code": "1709",
-      "name": "和益",
-      "is_etf": false,
-      "price": 53.2,
-      "ma60": 32.36,
-      "suggested_stop_loss": 31.39,
-      "inst_net_buy_3d": 13303,
-      "it_continuous_buy": false,
-      "revenue_double_growth": false,
-      "news_heat_today": 1,
-      "news_heat_yesterday": 2,
-      "ptt_push": 0,
-      "ptt_boo": 0,
-      "keywords_hit": [
-        {
-          "tag": "Vera Rubin",
-          "weight": 5
-        },
-        {
-          "tag": "矽光子",
-          "weight": 5
-        },
-        {
-          "tag": "CoWoS",
-          "weight": 4
-        },
-        {
-          "tag": "AI伺服器",
-          "weight": 4
-        },
-        {
-          "tag": "先進封裝",
-          "weight": 3
-        }
-      ],
-      "alert": null,
-      "score": 80,
-      "light": "🟢 偏多觀察",
-      "advice": "【體檢優良】股價穩站季線之上，趨勢強勢。三大法人近期有明顯的大量買單。 整體看來是好學生，可加入自選股觀察找買點。"
-    },
-    {
-      "code": "6116",
-      "name": "彩晶",
-      "is_etf": false,
-      "price": 15.65,
-      "ma60": 14.42,
-      "suggested_stop_loss": 13.99,
-      "inst_net_buy_3d": 12363,
-      "it_continuous_buy": false,
-      "revenue_double_growth": false,
-      "news_heat_today": 3,
-      "news_heat_yesterday": 5,
-      "ptt_push": 0,
-      "ptt_boo": 0,
-      "keywords_hit": [
-        {
-          "tag": "Vera Rubin",
-          "weight": 5
-        },
-        {
-          "tag": "矽光子",
-          "weight": 5
-        },
-        {
-          "tag": "AI伺服器",
-          "weight": 4
-        },
-        {
-          "tag": "HBM",
-          "weight": 3
-        },
-        {
-          "tag": "液冷",
-          "weight": 3
-        },
-        {
-          "tag": "先進封裝",
-          "weight": 3
-        }
-      ],
-      "alert": null,
-      "score": 80,
-      "light": "🟢 偏多觀察",
-      "advice": "【體檢優良】股價穩站季線之上，趨勢強勢。三大法人近期有明顯的大量買單。 整體看來是好學生，可加入自選股觀察找買點。"
-    },
-    {
-      "code": "2484",
-      "name": "希華",
-      "is_etf": false,
-      "price": 84.6,
-      "ma60": 73.49,
-      "suggested_stop_loss": 71.29,
-      "inst_net_buy_3d": 8812,
-      "it_continuous_buy": false,
-      "revenue_double_growth": false,
-      "news_heat_today": 3,
-      "news_heat_yesterday": 0,
-      "ptt_push": 0,
-      "ptt_boo": 0,
-      "keywords_hit": [
-        {
-          "tag": "矽光子",
-          "weight": 5
-        },
-        {
-          "tag": "GB200",
-          "weight": 5
-        },
-        {
-          "tag": "全液冷",
-          "weight": 4
-        },
-        {
-          "tag": "AI伺服器",
-          "weight": 4
-        },
-        {
-          "tag": "液冷",
-          "weight": 3
-        },
-        {
-          "tag": "先進封裝",
-          "weight": 3
-        }
-      ],
-      "alert": "news_surge",
-      "score": 80,
-      "light": "🟢 偏多觀察",
-      "advice": "【體檢優良】股價穩站季線之上，趨勢強勢。三大法人近期有明顯的大量買單。 整體看來是好學生，可加入自選股觀察找買點。"
-    },
-    {
-      "code": "3576",
-      "name": "聯合再生",
-      "is_etf": false,
-      "price": 18.5,
-      "ma60": 17.31,
-      "suggested_stop_loss": 16.79,
-      "inst_net_buy_3d": 8945,
-      "it_continuous_buy": false,
-      "revenue_double_growth": false,
-      "news_heat_today": 2,
-      "news_heat_yesterday": 10,
-      "ptt_push": 0,
-      "ptt_boo": 0,
-      "keywords_hit": [
-        {
-          "tag": "矽光子",
-          "weight": 5
-        },
-        {
-          "tag": "CoWoS",
-          "weight": 4
-        },
-        {
-          "tag": "AI伺服器",
-          "weight": 4
-        },
-        {
-          "tag": "HBM",
-          "weight": 3
-        },
-        {
-          "tag": "液冷",
-          "weight": 3
-        },
-        {
-          "tag": "先進封裝",
-          "weight": 3
-        }
-      ],
-      "alert": null,
-      "score": 80,
-      "light": "🟢 偏多觀察",
-      "advice": "【體檢優良】股價穩站季線之上，趨勢強勢。三大法人近期有明顯的大量買單。 整體看來是好學生，可加入自選股觀察找買點。"
     },
     {
       "code": "00997A",
       "name": "主動群益美國增長",
       "is_etf": true,
-      "price": 11.93,
-      "ma60": 11.35,
-      "suggested_stop_loss": 11.01,
-      "inst_net_buy_3d": 10134,
+      "price": 12.0,
+      "ma60": 11.34,
+      "suggested_stop_loss": 11.0,
+      "inst_net_buy_3d": 15182,
       "it_continuous_buy": false,
       "revenue_double_growth": false,
-      "news_heat_today": 5,
-      "news_heat_yesterday": 0,
+      "news_heat_today": 0,
+      "news_heat_yesterday": 5,
       "ptt_push": 0,
       "ptt_boo": 0,
       "keywords_hit": [
@@ -1520,47 +1641,31 @@
           "weight": 4
         },
         {
+          "tag": "AI伺服器",
+          "weight": 4
+        },
+        {
           "tag": "先進封裝",
           "weight": 3
         }
       ],
-      "alert": "news_surge",
-      "score": 80,
-      "light": "🟢 偏多觀察",
-      "advice": "【體檢優良】股價穩站季線之上，趨勢強勢。三大法人近期有明顯的大量買單。 整體看來是好學生，可加入自選股觀察找買點。"
-    },
-    {
-      "code": "009824",
-      "name": "群益美國科技巨頭",
-      "is_etf": true,
-      "price": 10.75,
-      "ma60": 10.1,
-      "suggested_stop_loss": 9.8,
-      "inst_net_buy_3d": 10395,
-      "it_continuous_buy": false,
-      "revenue_double_growth": false,
-      "news_heat_today": 2,
-      "news_heat_yesterday": 0,
-      "ptt_push": 0,
-      "ptt_boo": 0,
-      "keywords_hit": [],
       "alert": null,
       "score": 80,
       "light": "🟢 偏多觀察",
       "advice": "【體檢優良】股價穩站季線之上，趨勢強勢。三大法人近期有明顯的大量買單。 整體看來是好學生，可加入自選股觀察找買點。"
     },
     {
-      "code": "00830",
-      "name": "國泰費城半導體",
-      "is_etf": true,
-      "price": 90.9,
-      "ma60": 84.85,
-      "suggested_stop_loss": 82.3,
-      "inst_net_buy_3d": 6821,
-      "it_continuous_buy": false,
+      "code": "6505",
+      "name": "台塑化",
+      "is_etf": false,
+      "price": 100.0,
+      "ma60": 77.39,
+      "suggested_stop_loss": 75.07,
+      "inst_net_buy_3d": 11005,
+      "it_continuous_buy": true,
       "revenue_double_growth": false,
-      "news_heat_today": 5,
-      "news_heat_yesterday": 1,
+      "news_heat_today": 4,
+      "news_heat_yesterday": 6,
       "ptt_push": 0,
       "ptt_boo": 0,
       "keywords_hit": [
@@ -1574,100 +1679,6 @@
         },
         {
           "tag": "GB200",
-          "weight": 5
-        },
-        {
-          "tag": "全液冷",
-          "weight": 4
-        },
-        {
-          "tag": "AI伺服器",
-          "weight": 4
-        },
-        {
-          "tag": "液冷",
-          "weight": 3
-        },
-        {
-          "tag": "先進封裝",
-          "weight": 3
-        }
-      ],
-      "alert": "news_surge",
-      "score": 80,
-      "light": "🟢 偏多觀察",
-      "advice": "【體檢優良】股價穩站季線之上，趨勢強勢。三大法人近期有明顯的大量買單。 整體看來是好學生，可加入自選股觀察找買點。"
-    },
-    {
-      "code": "2618",
-      "name": "長榮航",
-      "is_etf": false,
-      "price": 42.2,
-      "ma60": 42.05,
-      "suggested_stop_loss": 40.79,
-      "inst_net_buy_3d": 6884,
-      "it_continuous_buy": false,
-      "revenue_double_growth": false,
-      "news_heat_today": 0,
-      "news_heat_yesterday": 0,
-      "ptt_push": 0,
-      "ptt_boo": 0,
-      "keywords_hit": [
-        {
-          "tag": "Vera Rubin",
-          "weight": 5
-        },
-        {
-          "tag": "矽光子",
-          "weight": 5
-        },
-        {
-          "tag": "CoWoS",
-          "weight": 4
-        },
-        {
-          "tag": "全液冷",
-          "weight": 4
-        },
-        {
-          "tag": "AI伺服器",
-          "weight": 4
-        },
-        {
-          "tag": "液冷",
-          "weight": 3
-        },
-        {
-          "tag": "先進封裝",
-          "weight": 3
-        }
-      ],
-      "alert": null,
-      "score": 70,
-      "light": "🟡 中立觀望",
-      "advice": "【表現平平】股價維持在季線之上，長線算安全。三大法人近期有明顯的大量買單。 目前沒有特別突出的表現，建議多看少做。"
-    },
-    {
-      "code": "3189",
-      "name": "景碩",
-      "is_etf": false,
-      "price": 1010.0,
-      "ma60": 810.72,
-      "suggested_stop_loss": 786.4,
-      "inst_net_buy_3d": 6019,
-      "it_continuous_buy": true,
-      "revenue_double_growth": false,
-      "news_heat_today": 7,
-      "news_heat_yesterday": 4,
-      "ptt_push": 0,
-      "ptt_boo": 0,
-      "keywords_hit": [
-        {
-          "tag": "Vera Rubin",
-          "weight": 5
-        },
-        {
-          "tag": "矽光子",
           "weight": 5
         },
         {
@@ -1705,214 +1716,30 @@
       "advice": "【體檢優良】股價穩站季線之上，趨勢強勢。有投信大哥在默默連買吃貨，背後有靠山。 整體看來是好學生，可加入自選股觀察找買點。"
     },
     {
-      "code": "8046",
-      "name": "南電",
-      "is_etf": false,
-      "price": 1420.0,
-      "ma60": 1149.75,
-      "suggested_stop_loss": 1115.26,
-      "inst_net_buy_3d": 6341,
-      "it_continuous_buy": false,
-      "revenue_double_growth": false,
-      "news_heat_today": 12,
-      "news_heat_yesterday": 2,
-      "ptt_push": 0,
-      "ptt_boo": 0,
-      "keywords_hit": [
-        {
-          "tag": "Vera Rubin",
-          "weight": 5
-        },
-        {
-          "tag": "矽光子",
-          "weight": 5
-        },
-        {
-          "tag": "全液冷",
-          "weight": 4
-        },
-        {
-          "tag": "快接頭",
-          "weight": 4
-        },
-        {
-          "tag": "AI伺服器",
-          "weight": 4
-        },
-        {
-          "tag": "HBM",
-          "weight": 3
-        },
-        {
-          "tag": "液冷",
-          "weight": 3
-        },
-        {
-          "tag": "先進封裝",
-          "weight": 3
-        }
-      ],
-      "alert": "news_surge",
-      "score": 80,
-      "light": "🟢 偏多觀察",
-      "advice": "【體檢優良】股價穩站季線之上，趨勢強勢。三大法人近期有明顯的大量買單。 整體看來是好學生，可加入自選股觀察找買點。"
-    },
-    {
-      "code": "6456",
-      "name": "GIS-KY",
-      "is_etf": false,
-      "price": 87.9,
-      "ma60": 67.57,
-      "suggested_stop_loss": 65.54,
-      "inst_net_buy_3d": 6130,
-      "it_continuous_buy": false,
-      "revenue_double_growth": false,
-      "news_heat_today": 2,
-      "news_heat_yesterday": 5,
-      "ptt_push": 0,
-      "ptt_boo": 0,
-      "keywords_hit": [
-        {
-          "tag": "矽光子",
-          "weight": 5
-        },
-        {
-          "tag": "全液冷",
-          "weight": 4
-        },
-        {
-          "tag": "快接頭",
-          "weight": 4
-        },
-        {
-          "tag": "AI伺服器",
-          "weight": 4
-        },
-        {
-          "tag": "HBM",
-          "weight": 3
-        },
-        {
-          "tag": "液冷",
-          "weight": 3
-        },
-        {
-          "tag": "先進封裝",
-          "weight": 3
-        }
-      ],
-      "alert": null,
-      "score": 80,
-      "light": "🟢 偏多觀察",
-      "advice": "【體檢優良】股價穩站季線之上，趨勢強勢。三大法人近期有明顯的大量買單。 整體看來是好學生，可加入自選股觀察找買點。"
-    },
-    {
-      "code": "2412",
-      "name": "中華電",
-      "is_etf": false,
-      "price": 145.5,
-      "ma60": 138.77,
-      "suggested_stop_loss": 134.61,
-      "inst_net_buy_3d": 6293,
-      "it_continuous_buy": false,
-      "revenue_double_growth": false,
-      "news_heat_today": 0,
-      "news_heat_yesterday": 2,
-      "ptt_push": 0,
-      "ptt_boo": 0,
-      "keywords_hit": [
-        {
-          "tag": "Vera Rubin",
-          "weight": 5
-        },
-        {
-          "tag": "矽光子",
-          "weight": 5
-        },
-        {
-          "tag": "AI伺服器",
-          "weight": 4
-        },
-        {
-          "tag": "液冷",
-          "weight": 3
-        },
-        {
-          "tag": "先進封裝",
-          "weight": 3
-        }
-      ],
-      "alert": null,
-      "score": 70,
-      "light": "🟡 中立觀望",
-      "advice": "【表現平平】股價維持在季線之上，長線算安全。三大法人近期有明顯的大量買單。 目前沒有特別突出的表現，建議多看少做。"
-    },
-    {
-      "code": "0052",
-      "name": "富邦科技",
-      "is_etf": true,
-      "price": 66.0,
-      "ma60": 61.52,
-      "suggested_stop_loss": 59.67,
-      "inst_net_buy_3d": 5417,
-      "it_continuous_buy": false,
-      "revenue_double_growth": false,
-      "news_heat_today": 0,
-      "news_heat_yesterday": 2,
-      "ptt_push": 0,
-      "ptt_boo": 0,
-      "keywords_hit": [
-        {
-          "tag": "Vera Rubin",
-          "weight": 5
-        },
-        {
-          "tag": "矽光子",
-          "weight": 5
-        },
-        {
-          "tag": "全液冷",
-          "weight": 4
-        },
-        {
-          "tag": "AI伺服器",
-          "weight": 4
-        },
-        {
-          "tag": "HBM",
-          "weight": 3
-        },
-        {
-          "tag": "液冷",
-          "weight": 3
-        },
-        {
-          "tag": "先進封裝",
-          "weight": 3
-        }
-      ],
-      "alert": null,
-      "score": 80,
-      "light": "🟢 偏多觀察",
-      "advice": "【體檢優良】股價穩站季線之上，趨勢強勢。三大法人近期有明顯的大量買單。 整體看來是好學生，可加入自選股觀察找買點。"
-    },
-    {
       "code": "2892",
       "name": "第一金",
       "is_etf": false,
-      "price": 38.7,
-      "ma60": 35.75,
-      "suggested_stop_loss": 34.68,
-      "inst_net_buy_3d": 6007,
+      "price": 38.55,
+      "ma60": 35.84,
+      "suggested_stop_loss": 34.76,
+      "inst_net_buy_3d": 11699,
       "it_continuous_buy": true,
       "revenue_double_growth": false,
-      "news_heat_today": 2,
+      "news_heat_today": 1,
       "news_heat_yesterday": 2,
       "ptt_push": 0,
       "ptt_boo": 0,
       "keywords_hit": [
         {
+          "tag": "Vera Rubin",
+          "weight": 5
+        },
+        {
           "tag": "矽光子",
+          "weight": 5
+        },
+        {
+          "tag": "GB200",
           "weight": 5
         },
         {
@@ -1938,17 +1765,17 @@
       "advice": "【表現平平】短線跌破月線轉弱，留意是否繼續向下測試季線。有投信大哥在默默連買吃貨，背後有靠山。 目前沒有特別突出的表現，建議多看少做。"
     },
     {
-      "code": "00951",
-      "name": "台新日本半導體",
+      "code": "00940",
+      "name": "元大台灣價值高息",
       "is_etf": true,
-      "price": 19.09,
-      "ma60": 17.65,
-      "suggested_stop_loss": 17.12,
-      "inst_net_buy_3d": 6649,
+      "price": 13.17,
+      "ma60": 12.56,
+      "suggested_stop_loss": 12.18,
+      "inst_net_buy_3d": 12732,
       "it_continuous_buy": false,
       "revenue_double_growth": false,
       "news_heat_today": 1,
-      "news_heat_yesterday": 0,
+      "news_heat_yesterday": 5,
       "ptt_push": 0,
       "ptt_boo": 0,
       "keywords_hit": [
@@ -1956,6 +1783,125 @@
           "tag": "全液冷",
           "weight": 4
         },
+        {
+          "tag": "AI伺服器",
+          "weight": 4
+        },
+        {
+          "tag": "HBM",
+          "weight": 3
+        },
+        {
+          "tag": "液冷",
+          "weight": 3
+        }
+      ],
+      "alert": null,
+      "score": 70,
+      "light": "🟡 中立觀望",
+      "advice": "【表現平平】股價維持在季線之上，長線算安全。三大法人近期有明顯的大量買單。 目前沒有特別突出的表現，建議多看少做。"
+    },
+    {
+      "code": "3714",
+      "name": "富采",
+      "is_etf": false,
+      "price": 70.8,
+      "ma60": 59.72,
+      "suggested_stop_loss": 57.93,
+      "inst_net_buy_3d": 12432,
+      "it_continuous_buy": false,
+      "revenue_double_growth": false,
+      "news_heat_today": 2,
+      "news_heat_yesterday": 1,
+      "ptt_push": 0,
+      "ptt_boo": 0,
+      "keywords_hit": [
+        {
+          "tag": "Vera Rubin",
+          "weight": 5
+        },
+        {
+          "tag": "AI伺服器",
+          "weight": 4
+        },
+        {
+          "tag": "HBM",
+          "weight": 3
+        },
+        {
+          "tag": "先進封裝",
+          "weight": 3
+        }
+      ],
+      "alert": null,
+      "score": 80,
+      "light": "🟢 偏多觀察",
+      "advice": "【體檢優良】股價穩站季線之上，趨勢強勢。三大法人近期有明顯的大量買單。 整體看來是好學生，可加入自選股觀察找買點。"
+    },
+    {
+      "code": "2618",
+      "name": "長榮航",
+      "is_etf": false,
+      "price": 42.35,
+      "ma60": 42.05,
+      "suggested_stop_loss": 40.79,
+      "inst_net_buy_3d": 10031,
+      "it_continuous_buy": false,
+      "revenue_double_growth": false,
+      "news_heat_today": 0,
+      "news_heat_yesterday": 3,
+      "ptt_push": 0,
+      "ptt_boo": 0,
+      "keywords_hit": [
+        {
+          "tag": "Vera Rubin",
+          "weight": 5
+        },
+        {
+          "tag": "矽光子",
+          "weight": 5
+        },
+        {
+          "tag": "全液冷",
+          "weight": 4
+        },
+        {
+          "tag": "快接頭",
+          "weight": 4
+        },
+        {
+          "tag": "AI伺服器",
+          "weight": 4
+        },
+        {
+          "tag": "液冷",
+          "weight": 3
+        },
+        {
+          "tag": "先進封裝",
+          "weight": 3
+        }
+      ],
+      "alert": null,
+      "score": 70,
+      "light": "🟡 中立觀望",
+      "advice": "【表現平平】股價維持在季線之上，長線算安全。三大法人近期有明顯的大量買單。 目前沒有特別突出的表現，建議多看少做。"
+    },
+    {
+      "code": "2609",
+      "name": "陽明",
+      "is_etf": false,
+      "price": 59.7,
+      "ma60": 55.4,
+      "suggested_stop_loss": 53.74,
+      "inst_net_buy_3d": 11693,
+      "it_continuous_buy": false,
+      "revenue_double_growth": false,
+      "news_heat_today": 0,
+      "news_heat_yesterday": 3,
+      "ptt_push": 0,
+      "ptt_boo": 0,
+      "keywords_hit": [
         {
           "tag": "AI伺服器",
           "weight": 4
@@ -1971,24 +1917,20 @@
       "advice": "【體檢優良】股價穩站季線之上，趨勢強勢。三大法人近期有明顯的大量買單。 整體看來是好學生，可加入自選股觀察找買點。"
     },
     {
-      "code": "2426",
-      "name": "鼎元",
-      "is_etf": false,
-      "price": 103.0,
-      "ma60": 79.07,
-      "suggested_stop_loss": 76.7,
-      "inst_net_buy_3d": 5737,
+      "code": "00993A",
+      "name": "主動安聯台灣",
+      "is_etf": true,
+      "price": 14.2,
+      "ma60": 13.04,
+      "suggested_stop_loss": 12.65,
+      "inst_net_buy_3d": 11375,
       "it_continuous_buy": false,
       "revenue_double_growth": false,
-      "news_heat_today": 1,
-      "news_heat_yesterday": 2,
+      "news_heat_today": 0,
+      "news_heat_yesterday": 0,
       "ptt_push": 0,
       "ptt_boo": 0,
       "keywords_hit": [
-        {
-          "tag": "GB200",
-          "weight": 5
-        },
         {
           "tag": "AI伺服器",
           "weight": 4
@@ -2004,17 +1946,17 @@
       "advice": "【體檢優良】股價穩站季線之上，趨勢強勢。三大法人近期有明顯的大量買單。 整體看來是好學生，可加入自選股觀察找買點。"
     },
     {
-      "code": "2492",
-      "name": "華新科",
-      "is_etf": false,
-      "price": 329.0,
-      "ma60": 302.81,
-      "suggested_stop_loss": 293.73,
-      "inst_net_buy_3d": 4504,
+      "code": "00830",
+      "name": "國泰費城半導體",
+      "is_etf": true,
+      "price": 91.25,
+      "ma60": 84.87,
+      "suggested_stop_loss": 82.32,
+      "inst_net_buy_3d": 8720,
       "it_continuous_buy": false,
       "revenue_double_growth": false,
-      "news_heat_today": 19,
-      "news_heat_yesterday": 4,
+      "news_heat_today": 4,
+      "news_heat_yesterday": 7,
       "ptt_push": 0,
       "ptt_boo": 0,
       "keywords_hit": [
@@ -2025,6 +1967,14 @@
         {
           "tag": "矽光子",
           "weight": 5
+        },
+        {
+          "tag": "GB200",
+          "weight": 5
+        },
+        {
+          "tag": "全液冷",
+          "weight": 4
         },
         {
           "tag": "AI伺服器",
@@ -2043,40 +1993,20 @@
           "weight": 3
         }
       ],
-      "alert": "news_surge",
+      "alert": null,
       "score": 80,
       "light": "🟢 偏多觀察",
       "advice": "【體檢優良】股價穩站季線之上，趨勢強勢。三大法人近期有明顯的大量買單。 整體看來是好學生，可加入自選股觀察找買點。"
     },
     {
-      "code": "00900",
-      "name": "富邦特選高股息30",
+      "code": "00881",
+      "name": "國泰台灣科技龍頭",
       "is_etf": true,
-      "price": 19.4,
-      "ma60": 18.94,
-      "suggested_stop_loss": 18.37,
-      "inst_net_buy_3d": 6761,
+      "price": 52.75,
+      "ma60": 51.07,
+      "suggested_stop_loss": 49.54,
+      "inst_net_buy_3d": 9159,
       "it_continuous_buy": false,
-      "revenue_double_growth": false,
-      "news_heat_today": 0,
-      "news_heat_yesterday": 0,
-      "ptt_push": 0,
-      "ptt_boo": 0,
-      "keywords_hit": [],
-      "alert": null,
-      "score": 50,
-      "light": "🟡 中立觀望",
-      "advice": "【表現平平】短線跌破月線轉弱，留意是否繼續向下測試季線。三大法人近期有明顯的大量買單。 目前沒有特別突出的表現，建議多看少做。"
-    },
-    {
-      "code": "2347",
-      "name": "聯強",
-      "is_etf": false,
-      "price": 95.4,
-      "ma60": 89.11,
-      "suggested_stop_loss": 86.44,
-      "inst_net_buy_3d": 4761,
-      "it_continuous_buy": true,
       "revenue_double_growth": false,
       "news_heat_today": 0,
       "news_heat_yesterday": 0,
@@ -2088,8 +2018,8 @@
           "weight": 5
         },
         {
-          "tag": "CoWoS",
-          "weight": 4
+          "tag": "矽光子",
+          "weight": 5
         },
         {
           "tag": "全液冷",
@@ -2100,33 +2030,12 @@
           "weight": 4
         },
         {
+          "tag": "HBM",
+          "weight": 3
+        },
+        {
           "tag": "液冷",
           "weight": 3
-        }
-      ],
-      "alert": null,
-      "score": 85,
-      "light": "🟢 偏多觀察",
-      "advice": "【體檢優良】股價穩站季線之上，趨勢強勢。有投信大哥在默默連買吃貨，背後有靠山。 整體看來是好學生，可加入自選股觀察找買點。"
-    },
-    {
-      "code": "00994A",
-      "name": "主動第一金台股優",
-      "is_etf": true,
-      "price": 17.29,
-      "ma60": 16.53,
-      "suggested_stop_loss": 16.03,
-      "inst_net_buy_3d": 5945,
-      "it_continuous_buy": false,
-      "revenue_double_growth": false,
-      "news_heat_today": 1,
-      "news_heat_yesterday": 0,
-      "ptt_push": 0,
-      "ptt_boo": 0,
-      "keywords_hit": [
-        {
-          "tag": "Vera Rubin",
-          "weight": 5
         },
         {
           "tag": "先進封裝",
@@ -2139,17 +2048,165 @@
       "advice": "【表現平平】股價維持在季線之上，長線算安全。三大法人近期有明顯的大量買單。 目前沒有特別突出的表現，建議多看少做。"
     },
     {
-      "code": "3702",
-      "name": "大聯大",
-      "is_etf": false,
-      "price": 119.0,
-      "ma60": 111.8,
-      "suggested_stop_loss": 108.45,
-      "inst_net_buy_3d": 4848,
+      "code": "00999A",
+      "name": "主動野村臺灣高息",
+      "is_etf": true,
+      "price": 11.4,
+      "ma60": 10.95,
+      "suggested_stop_loss": 10.62,
+      "inst_net_buy_3d": 10517,
       "it_continuous_buy": false,
       "revenue_double_growth": false,
+      "news_heat_today": 1,
+      "news_heat_yesterday": 1,
+      "ptt_push": 0,
+      "ptt_boo": 0,
+      "keywords_hit": [
+        {
+          "tag": "Vera Rubin",
+          "weight": 5
+        },
+        {
+          "tag": "AI伺服器",
+          "weight": 4
+        },
+        {
+          "tag": "HBM",
+          "weight": 3
+        }
+      ],
+      "alert": null,
+      "score": 70,
+      "light": "🟡 中立觀望",
+      "advice": "【表現平平】股價維持在季線之上，長線算安全。三大法人近期有明顯的大量買單。 目前沒有特別突出的表現，建議多看少做。"
+    },
+    {
+      "code": "2412",
+      "name": "中華電",
+      "is_etf": false,
+      "price": 146.0,
+      "ma60": 138.85,
+      "suggested_stop_loss": 134.68,
+      "inst_net_buy_3d": 9044,
+      "it_continuous_buy": false,
+      "revenue_double_growth": false,
+      "news_heat_today": 3,
+      "news_heat_yesterday": 2,
+      "ptt_push": 0,
+      "ptt_boo": 0,
+      "keywords_hit": [
+        {
+          "tag": "Vera Rubin",
+          "weight": 5
+        },
+        {
+          "tag": "矽光子",
+          "weight": 5
+        },
+        {
+          "tag": "AI伺服器",
+          "weight": 4
+        },
+        {
+          "tag": "液冷",
+          "weight": 3
+        },
+        {
+          "tag": "先進封裝",
+          "weight": 3
+        }
+      ],
+      "alert": null,
+      "score": 80,
+      "light": "🟢 偏多觀察",
+      "advice": "【體檢優良】股價穩站季線之上，趨勢強勢。三大法人近期有明顯的大量買單。 整體看來是好學生，可加入自選股觀察找買點。"
+    },
+    {
+      "code": "00994A",
+      "name": "主動第一金台股優",
+      "is_etf": true,
+      "price": 17.56,
+      "ma60": 16.54,
+      "suggested_stop_loss": 16.04,
+      "inst_net_buy_3d": 10187,
+      "it_continuous_buy": false,
+      "revenue_double_growth": false,
+      "news_heat_today": 0,
+      "news_heat_yesterday": 1,
+      "ptt_push": 0,
+      "ptt_boo": 0,
+      "keywords_hit": [
+        {
+          "tag": "Vera Rubin",
+          "weight": 5
+        }
+      ],
+      "alert": null,
+      "score": 80,
+      "light": "🟢 偏多觀察",
+      "advice": "【體檢優良】股價穩站季線之上，趨勢強勢。三大法人近期有明顯的大量買單。 整體看來是好學生，可加入自選股觀察找買點。"
+    },
+    {
+      "code": "2883",
+      "name": "凱基金",
+      "is_etf": false,
+      "price": 37.35,
+      "ma60": 33.41,
+      "suggested_stop_loss": 32.41,
+      "inst_net_buy_3d": 7758,
+      "it_continuous_buy": true,
+      "revenue_double_growth": false,
       "news_heat_today": 2,
-      "news_heat_yesterday": 0,
+      "news_heat_yesterday": 5,
+      "ptt_push": 0,
+      "ptt_boo": 0,
+      "keywords_hit": [
+        {
+          "tag": "Vera Rubin",
+          "weight": 5
+        },
+        {
+          "tag": "矽光子",
+          "weight": 5
+        },
+        {
+          "tag": "GB200",
+          "weight": 5
+        },
+        {
+          "tag": "全液冷",
+          "weight": 4
+        },
+        {
+          "tag": "HBM",
+          "weight": 3
+        },
+        {
+          "tag": "液冷",
+          "weight": 3
+        },
+        {
+          "tag": "先進封裝",
+          "weight": 3
+        }
+      ],
+      "alert": null,
+      "score": 55,
+      "light": "🟡 中立觀望",
+      "advice": "【表現平平】短線跌破月線轉弱，留意是否繼續向下測試季線。有投信大哥在默默連買吃貨，背後有靠山。 目前沒有特別突出的表現，建議多看少做。"
+    },
+    {
+      "code": "3037",
+      "name": "欣興",
+      "is_etf": false,
+      "price": 1305.0,
+      "ma60": 981.0,
+      "suggested_stop_loss": 951.57,
+      "inst_net_buy_3d": 7796,
+      "it_continuous_buy": true,
+      "revenue_double_growth": false,
+      "news_heat_today": 10,
+      "news_heat_yesterday": 15,
       "ptt_push": 0,
       "ptt_boo": 0,
       "keywords_hit": [
@@ -2162,14 +2219,95 @@
           "weight": 4
         },
         {
+          "tag": "快接頭",
+          "weight": 4
+        },
+        {
           "tag": "AI伺服器",
           "weight": 4
         },
         {
-          "tag": "液冷",
+          "tag": "HBM",
+          "weight": 3
+        },
+        {
+          "tag": "先進封裝",
           "weight": 3
         }
       ],
+      "alert": null,
+      "score": 85,
+      "light": "🟢 偏多觀察",
+      "advice": "【體檢優良】股價穩站季線之上，趨勢強勢。有投信大哥在默默連買吃貨，背後有靠山。 整體看來是好學生，可加入自選股觀察找買點。"
+    },
+    {
+      "code": "8046",
+      "name": "南電",
+      "is_etf": false,
+      "price": 1460.0,
+      "ma60": 1156.92,
+      "suggested_stop_loss": 1122.21,
+      "inst_net_buy_3d": 6465,
+      "it_continuous_buy": true,
+      "revenue_double_growth": false,
+      "news_heat_today": 13,
+      "news_heat_yesterday": 14,
+      "ptt_push": 0,
+      "ptt_boo": 0,
+      "keywords_hit": [
+        {
+          "tag": "Vera Rubin",
+          "weight": 5
+        },
+        {
+          "tag": "矽光子",
+          "weight": 5
+        },
+        {
+          "tag": "全液冷",
+          "weight": 4
+        },
+        {
+          "tag": "快接頭",
+          "weight": 4
+        },
+        {
+          "tag": "AI伺服器",
+          "weight": 4
+        },
+        {
+          "tag": "HBM",
+          "weight": 3
+        },
+        {
+          "tag": "液冷",
+          "weight": 3
+        },
+        {
+          "tag": "先進封裝",
+          "weight": 3
+        }
+      ],
+      "alert": null,
+      "score": 85,
+      "light": "🟢 偏多觀察",
+      "advice": "【體檢優良】股價穩站季線之上，趨勢強勢。有投信大哥在默默連買吃貨，背後有靠山。 整體看來是好學生，可加入自選股觀察找買點。"
+    },
+    {
+      "code": "009824",
+      "name": "群益美國科技巨頭",
+      "is_etf": true,
+      "price": 10.73,
+      "ma60": 10.12,
+      "suggested_stop_loss": 9.82,
+      "inst_net_buy_3d": 9550,
+      "it_continuous_buy": false,
+      "revenue_double_growth": false,
+      "news_heat_today": 0,
+      "news_heat_yesterday": 3,
+      "ptt_push": 0,
+      "ptt_boo": 0,
+      "keywords_hit": [],
       "alert": null,
       "score": 80,
       "light": "🟢 偏多觀察",
@@ -2179,13 +2317,13 @@
       "code": "6672",
       "name": "騰輝電子-KY",
       "is_etf": false,
-      "price": 405.5,
-      "ma60": 271.12,
-      "suggested_stop_loss": 262.99,
-      "inst_net_buy_3d": 3030,
+      "price": 439.0,
+      "ma60": 273.44,
+      "suggested_stop_loss": 265.24,
+      "inst_net_buy_3d": 5612,
       "it_continuous_buy": false,
       "revenue_double_growth": false,
-      "news_heat_today": 2,
+      "news_heat_today": 15,
       "news_heat_yesterday": 5,
       "ptt_push": 0,
       "ptt_boo": 0,
@@ -2215,11 +2353,56 @@
           "weight": 4
         },
         {
+          "tag": "HBM",
+          "weight": 3
+        },
+        {
           "tag": "液冷",
           "weight": 3
         },
         {
           "tag": "先進封裝",
+          "weight": 3
+        }
+      ],
+      "alert": "news_surge",
+      "score": 80,
+      "light": "🟢 偏多觀察",
+      "advice": "【體檢優良】股價穩站季線之上，趨勢強勢。三大法人近期有明顯的大量買單。 整體看來是好學生，可加入自選股觀察找買點。"
+    },
+    {
+      "code": "00951",
+      "name": "台新日本半導體",
+      "is_etf": true,
+      "price": 19.17,
+      "ma60": 17.64,
+      "suggested_stop_loss": 17.11,
+      "inst_net_buy_3d": 7056,
+      "it_continuous_buy": false,
+      "revenue_double_growth": false,
+      "news_heat_today": 0,
+      "news_heat_yesterday": 1,
+      "ptt_push": 0,
+      "ptt_boo": 0,
+      "keywords_hit": [
+        {
+          "tag": "矽光子",
+          "weight": 5
+        },
+        {
+          "tag": "CoWoS",
+          "weight": 4
+        },
+        {
+          "tag": "全液冷",
+          "weight": 4
+        },
+        {
+          "tag": "AI伺服器",
+          "weight": 4
+        },
+        {
+          "tag": "液冷",
           "weight": 3
         }
       ],
@@ -2229,17 +2412,17 @@
       "advice": "【體檢優良】股價穩站季線之上，趨勢強勢。三大法人近期有明顯的大量買單。 整體看來是好學生，可加入自選股觀察找買點。"
     },
     {
-      "code": "8150",
-      "name": "南茂",
+      "code": "3189",
+      "name": "景碩",
       "is_etf": false,
-      "price": 115.5,
-      "ma60": 94.31,
-      "suggested_stop_loss": 91.48,
-      "inst_net_buy_3d": 3475,
-      "it_continuous_buy": false,
+      "price": 1050.0,
+      "ma60": 816.77,
+      "suggested_stop_loss": 792.27,
+      "inst_net_buy_3d": 5926,
+      "it_continuous_buy": true,
       "revenue_double_growth": false,
       "news_heat_today": 2,
-      "news_heat_yesterday": 9,
+      "news_heat_yesterday": 7,
       "ptt_push": 0,
       "ptt_boo": 0,
       "keywords_hit": [
@@ -2264,39 +2447,6 @@
           "weight": 4
         },
         {
-          "tag": "液冷",
-          "weight": 3
-        },
-        {
-          "tag": "先進封裝",
-          "weight": 3
-        }
-      ],
-      "alert": null,
-      "score": 80,
-      "light": "🟢 偏多觀察",
-      "advice": "【體檢優良】股價穩站季線之上，趨勢強勢。三大法人近期有明顯的大量買單。 整體看來是好學生，可加入自選股觀察找買點。"
-    },
-    {
-      "code": "00929",
-      "name": "復華台灣科技優息",
-      "is_etf": true,
-      "price": 29.59,
-      "ma60": 28.89,
-      "suggested_stop_loss": 28.02,
-      "inst_net_buy_3d": 4809,
-      "it_continuous_buy": false,
-      "revenue_double_growth": false,
-      "news_heat_today": 8,
-      "news_heat_yesterday": 1,
-      "ptt_push": 0,
-      "ptt_boo": 0,
-      "keywords_hit": [
-        {
-          "tag": "全液冷",
-          "weight": 4
-        },
-        {
           "tag": "HBM",
           "weight": 3
         },
@@ -2309,19 +2459,19 @@
           "weight": 3
         }
       ],
-      "alert": "news_surge",
-      "score": 70,
-      "light": "🟡 中立觀望",
-      "advice": "【表現平平】股價維持在季線之上，長線算安全。三大法人近期有明顯的大量買單。 目前沒有特別突出的表現，建議多看少做。"
+      "alert": null,
+      "score": 85,
+      "light": "🟢 偏多觀察",
+      "advice": "【體檢優良】股價穩站季線之上，趨勢強勢。有投信大哥在默默連買吃貨，背後有靠山。 整體看來是好學生，可加入自選股觀察找買點。"
     },
     {
-      "code": "00896",
-      "name": "中信綠能及電動車",
-      "is_etf": true,
-      "price": 27.84,
-      "ma60": 27.18,
-      "suggested_stop_loss": 26.36,
-      "inst_net_buy_3d": 5417,
+      "code": "1312",
+      "name": "國喬",
+      "is_etf": false,
+      "price": 14.75,
+      "ma60": 13.3,
+      "suggested_stop_loss": 12.9,
+      "inst_net_buy_3d": 8169,
       "it_continuous_buy": false,
       "revenue_double_growth": false,
       "news_heat_today": 0,
@@ -2329,86 +2479,32 @@
       "ptt_push": 0,
       "ptt_boo": 0,
       "keywords_hit": [
+        {
+          "tag": "矽光子",
+          "weight": 5
+        },
         {
           "tag": "液冷",
           "weight": 3
         }
       ],
       "alert": null,
-      "score": 70,
-      "light": "🟡 中立觀望",
-      "advice": "【表現平平】股價維持在季線之上，長線算安全。三大法人近期有明顯的大量買單。 目前沒有特別突出的表現，建議多看少做。"
-    },
-    {
-      "code": "00993A",
-      "name": "主動安聯台灣",
-      "is_etf": true,
-      "price": 13.98,
-      "ma60": 13.03,
-      "suggested_stop_loss": 12.64,
-      "inst_net_buy_3d": 4641,
-      "it_continuous_buy": false,
-      "revenue_double_growth": false,
-      "news_heat_today": 0,
-      "news_heat_yesterday": 0,
-      "ptt_push": 0,
-      "ptt_boo": 0,
-      "keywords_hit": [
-        {
-          "tag": "AI伺服器",
-          "weight": 4
-        },
-        {
-          "tag": "先進封裝",
-          "weight": 3
-        }
-      ],
-      "alert": null,
       "score": 80,
       "light": "🟢 偏多觀察",
       "advice": "【體檢優良】股價穩站季線之上，趨勢強勢。三大法人近期有明顯的大量買單。 整體看來是好學生，可加入自選股觀察找買點。"
     },
     {
-      "code": "00954",
-      "name": "中信日本半導體",
-      "is_etf": true,
-      "price": 20.34,
-      "ma60": 18.83,
-      "suggested_stop_loss": 18.27,
-      "inst_net_buy_3d": 4599,
+      "code": "3231",
+      "name": "緯創",
+      "is_etf": false,
+      "price": 186.5,
+      "ma60": 177.62,
+      "suggested_stop_loss": 172.29,
+      "inst_net_buy_3d": 6929,
       "it_continuous_buy": false,
       "revenue_double_growth": false,
-      "news_heat_today": 0,
-      "news_heat_yesterday": 0,
-      "ptt_push": 0,
-      "ptt_boo": 0,
-      "keywords_hit": [
-        {
-          "tag": "AI伺服器",
-          "weight": 4
-        },
-        {
-          "tag": "HBM",
-          "weight": 3
-        }
-      ],
-      "alert": null,
-      "score": 80,
-      "light": "🟢 偏多觀察",
-      "advice": "【體檢優良】股價穩站季線之上，趨勢強勢。三大法人近期有明顯的大量買單。 整體看來是好學生，可加入自選股觀察找買點。"
-    },
-    {
-      "code": "00982A",
-      "name": "主動群益台灣強棒",
-      "is_etf": true,
-      "price": 23.15,
-      "ma60": 22.39,
-      "suggested_stop_loss": 21.72,
-      "inst_net_buy_3d": 3219,
-      "it_continuous_buy": false,
-      "revenue_double_growth": false,
-      "news_heat_today": 1,
-      "news_heat_yesterday": 3,
+      "news_heat_today": 3,
+      "news_heat_yesterday": 13,
       "ptt_push": 0,
       "ptt_boo": 0,
       "keywords_hit": [
@@ -2421,8 +2517,184 @@
           "weight": 5
         },
         {
+          "tag": "AI伺服器",
+          "weight": 4
+        },
+        {
+          "tag": "HBM",
+          "weight": 3
+        },
+        {
+          "tag": "先進封裝",
+          "weight": 3
+        }
+      ],
+      "alert": null,
+      "score": 70,
+      "light": "🟡 中立觀望",
+      "advice": "【表現平平】股價維持在季線之上，長線算安全。三大法人近期有明顯的大量買單。 目前沒有特別突出的表現，建議多看少做。"
+    },
+    {
+      "code": "00900",
+      "name": "富邦特選高股息30",
+      "is_etf": true,
+      "price": 19.37,
+      "ma60": 18.94,
+      "suggested_stop_loss": 18.37,
+      "inst_net_buy_3d": 8880,
+      "it_continuous_buy": false,
+      "revenue_double_growth": false,
+      "news_heat_today": 0,
+      "news_heat_yesterday": 1,
+      "ptt_push": 0,
+      "ptt_boo": 0,
+      "keywords_hit": [],
+      "alert": null,
+      "score": 50,
+      "light": "🟡 中立觀望",
+      "advice": "【表現平平】短線跌破月線轉弱，留意是否繼續向下測試季線。三大法人近期有明顯的大量買單。 目前沒有特別突出的表現，建議多看少做。"
+    },
+    {
+      "code": "00896",
+      "name": "中信綠能及電動車",
+      "is_etf": true,
+      "price": 27.89,
+      "ma60": 27.19,
+      "suggested_stop_loss": 26.37,
+      "inst_net_buy_3d": 8432,
+      "it_continuous_buy": false,
+      "revenue_double_growth": false,
+      "news_heat_today": 0,
+      "news_heat_yesterday": 0,
+      "ptt_push": 0,
+      "ptt_boo": 0,
+      "keywords_hit": [
+        {
+          "tag": "HBM",
+          "weight": 3
+        }
+      ],
+      "alert": null,
+      "score": 70,
+      "light": "🟡 中立觀望",
+      "advice": "【表現平平】股價維持在季線之上，長線算安全。三大法人近期有明顯的大量買單。 目前沒有特別突出的表現，建議多看少做。"
+    },
+    {
+      "code": "2347",
+      "name": "聯強",
+      "is_etf": false,
+      "price": 97.1,
+      "ma60": 89.21,
+      "suggested_stop_loss": 86.53,
+      "inst_net_buy_3d": 6534,
+      "it_continuous_buy": false,
+      "revenue_double_growth": false,
+      "news_heat_today": 0,
+      "news_heat_yesterday": 0,
+      "ptt_push": 0,
+      "ptt_boo": 0,
+      "keywords_hit": [
+        {
+          "tag": "Vera Rubin",
+          "weight": 5
+        },
+        {
+          "tag": "CoWoS",
+          "weight": 4
+        },
+        {
           "tag": "全液冷",
           "weight": 4
+        },
+        {
+          "tag": "AI伺服器",
+          "weight": 4
+        },
+        {
+          "tag": "液冷",
+          "weight": 3
+        }
+      ],
+      "alert": null,
+      "score": 80,
+      "light": "🟢 偏多觀察",
+      "advice": "【體檢優良】股價穩站季線之上，趨勢強勢。三大法人近期有明顯的大量買單。 整體看來是好學生，可加入自選股觀察找買點。"
+    },
+    {
+      "code": "2884",
+      "name": "玉山金",
+      "is_etf": false,
+      "price": 45.35,
+      "ma60": 39.93,
+      "suggested_stop_loss": 38.73,
+      "inst_net_buy_3d": 5571,
+      "it_continuous_buy": true,
+      "revenue_double_growth": false,
+      "news_heat_today": 1,
+      "news_heat_yesterday": 5,
+      "ptt_push": 0,
+      "ptt_boo": 0,
+      "keywords_hit": [
+        {
+          "tag": "Vera Rubin",
+          "weight": 5
+        },
+        {
+          "tag": "矽光子",
+          "weight": 5
+        },
+        {
+          "tag": "GB200",
+          "weight": 5
+        },
+        {
+          "tag": "全液冷",
+          "weight": 4
+        },
+        {
+          "tag": "AI伺服器",
+          "weight": 4
+        },
+        {
+          "tag": "液冷",
+          "weight": 3
+        }
+      ],
+      "alert": null,
+      "score": 55,
+      "light": "🟡 中立觀望",
+      "advice": "【表現平平】短線跌破月線轉弱，留意是否繼續向下測試季線。有投信大哥在默默連買吃貨，背後有靠山。 目前沒有特別突出的表現，建議多看少做。"
+    },
+    {
+      "code": "2634",
+      "name": "漢翔",
+      "is_etf": false,
+      "price": 66.0,
+      "ma60": 64.74,
+      "suggested_stop_loss": 62.8,
+      "inst_net_buy_3d": 5823,
+      "it_continuous_buy": false,
+      "revenue_double_growth": false,
+      "news_heat_today": 2,
+      "news_heat_yesterday": 1,
+      "ptt_push": 0,
+      "ptt_boo": 0,
+      "keywords_hit": [
+        {
+          "tag": "矽光子",
+          "weight": 5
+        },
+        {
+          "tag": "全液冷",
+          "weight": 4
+        },
+        {
+          "tag": "AI伺服器",
+          "weight": 4
+        },
+        {
+          "tag": "HBM",
+          "weight": 3
         },
         {
           "tag": "液冷",
@@ -2439,17 +2711,17 @@
       "advice": "【表現平平】股價維持在季線之上，長線算安全。三大法人近期有明顯的大量買單。 目前沒有特別突出的表現，建議多看少做。"
     },
     {
-      "code": "2330",
-      "name": "台積電",
+      "code": "6456",
+      "name": "GIS-KY",
       "is_etf": false,
-      "price": 2510.0,
-      "ma60": 2403.42,
-      "suggested_stop_loss": 2331.32,
-      "inst_net_buy_3d": 3162,
-      "it_continuous_buy": true,
+      "price": 92.9,
+      "ma60": 68.01,
+      "suggested_stop_loss": 65.97,
+      "inst_net_buy_3d": 5775,
+      "it_continuous_buy": false,
       "revenue_double_growth": false,
-      "news_heat_today": 15,
-      "news_heat_yesterday": 25,
+      "news_heat_today": 1,
+      "news_heat_yesterday": 1,
       "ptt_push": 0,
       "ptt_boo": 0,
       "keywords_hit": [
@@ -2470,27 +2742,359 @@
           "weight": 3
         },
         {
+          "tag": "液冷",
+          "weight": 3
+        },
+        {
           "tag": "先進封裝",
           "weight": 3
         }
       ],
       "alert": null,
-      "score": 75,
+      "score": 80,
       "light": "🟢 偏多觀察",
-      "advice": "【體檢優良】股價維持在季線之上，長線算安全。有投信大哥在默默連買吃貨，背後有靠山。 整體看來是好學生，可加入自選股觀察找買點。"
+      "advice": "【體檢優良】股價穩站季線之上，趨勢強勢。三大法人近期有明顯的大量買單。 整體看來是好學生，可加入自選股觀察找買點。"
     },
     {
-      "code": "00999A",
-      "name": "主動野村臺灣高息",
-      "is_etf": true,
-      "price": 11.3,
-      "ma60": 10.93,
-      "suggested_stop_loss": 10.6,
-      "inst_net_buy_3d": 3559,
+      "code": "1303",
+      "name": "南亞",
+      "is_etf": false,
+      "price": 260.0,
+      "ma60": 207.32,
+      "suggested_stop_loss": 201.1,
+      "inst_net_buy_3d": 5526,
       "it_continuous_buy": false,
       "revenue_double_growth": false,
-      "news_heat_today": 2,
+      "news_heat_today": 3,
+      "news_heat_yesterday": 4,
+      "ptt_push": 0,
+      "ptt_boo": 0,
+      "keywords_hit": [
+        {
+          "tag": "Vera Rubin",
+          "weight": 5
+        },
+        {
+          "tag": "矽光子",
+          "weight": 5
+        },
+        {
+          "tag": "CoWoS",
+          "weight": 4
+        },
+        {
+          "tag": "AI伺服器",
+          "weight": 4
+        },
+        {
+          "tag": "液冷",
+          "weight": 3
+        },
+        {
+          "tag": "先進封裝",
+          "weight": 3
+        }
+      ],
+      "alert": null,
+      "score": 80,
+      "light": "🟢 偏多觀察",
+      "advice": "【體檢優良】股價穩站季線之上，趨勢強勢。三大法人近期有明顯的大量買單。 整體看來是好學生，可加入自選股觀察找買點。"
+    },
+    {
+      "code": "9933",
+      "name": "中鼎",
+      "is_etf": false,
+      "price": 45.8,
+      "ma60": 40.39,
+      "suggested_stop_loss": 39.18,
+      "inst_net_buy_3d": 6127,
+      "it_continuous_buy": false,
+      "revenue_double_growth": false,
+      "news_heat_today": 1,
       "news_heat_yesterday": 0,
+      "ptt_push": 0,
+      "ptt_boo": 0,
+      "keywords_hit": [
+        {
+          "tag": "矽光子",
+          "weight": 5
+        },
+        {
+          "tag": "AI伺服器",
+          "weight": 4
+        },
+        {
+          "tag": "HBM",
+          "weight": 3
+        },
+        {
+          "tag": "先進封裝",
+          "weight": 3
+        }
+      ],
+      "alert": null,
+      "score": 80,
+      "light": "🟢 偏多觀察",
+      "advice": "【體檢優良】股價穩站季線之上，趨勢強勢。三大法人近期有明顯的大量買單。 整體看來是好學生，可加入自選股觀察找買點。"
+    },
+    {
+      "code": "6257",
+      "name": "矽格",
+      "is_etf": false,
+      "price": 257.5,
+      "ma60": 216.32,
+      "suggested_stop_loss": 209.83,
+      "inst_net_buy_3d": 5118,
+      "it_continuous_buy": true,
+      "revenue_double_growth": false,
+      "news_heat_today": 0,
+      "news_heat_yesterday": 1,
+      "ptt_push": 0,
+      "ptt_boo": 0,
+      "keywords_hit": [
+        {
+          "tag": "Vera Rubin",
+          "weight": 5
+        },
+        {
+          "tag": "矽光子",
+          "weight": 5
+        },
+        {
+          "tag": "全液冷",
+          "weight": 4
+        },
+        {
+          "tag": "AI伺服器",
+          "weight": 4
+        },
+        {
+          "tag": "液冷",
+          "weight": 3
+        },
+        {
+          "tag": "先進封裝",
+          "weight": 3
+        }
+      ],
+      "alert": null,
+      "score": 85,
+      "light": "🟢 偏多觀察",
+      "advice": "【體檢優良】股價穩站季線之上，趨勢強勢。有投信大哥在默默連買吃貨，背後有靠山。 整體看來是好學生，可加入自選股觀察找買點。"
+    },
+    {
+      "code": "6239",
+      "name": "力成",
+      "is_etf": false,
+      "price": 308.0,
+      "ma60": 278.49,
+      "suggested_stop_loss": 270.14,
+      "inst_net_buy_3d": 4920,
+      "it_continuous_buy": true,
+      "revenue_double_growth": false,
+      "news_heat_today": 5,
+      "news_heat_yesterday": 1,
+      "ptt_push": 0,
+      "ptt_boo": 0,
+      "keywords_hit": [
+        {
+          "tag": "Vera Rubin",
+          "weight": 5
+        },
+        {
+          "tag": "矽光子",
+          "weight": 5
+        },
+        {
+          "tag": "全液冷",
+          "weight": 4
+        },
+        {
+          "tag": "AI伺服器",
+          "weight": 4
+        },
+        {
+          "tag": "液冷",
+          "weight": 3
+        },
+        {
+          "tag": "先進封裝",
+          "weight": 3
+        }
+      ],
+      "alert": "news_surge",
+      "score": 85,
+      "light": "🟢 偏多觀察",
+      "advice": "【體檢優良】股價穩站季線之上，趨勢強勢。有投信大哥在默默連買吃貨，背後有靠山。 整體看來是好學生，可加入自選股觀察找買點。"
+    },
+    {
+      "code": "1310",
+      "name": "台苯",
+      "is_etf": false,
+      "price": 9.61,
+      "ma60": 8.78,
+      "suggested_stop_loss": 8.52,
+      "inst_net_buy_3d": 5741,
+      "it_continuous_buy": false,
+      "revenue_double_growth": false,
+      "news_heat_today": 1,
+      "news_heat_yesterday": 0,
+      "ptt_push": 0,
+      "ptt_boo": 0,
+      "keywords_hit": [
+        {
+          "tag": "矽光子",
+          "weight": 5
+        },
+        {
+          "tag": "AI伺服器",
+          "weight": 4
+        },
+        {
+          "tag": "先進封裝",
+          "weight": 3
+        }
+      ],
+      "alert": null,
+      "score": 80,
+      "light": "🟢 偏多觀察",
+      "advice": "【體檢優良】股價穩站季線之上，趨勢強勢。三大法人近期有明顯的大量買單。 整體看來是好學生，可加入自選股觀察找買點。"
+    },
+    {
+      "code": "1714",
+      "name": "和桐",
+      "is_etf": false,
+      "price": 16.85,
+      "ma60": 16.02,
+      "suggested_stop_loss": 15.54,
+      "inst_net_buy_3d": 6306,
+      "it_continuous_buy": false,
+      "revenue_double_growth": false,
+      "news_heat_today": 0,
+      "news_heat_yesterday": 0,
+      "ptt_push": 0,
+      "ptt_boo": 0,
+      "keywords_hit": [
+        {
+          "tag": "HBM",
+          "weight": 3
+        },
+        {
+          "tag": "液冷",
+          "weight": 3
+        }
+      ],
+      "alert": null,
+      "score": 80,
+      "light": "🟢 偏多觀察",
+      "advice": "【體檢優良】股價穩站季線之上，趨勢強勢。三大法人近期有明顯的大量買單。 整體看來是好學生，可加入自選股觀察找買點。"
+    },
+    {
+      "code": "2801",
+      "name": "彰銀",
+      "is_etf": false,
+      "price": 27.6,
+      "ma60": 25.36,
+      "suggested_stop_loss": 24.6,
+      "inst_net_buy_3d": 5244,
+      "it_continuous_buy": true,
+      "revenue_double_growth": false,
+      "news_heat_today": 2,
+      "news_heat_yesterday": 3,
+      "ptt_push": 0,
+      "ptt_boo": 0,
+      "keywords_hit": [
+        {
+          "tag": "矽光子",
+          "weight": 5
+        },
+        {
+          "tag": "CoWoS",
+          "weight": 4
+        },
+        {
+          "tag": "HBM",
+          "weight": 3
+        },
+        {
+          "tag": "先進封裝",
+          "weight": 3
+        }
+      ],
+      "alert": null,
+      "score": 55,
+      "light": "🟡 中立觀望",
+      "advice": "【表現平平】短線跌破月線轉弱，留意是否繼續向下測試季線。有投信大哥在默默連買吃貨，背後有靠山。 目前沒有特別突出的表現，建議多看少做。"
+    },
+    {
+      "code": "3702",
+      "name": "大聯大",
+      "is_etf": false,
+      "price": 119.0,
+      "ma60": 111.97,
+      "suggested_stop_loss": 108.61,
+      "inst_net_buy_3d": 5029,
+      "it_continuous_buy": false,
+      "revenue_double_growth": false,
+      "news_heat_today": 0,
+      "news_heat_yesterday": 1,
+      "ptt_push": 0,
+      "ptt_boo": 0,
+      "keywords_hit": [
+        {
+          "tag": "Vera Rubin",
+          "weight": 5
+        },
+        {
+          "tag": "全液冷",
+          "weight": 4
+        },
+        {
+          "tag": "AI伺服器",
+          "weight": 4
+        },
+        {
+          "tag": "液冷",
+          "weight": 3
+        }
+      ],
+      "alert": null,
+      "score": 80,
+      "light": "🟢 偏多觀察",
+      "advice": "【體檢優良】股價穩站季線之上，趨勢強勢。三大法人近期有明顯的大量買單。 整體看來是好學生，可加入自選股觀察找買點。"
+    },
+    {
+      "code": "1802",
+      "name": "台玻",
+      "is_etf": false,
+      "price": 59.5,
+      "ma60": 57.11,
+      "suggested_stop_loss": 55.4,
+      "inst_net_buy_3d": 6378,
+      "it_continuous_buy": false,
+      "revenue_double_growth": false,
+      "news_heat_today": 0,
+      "news_heat_yesterday": 1,
+      "ptt_push": 0,
+      "ptt_boo": 0,
+      "keywords_hit": [],
+      "alert": null,
+      "score": 70,
+      "light": "🟡 中立觀望",
+      "advice": "【表現平平】股價維持在季線之上，長線算安全。三大法人近期有明顯的大量買單。 目前沒有特別突出的表現，建議多看少做。"
+    },
+    {
+      "code": "00980A",
+      "name": "主動野村臺灣優選",
+      "is_etf": true,
+      "price": 25.87,
+      "ma60": 23.85,
+      "suggested_stop_loss": 23.13,
+      "inst_net_buy_3d": 4868,
+      "it_continuous_buy": false,
+      "revenue_double_growth": false,
+      "news_heat_today": 0,
+      "news_heat_yesterday": 2,
       "ptt_push": 0,
       "ptt_boo": 0,
       "keywords_hit": [
@@ -2508,154 +3112,22 @@
         }
       ],
       "alert": null,
-      "score": 50,
-      "light": "🟡 中立觀望",
-      "advice": "【表現平平】短線跌破月線轉弱，留意是否繼續向下測試季線。三大法人近期有明顯的大量買單。 目前沒有特別突出的表現，建議多看少做。"
-    },
-    {
-      "code": "2353",
-      "name": "宏碁",
-      "is_etf": false,
-      "price": 31.85,
-      "ma60": 30.99,
-      "suggested_stop_loss": 30.06,
-      "inst_net_buy_3d": 2949,
-      "it_continuous_buy": true,
-      "revenue_double_growth": false,
-      "news_heat_today": 2,
-      "news_heat_yesterday": 2,
-      "ptt_push": 0,
-      "ptt_boo": 0,
-      "keywords_hit": [
-        {
-          "tag": "矽光子",
-          "weight": 5
-        },
-        {
-          "tag": "AI伺服器",
-          "weight": 4
-        },
-        {
-          "tag": "HBM",
-          "weight": 3
-        },
-        {
-          "tag": "液冷",
-          "weight": 3
-        },
-        {
-          "tag": "先進封裝",
-          "weight": 3
-        }
-      ],
-      "alert": null,
-      "score": 75,
-      "light": "🟢 偏多觀察",
-      "advice": "【體檢優良】股價維持在季線之上，長線算安全。有投信大哥在默默連買吃貨，背後有靠山。 整體看來是好學生，可加入自選股觀察找買點。"
-    },
-    {
-      "code": "3045",
-      "name": "台灣大",
-      "is_etf": false,
-      "price": 122.0,
-      "ma60": 115.22,
-      "suggested_stop_loss": 111.76,
-      "inst_net_buy_3d": 3055,
-      "it_continuous_buy": false,
-      "revenue_double_growth": false,
-      "news_heat_today": 2,
-      "news_heat_yesterday": 3,
-      "ptt_push": 0,
-      "ptt_boo": 0,
-      "keywords_hit": [
-        {
-          "tag": "矽光子",
-          "weight": 5
-        },
-        {
-          "tag": "全液冷",
-          "weight": 4
-        },
-        {
-          "tag": "液冷",
-          "weight": 3
-        },
-        {
-          "tag": "先進封裝",
-          "weight": 3
-        }
-      ],
-      "alert": null,
       "score": 80,
       "light": "🟢 偏多觀察",
       "advice": "【體檢優良】股價穩站季線之上，趨勢強勢。三大法人近期有明顯的大量買單。 整體看來是好學生，可加入自選股觀察找買點。"
     },
     {
-      "code": "1102",
-      "name": "亞泥",
+      "code": "1313",
+      "name": "聯成",
       "is_etf": false,
-      "price": 35.65,
-      "ma60": 34.24,
-      "suggested_stop_loss": 33.21,
-      "inst_net_buy_3d": 3946,
-      "it_continuous_buy": false,
-      "revenue_double_growth": false,
-      "news_heat_today": 1,
-      "news_heat_yesterday": 0,
-      "ptt_push": 0,
-      "ptt_boo": 0,
-      "keywords_hit": [
-        {
-          "tag": "AI伺服器",
-          "weight": 4
-        }
-      ],
-      "alert": null,
-      "score": 70,
-      "light": "🟡 中立觀望",
-      "advice": "【表現平平】股價維持在季線之上，長線算安全。三大法人近期有明顯的大量買單。 目前沒有特別突出的表現，建議多看少做。"
-    },
-    {
-      "code": "3311",
-      "name": "閎暉",
-      "is_etf": false,
-      "price": 45.15,
-      "ma60": 34.13,
-      "suggested_stop_loss": 33.11,
-      "inst_net_buy_3d": 3460,
-      "it_continuous_buy": false,
-      "revenue_double_growth": false,
-      "news_heat_today": 3,
-      "news_heat_yesterday": 0,
-      "ptt_push": 0,
-      "ptt_boo": 0,
-      "keywords_hit": [
-        {
-          "tag": "AI伺服器",
-          "weight": 4
-        },
-        {
-          "tag": "先進封裝",
-          "weight": 3
-        }
-      ],
-      "alert": "news_surge",
-      "score": 80,
-      "light": "🟢 偏多觀察",
-      "advice": "【體檢優良】股價穩站季線之上，趨勢強勢。三大法人近期有明顯的大量買單。 整體看來是好學生，可加入自選股觀察找買點。"
-    },
-    {
-      "code": "1714",
-      "name": "和桐",
-      "is_etf": false,
-      "price": 16.2,
-      "ma60": 16.05,
-      "suggested_stop_loss": 15.57,
-      "inst_net_buy_3d": 3372,
+      "price": 12.65,
+      "ma60": 11.84,
+      "suggested_stop_loss": 11.48,
+      "inst_net_buy_3d": 5156,
       "it_continuous_buy": false,
       "revenue_double_growth": false,
       "news_heat_today": 0,
-      "news_heat_yesterday": 1,
+      "news_heat_yesterday": 0,
       "ptt_push": 0,
       "ptt_boo": 0,
       "keywords_hit": [
@@ -2664,88 +3136,14 @@
           "weight": 3
         },
         {
-          "tag": "液冷",
-          "weight": 3
-        }
-      ],
-      "alert": null,
-      "score": 70,
-      "light": "🟡 中立觀望",
-      "advice": "【表現平平】股價維持在季線之上，長線算安全。三大法人近期有明顯的大量買單。 目前沒有特別突出的表現，建議多看少做。"
-    },
-    {
-      "code": "2801",
-      "name": "彰銀",
-      "is_etf": false,
-      "price": 27.55,
-      "ma60": 25.29,
-      "suggested_stop_loss": 24.53,
-      "inst_net_buy_3d": 3082,
-      "it_continuous_buy": false,
-      "revenue_double_growth": false,
-      "news_heat_today": 1,
-      "news_heat_yesterday": 0,
-      "ptt_push": 0,
-      "ptt_boo": 0,
-      "keywords_hit": [
-        {
-          "tag": "矽光子",
-          "weight": 5
-        },
-        {
           "tag": "先進封裝",
           "weight": 3
-        }
-      ],
-      "alert": null,
-      "score": 50,
-      "light": "🟡 中立觀望",
-      "advice": "【表現平平】短線跌破月線轉弱，留意是否繼續向下測試季線。三大法人近期有明顯的大量買單。 目前沒有特別突出的表現，建議多看少做。"
-    },
-    {
-      "code": "3035",
-      "name": "智原",
-      "is_etf": false,
-      "price": 213.0,
-      "ma60": 183.92,
-      "suggested_stop_loss": 178.4,
-      "inst_net_buy_3d": 2983,
-      "it_continuous_buy": false,
-      "revenue_double_growth": false,
-      "news_heat_today": 0,
-      "news_heat_yesterday": 2,
-      "ptt_push": 0,
-      "ptt_boo": 0,
-      "keywords_hit": [
-        {
-          "tag": "全液冷",
-          "weight": 4
         }
       ],
       "alert": null,
       "score": 80,
       "light": "🟢 偏多觀察",
       "advice": "【體檢優良】股價穩站季線之上，趨勢強勢。三大法人近期有明顯的大量買單。 整體看來是好學生，可加入自選股觀察找買點。"
-    },
-    {
-      "code": "5876",
-      "name": "上海商銀",
-      "is_etf": false,
-      "price": 48.4,
-      "ma60": 45.47,
-      "suggested_stop_loss": 44.11,
-      "inst_net_buy_3d": 3140,
-      "it_continuous_buy": false,
-      "revenue_double_growth": false,
-      "news_heat_today": 0,
-      "news_heat_yesterday": 0,
-      "ptt_push": 0,
-      "ptt_boo": 0,
-      "keywords_hit": [],
-      "alert": null,
-      "score": 50,
-      "light": "🟡 中立觀望",
-      "advice": "【表現平平】短線跌破月線轉弱，留意是否繼續向下測試季線。三大法人近期有明顯的大量買單。 目前沒有特別突出的表現，建議多看少做。"
     }
   ]
 }
